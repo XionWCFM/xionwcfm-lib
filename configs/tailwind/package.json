@@ -1,0 +1,25 @@
+{
+  "name": "@xionwcfm/tailwindcss-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./base": {
+      "default": "./src/base.ts"
+    }
+  },
+  "devDependencies": {
+    "@xionwcfm/typescript-config": "workspace:*",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "latest",
+    "@xionwcfm/token": "workspace:*"
+  },
+  "peerDependencies": {
+    "tailwindcss-animate": ">=0.0.0",
+    "@xionwcfm/token": "workspace:*"
+  }
+}

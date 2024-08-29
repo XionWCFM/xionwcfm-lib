@@ -1,0 +1,17 @@
+pre-push:
+  parallel: true
+  commands:
+    check:
+      run: pnpm run check:biome
+      stage_fixed: true
+    test:
+      run: pnpm run test:ci
+      
+pre-commit:
+  parallel: true
+  commands:
+    check:
+      run: pnpm run check:biome && git add .
+      stage_fixed: true
+    test:
+      run: pnpm run test:ci

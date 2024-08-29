@@ -1,0 +1,26 @@
+{
+  "name": "@xionwcfm/icon",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {},
+  "exports": {
+    "./email-icon": "./src/email-icon.tsx",
+    "./fill-check-icon": "./src/fill-check-icon.tsx",
+    "./fill-info-icon": "./src/fill-info-icon.tsx",
+    "./fill-warning-icon": "./src/fill-warning-icon.tsx"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@xionwcfm/typescript-config": "workspace:*",
+    "tsup": "^8.1.0",
+    "typescript": "latest"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

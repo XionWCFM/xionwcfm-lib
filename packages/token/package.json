@@ -1,0 +1,24 @@
+{
+  "name": "@xionwcfm/token",
+  "scripts": {
+    "build": "tsup"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./css": "./src/index.css"
+  },
+  "devDependencies": {
+    "@xionwcfm/typescript-config": "workspace:*",
+    "tsup": "^8.1.0",
+    "typescript": "latest"
+  }
+}

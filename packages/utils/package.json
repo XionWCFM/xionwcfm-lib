@@ -1,0 +1,104 @@
+{
+  "name": "@xionwcfm/utils",
+  "scripts": {
+    "build": "tsup"
+  },
+  "exports": {
+    "./array": {
+      "import": {
+        "types": "./dist/array/index.d.mts",
+        "default": "./dist/array/index.mjs"
+      },
+      "require": {
+        "types": "./dist/array/index.d.ts",
+        "default": "./dist/array/index.js"
+      }
+    },
+    "./async": {
+      "import": {
+        "types": "./dist/async/index.d.mts",
+        "default": "./dist/async/index.mjs"
+      },
+      "require": {
+        "types": "./dist/async/index.d.ts",
+        "default": "./dist/async/index.js"
+      }
+    },
+    "./function": {
+      "import": {
+        "types": "./dist/function/index.d.mts",
+        "default": "./dist/function/index.mjs"
+      },
+      "require": {
+        "types": "./dist/function/index.d.ts",
+        "default": "./dist/function/index.js"
+      }
+    },
+    "./math": {
+      "import": {
+        "types": "./dist/math/index.d.mts",
+        "default": "./dist/math/index.mjs"
+      },
+      "require": {
+        "types": "./dist/math/index.d.ts",
+        "default": "./dist/math/index.js"
+      }
+    },
+    "./object": {
+      "import": {
+        "types": "./dist/object/index.d.mts",
+        "default": "./dist/object/index.mjs"
+      },
+      "require": {
+        "types": "./dist/object/index.d.ts",
+        "default": "./dist/object/index.js"
+      }
+    },
+    "./string": {
+      "import": {
+        "types": "./dist/string/index.d.mts",
+        "default": "./dist/string/index.mjs"
+      },
+      "require": {
+        "types": "./dist/string/index.d.ts",
+        "default": "./dist/string/index.js"
+      }
+    },
+    "./type": {
+      "import": {
+        "types": "./dist/type/index.d.mts",
+        "default": "./dist/type/index.mjs"
+      },
+      "require": {
+        "types": "./dist/type/index.d.ts",
+        "default": "./dist/type/index.js"
+      }
+    },
+    "./web": {
+      "import": {
+        "types": "./dist/web/index.d.mts",
+        "default": "./dist/web/index.mjs"
+      },
+      "require": {
+        "types": "./dist/web/index.d.ts",
+        "default": "./dist/web/index.js"
+      }
+    },
+    "./pattern": {
+      "import": {
+        "types": "./dist/pattern/index.d.mts",
+        "default": "./dist/pattern/index.mjs"
+      },
+      "require": {
+        "types": "./dist/pattern/index.d.ts",
+        "default": "./dist/pattern/index.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@xionwcfm/typescript-config": "workspace:*",
+    "tsup": "^8.1.0",
+    "typescript": "latest"
+  }
+}

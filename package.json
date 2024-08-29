@@ -1,0 +1,33 @@
+{
+  "name": "turbo-repo",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "build:p": "turbo build --filter './packages/*'",
+    "storybook": "turbo storybook",
+    "push:origin": "git push origin $(git symbolic-ref --short HEAD)",
+    "lint": "turbo lint",
+    "test": "turbo run test",
+    "test:ci": "turbo run test:ci",
+    "lint:biome": "npx @biomejs/biome lint .",
+    "check:biome": "npx @biomejs/biome check --write .",
+    "format:biome": "npx @biomejs/biome format --write .",
+    "clean:all": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules && pnpm store prune && pnpm install",
+    "comment:ci": "node ./.github/scripts/comment-ci.js"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@xionwcfm/typescript-config": "workspace:*",
+    "prettier": "^3.2.5",
+    "turbo": "^2.1.0",
+    "typescript": "^5.4.5",
+    "vitest": "^2.0.5"
+  },
+  "packageManager": "pnpm@9.7.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "lefthook": "^1.6.16"
+  }
+}

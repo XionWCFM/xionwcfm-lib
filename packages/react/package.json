@@ -1,0 +1,226 @@
+{
+  "name": "@xionwcfm/hooks",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest",
+    "test:ci": "vitest run"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./builder": {
+      "import": {
+        "types": "./dist/builder.d.mts",
+        "default": "./dist/builder.mjs"
+      },
+      "require": {
+        "types": "./dist/builder.d.ts",
+        "default": "./dist/builder.js"
+      }
+    },
+    "./use-animation": {
+      "import": {
+        "types": "./dist/use-animation.d.mts",
+        "default": "./dist/use-animation.mjs"
+      },
+      "require": {
+        "types": "./dist/use-animation.d.ts",
+        "default": "./dist/use-animation.js"
+      }
+    },
+    "./use-debounce-value": {
+      "import": {
+        "types": "./dist/use-debounce-value.d.mts",
+        "default": "./dist/use-debounce-value.mjs"
+      },
+      "require": {
+        "types": "./dist/use-debounce-value.d.ts",
+        "default": "./dist/use-debounce-value.js"
+      }
+    },
+    "./use-draft": {
+      "import": {
+        "types": "./dist/use-draft.d.mts",
+        "default": "./dist/use-draft.mjs"
+      },
+      "require": {
+        "types": "./dist/use-draft.d.ts",
+        "default": "./dist/use-draft.js"
+      }
+    },
+    "./use-intersection-observer": {
+      "import": {
+        "types": "./dist/use-intersection-observer.d.mts",
+        "default": "./dist/use-intersection-observer.mjs"
+      },
+      "require": {
+        "types": "./dist/use-intersection-observer.d.ts",
+        "default": "./dist/use-intersection-observer.js"
+      }
+    },
+    "./use-loading": {
+      "import": {
+        "types": "./dist/use-loading.d.mts",
+        "default": "./dist/use-loading.mjs"
+      },
+      "require": {
+        "types": "./dist/use-loading.d.ts",
+        "default": "./dist/use-loading.js"
+      }
+    },
+    "./use-scroll-direction": {
+      "import": {
+        "types": "./dist/use-scroll-direction.d.mts",
+        "default": "./dist/use-scroll-direction.mjs"
+      },
+      "require": {
+        "types": "./dist/use-scroll-direction.d.ts",
+        "default": "./dist/use-scroll-direction.js"
+      }
+    },
+    "./use-boolean-state": {
+      "import": {
+        "types": "./dist/use-boolean-state.d.mts",
+        "default": "./dist/use-boolean-state.mjs"
+      },
+      "require": {
+        "types": "./dist/use-boolean-state.d.ts",
+        "default": "./dist/use-boolean-state.js"
+      }
+    },
+    "./use-check-list": {
+      "import": {
+        "types": "./dist/use-check-list.d.mts",
+        "default": "./dist/use-check-list.mjs"
+      },
+      "require": {
+        "types": "./dist/use-check-list.d.ts",
+        "default": "./dist/use-check-list.js"
+      }
+    },
+    "./use-force-update": {
+      "import": {
+        "types": "./dist/use-force-update.d.mts",
+        "default": "./dist/use-force-update.mjs"
+      },
+      "require": {
+        "types": "./dist/use-force-update.d.ts",
+        "default": "./dist/use-force-update.js"
+      }
+    },
+    "./use-input-state": {
+      "import": {
+        "types": "./dist/use-input-state.d.mts",
+        "default": "./dist/use-input-state.mjs"
+      },
+      "require": {
+        "types": "./dist/use-input-state.d.ts",
+        "default": "./dist/use-input-state.js"
+      }
+    },
+    "./use-is-mounted": {
+      "import": {
+        "types": "./dist/use-is-mounted.d.mts",
+        "default": "./dist/use-is-mounted.mjs"
+      },
+      "require": {
+        "types": "./dist/use-is-mounted.d.ts",
+        "default": "./dist/use-is-mounted.js"
+      }
+    },
+    "./use-is-mounted-ref": {
+      "import": {
+        "types": "./dist/use-is-mounted-ref.d.mts",
+        "default": "./dist/use-is-mounted-ref.mjs"
+      },
+      "require": {
+        "types": "./dist/use-is-mounted-ref.d.ts",
+        "default": "./dist/use-is-mounted-ref.js"
+      }
+    },
+    "./use-isomorphic-layout-effect": {
+      "import": {
+        "types": "./dist/use-isomorphic-layout-effect.d.mts",
+        "default": "./dist/use-isomorphic-layout-effect.mjs"
+      },
+      "require": {
+        "types": "./dist/use-isomorphic-layout-effect.d.ts",
+        "default": "./dist/use-isomorphic-layout-effect.js"
+      }
+    },
+    "./use-preserved-callback": {
+      "import": {
+        "types": "./dist/use-preserved-callback.d.mts",
+        "default": "./dist/use-preserved-callback.mjs"
+      },
+      "require": {
+        "types": "./dist/use-preserved-callback.d.ts",
+        "default": "./dist/use-preserved-callback.js"
+      }
+    },
+    "./use-ref-effect": {
+      "import": {
+        "types": "./dist/use-ref-effect.d.mts",
+        "default": "./dist/use-ref-effect.mjs"
+      },
+      "require": {
+        "types": "./dist/use-ref-effect.d.ts",
+        "default": "./dist/use-ref-effect.js"
+      }
+    },
+    "./use-resize-observer": {
+      "import": {
+        "types": "./dist/use-resize-observer.d.mts",
+        "default": "./dist/use-resize-observer.mjs"
+      },
+      "require": {
+        "types": "./dist/use-resize-observer.d.ts",
+        "default": "./dist/use-resize-observer.js"
+      }
+    },
+    "./use-toggle-state": {
+      "import": {
+        "types": "./dist/use-toggle-state.d.mts",
+        "default": "./dist/use-toggle-state.mjs"
+      },
+      "require": {
+        "types": "./dist/use-toggle-state.d.ts",
+        "default": "./dist/use-toggle-state.js"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^20.14.9",
+    "@types/react": "^18",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@xionwcfm/typescript-config": "workspace:*",
+    "happy-dom": "^14.12.0",
+    "tsup": "^8.1.0",
+    "typescript": "latest",
+    "vite": "^5.3.4",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0",
+    "vitest-fetch-mock": "^0.2.2"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

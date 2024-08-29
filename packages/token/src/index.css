@@ -1,0 +1,84 @@
+:root {
+    --spacing: 2px;
+    --font-size: 1rem;
+    --radius: 2px;
+  
+    --neutral-50: #fafafa;
+    --neutral-100: #f4f4f5;
+    --neutral-200: #e4e4e7;
+    --neutral-300: #d4d4d8;
+    --neutral-400: #a1a1aa;
+    --neutral-500: #71717a;
+    --neutral-600: #52525b;
+    --neutral-700: #3f3f46;
+    --neutral-800: #27272a;
+    --neutral-900: #18181b;
+    --neutral-950: #09090b;
+  
+    --gray-50: #f5f5f5;
+    --gray-100: #efefef;
+    --gray-200: #dcdcdc;
+    --gray-300: #bdbdbd;
+    --gray-400: #989898;
+    --gray-500: #7c7c7c;
+    --gray-600: #656565;
+    --gray-700: #525252;
+    --gray-800: #464646;
+    --gray-900: #3d3d3d;
+    --gray-950: #292929;
+
+    --success-50: #f0fdf4;
+    --success-100: #dcfce7;
+    --success-200: #bbf7d0;
+    --success-300: #86efac;
+    --success-400: #4ade80;
+    --success-500: #22c55e;
+    --success-600: #16a34a;
+    --success-700: #15803d;
+    --success-800: #166534;
+    --success-900: #14532d;
+    --success-950: #052e16;
+  
+    --primary-50: #f0f5fe;   
+    --primary-100: #dde7fc;  
+    --primary-200: #c2d6fb;
+    --primary-300: #98bcf8; 
+    --primary-400: #6899f2;  
+    --primary-500: #4474ed; 
+    --primary-600: #2850e0;  
+    --primary-700: #2642cf;  
+    --primary-800: #2537a8;  
+    --primary-900: #233485; 
+    --primary-950: #1a2251;  
+  
+    --warning-50: #fffbeb;
+    --warning-100: #fef3c7;
+    --warning-200: #fde68a;
+    --warning-300: #fcd34d;
+    --warning-400: #fbbf24;
+    --warning-500: #f59e0b;
+    --warning-600: #d97706;
+    --warning-700: #b45309;
+    --warning-800: #92400e;
+    --warning-900: #78350f;
+    --warning-950: #451a03;
+  
+    --danger-50: #fef2f2;
+    --danger-100: #fee2e2;
+    --danger-200: #fecaca;
+    --danger-300: #fca5a5;
+    --danger-400: #f87171;
+    --danger-500: #ef4444;
+    --danger-600: #dc2626;
+    --danger-700: #b91c1c;
+    --danger-800: #991b1b;
+    --danger-900: #7f1d1d;
+    --danger-950: #450a0a;
+  }
+  .dark {
+    --spacing: 2px;
+    --font-size: 1rem;
+    --white: 0 0% 100%;
+    --radius: 2px;
+  }
+  
