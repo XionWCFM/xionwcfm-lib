@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsup"
   },
+  "files": ["dist"],
   "exports": {
     ".": {
       "import": {
