@@ -1,7 +1,7 @@
-import type { PolymorphicComponentPropsWithRef, PolymorphicRef } from "@xionwcfm/types/polymorphic";
 import { type ElementType, type ReactNode, forwardRef } from "react";
 import type { PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./external-utils/cn";
+import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 
 type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C>;
 type ChipType = <C extends ElementType = "div" | "button" | "a">(

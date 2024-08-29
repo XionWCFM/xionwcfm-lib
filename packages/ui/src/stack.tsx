@@ -1,7 +1,7 @@
-import type { PolymorphicComponentPropsWithRef, PolymorphicRef } from "@xionwcfm/types/polymorphic";
 import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./external-utils/cn";
+import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { FlexItemsTypeProps, flexItemsVariants } from "./internal-utils/flex-align-variants";
 import { FlexDirectionTypeProps, flexDirectionVariants } from "./internal-utils/flex-direction-variants";
 import { FlexJustifyTypeProps, flexJustifyVariants } from "./internal-utils/flex-justify-variants";

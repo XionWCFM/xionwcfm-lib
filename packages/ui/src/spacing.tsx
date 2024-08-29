@@ -1,11 +1,11 @@
-import type {
-  PolymorphicComponentProps,
-  PolymorphicComponentPropsWithRef,
-  PolymorphicRef,
-} from "@xionwcfm/types/polymorphic";
 import type { VariantProps } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
 import { cn } from "./external-utils/cn";
+import {
+  PolymorphicComponentProps,
+  PolymorphicComponentPropsWithRef,
+  PolymorphicRef,
+} from "./internal-type/polymorphic";
 import { stackVariants } from "./internal-utils/stack-variants";
 import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
 

@@ -13,15 +13,12 @@ import { UnderlineInput } from "./outline-input";
 import { Paragraph } from "./paragraph";
 import { Portal } from "./portal";
 import { RadioGroup } from "./radio-group";
-import { Separate } from "./separate";
-import { Separated } from "./separated";
 import { Skeleton } from "./skeleton";
 import { Spacing } from "./spacing";
 import { Spinner } from "./spinner";
 import { Stack } from "./stack";
-import { SwitchCase } from "./switch-case";
 import { Tabs } from "./tabs";
-import { type ToastType, Toaster, toast } from "./toast";
+import { Toaster, toast } from "./toast";
 
 export {
   Flex,
@@ -37,17 +34,13 @@ export {
   DialogPrimitives,
   Drawer,
   Paragraph,
-  Separate,
-  Separated,
   Separator,
   Skeleton,
   Spacing,
   Spinner,
   Stack,
-  SwitchCase,
   Tabs,
   toast,
   Toaster,
   ConfirmDialog,
-  type ToastType,
 };

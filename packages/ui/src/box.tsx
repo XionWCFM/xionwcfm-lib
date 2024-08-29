@@ -1,11 +1,12 @@
-import { Slot, Slottable } from "@radix-ui/react-slot";
-import type {
+import { Slot } from "@radix-ui/react-slot";
+
+import { type ElementType, type ReactNode, forwardRef } from "react";
+import { cn } from "./external-utils/cn";
+import {
   PolymorphicComponentProps,
   PolymorphicComponentPropsWithRef,
   PolymorphicRef,
-} from "@xionwcfm/types/polymorphic";
-import { type ElementType, type ReactNode, forwardRef } from "react";
-import { cn } from "./external-utils/cn";
+} from "./internal-type/polymorphic";
 import { SpacingSystemProps, getS } from "./internal-utils/get-s";
 import { HTypeProps, hVariants } from "./internal-utils/h-variants";
 import { MaxHTypeProps, maxHVariants } from "./internal-utils/max-h-variants";

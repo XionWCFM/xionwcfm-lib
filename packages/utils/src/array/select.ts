@@ -1,7 +1,7 @@
 export const select = <T, K>(
   array: readonly T[],
-  mapper: (item: T, index: number) => K,
   condition: (item: T, index: number) => boolean,
+  mapper: (item: T, index: number) => K,
 ) => {
   if (!array) return [];
   return array.reduce((acc, item, index) => {

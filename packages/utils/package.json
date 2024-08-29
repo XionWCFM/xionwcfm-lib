@@ -1,9 +1,21 @@
 {
   "name": "@xionwcfm/utils",
+  "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "build": "tsup"
   },
   "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
     "./array": {
       "import": {
         "types": "./dist/array/index.d.mts",
@@ -64,14 +76,14 @@
         "default": "./dist/string/index.js"
       }
     },
-    "./type": {
+    "./predicate": {
       "import": {
-        "types": "./dist/type/index.d.mts",
-        "default": "./dist/type/index.mjs"
+        "types": "./dist/predicate/index.d.mts",
+        "default": "./dist/predicate/index.mjs"
       },
       "require": {
-        "types": "./dist/type/index.d.ts",
-        "default": "./dist/type/index.js"
+        "types": "./dist/predicate/index.d.ts",
+        "default": "./dist/predicate/index.js"
       }
     },
     "./web": {
@@ -100,5 +112,8 @@
     "@xionwcfm/typescript-config": "workspace:*",
     "tsup": "^8.1.0",
     "typescript": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

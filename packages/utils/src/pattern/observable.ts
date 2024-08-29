@@ -1,13 +1,13 @@
-type Observer<T> = (data: T) => void;
+export type ObserverType<T> = (data: T) => void;
 
 export class Observable<T> {
-  private observers: Observer<T>[] = [];
+  private observers: ObserverType<T>[] = [];
 
-  subscribe(observer: Observer<T>): void {
+  subscribe(observer: ObserverType<T>): void {
     this.observers.push(observer);
   }
 
-  unsubscribe(observer: Observer<T>): void {
+  unsubscribe(observer: ObserverType<T>): void {
     this.observers = this.observers.filter((obs) => obs !== observer);
   }
 
