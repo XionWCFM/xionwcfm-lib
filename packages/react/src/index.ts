@@ -37,6 +37,7 @@ import { useScrollDirection } from "./use-scroll-direction";
 import { useScrollLock } from "./use-scroll-lock";
 import { useShallowEffect } from "./use-shallow-effect";
 import { useThrottle } from "./use-throttle";
+import useThrottleValue from "./use-throttle-value";
 import { useToggleState } from "./use-toggle-state";
 import { useWindowEvent } from "./use-window-event";
 import { useWindowScroll } from "./use-window-scroll";
@@ -46,6 +47,7 @@ export {
   Debounce,
   Separated,
   SwitchCase,
+  useThrottleValue,
   useDebounceCallback,
   useDebounceValue,
   useImageStatus,

@@ -5,5 +5,5 @@
 # installation
 
 ```
-pnpm i @xionwcfm/react @xionwcfm/utils
+pƒnpm i @xionwcfm/react @xionwcfm/utils
 ```
