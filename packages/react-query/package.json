@@ -1,0 +1,51 @@
+{
+  "name": "@xionwcfm/react-query",
+  "version": "0.0.2",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest",
+    "test:ci": "vitest run"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist"],
+  "devDependencies": {
+    "@tanstack/react-query": "^5.52.3",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^20.14.9",
+    "@types/react": "^18",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@xionwcfm/typescript-config": "workspace:*",
+    "happy-dom": "^14.12.0",
+    "tsup": "^8.1.0",
+    "typescript": "latest",
+    "vite": "^5.3.4",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0",
+    "vitest-fetch-mock": "^0.2.2"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "@tanstack/react-query": ">=5"
+  }
+}
