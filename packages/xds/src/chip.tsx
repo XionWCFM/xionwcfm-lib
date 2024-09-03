@@ -7,10 +7,11 @@ type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C>;
 type ChipType = <C extends ElementType = "div" | "button" | "a">(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
 ) => ReactNode | null;
-
+//@ts-ignore
 export const Chip: ChipType = forwardRef(function Chip<C extends ElementType = "div">(
   { children, as, className, variant, w, h, ...rest }: Props<C>,
-  ref?: PolymorphicRef<C>,
+  // ref?: PolymorphicRef<C>,
+  ref?: any,
 ) {
   const Component = as || "div";
 

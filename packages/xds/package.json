@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/xds",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -21,10 +21,11 @@
       "default": "./dist/style.css"
     }
   },
-  "files": ["dist/**"],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss -i ./style.css -o dist/style.css --minify --postcss",
+    "build:no": "tailwindcss -i ./style.css -o dist/style.css --postcss",
     "generate:component": "turbo gen react-component"
   },
   "publishConfig": {
@@ -84,5 +85,9 @@
     "@radix-ui/react-visually-hidden": "^1.1.0",
     "sonner": "^1.5.0",
     "vaul": "^0.9.1"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   }
 }

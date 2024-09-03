@@ -11,10 +11,11 @@ type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> & Varian
 type FlexType = <C extends ElementType = SemanticHTMLContentSectionType>(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
 ) => ReactNode | null;
-
-export const Flex: FlexType = forwardRef(function Stack<C extends ElementType = "div">(
+//@ts-ignore
+export const Flex: FlexType = forwardRef(function Flex<C extends ElementType = "div">(
   props: Props<C>,
-  ref?: PolymorphicRef<C>,
+  // ref?: PolymorphicRef<C>,
+  ref?: any,
 ) {
   const { children, direction, gap, w, h, justify, items: align, className, as, ...rest } = props;
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;

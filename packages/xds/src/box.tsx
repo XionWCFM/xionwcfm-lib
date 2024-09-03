@@ -1,5 +1,5 @@
-import { Slot } from "@radix-ui/react-slot";
-import { type ElementType, type ReactNode, forwardRef } from "react";
+import { Slot, SlotProps } from "@radix-ui/react-slot";
+import { type ElementType, ForwardRefExoticComponent, type ReactNode, forwardRef } from "react";
 import { cn } from "./external-utils/cn";
 import {
   PolymorphicComponentProps,
@@ -37,9 +37,10 @@ type BoxType = <C extends ElementType = ElementType>(
 
 export const Box: BoxType = forwardRef(function Box<C extends ElementType = "div">(
   { children, as, className, asChild = false, ...rest }: PolimophicWithSpacingSystemProps<C>,
-  ref?: PolymorphicRef<C>,
+  // ref?: PolymorphicRef<C>,
+  ref?: any,
 ) {
-  const AsComponent = as || "div";
+  const AsComponent = (as || "div") as C;
   const SlottableComponent = asChild ? Slot : AsComponent;
   const {
     m,

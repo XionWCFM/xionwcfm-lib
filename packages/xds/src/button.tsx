@@ -67,7 +67,8 @@ type ButtonType = <C extends ElementType = SemanticHTMLContentSectionType>(
 
 export const Button: ButtonType = forwardRef(function Button<C extends ElementType = "button">(
   props: Props<C>,
-  ref?: PolymorphicRef<C>,
+  // ref?: PolymorphicRef<C>,
+  ref?: any,
 ) {
   const {
     children,

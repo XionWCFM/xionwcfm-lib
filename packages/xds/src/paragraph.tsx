@@ -133,10 +133,11 @@ type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
 type ParagraphType = <C extends ElementType = SemanticHTMLTextContentType>(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
 ) => ReactNode | null;
-
+//@ts-ignore
 export const Paragraph: ParagraphType = forwardRef(function Paragraph<C extends ElementType = "p">(
   props: Props<C>,
-  ref?: PolymorphicRef<C>,
+  // ref?: PolymorphicRef<C>,
+  ref?: any,
 ) {
   const { overflow, size, color, leading, weight, responsive, className, children, as, ...rest } = props;
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;

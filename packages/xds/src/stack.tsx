@@ -22,10 +22,11 @@ type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
 type StackType = <C extends ElementType = SemanticHTMLContentSectionType>(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
 ) => ReactNode | null;
-
+//@ts-ignore
 export const Stack: StackType = forwardRef(function Stack<C extends ElementType = "div">(
   props: Props<C>,
-  ref?: PolymorphicRef<C>,
+  // ref?: PolymorphicRef<C>,
+  ref?: any,
 ) {
   const { children, direction, gap, w, h, justify, items, className, as, ...rest } = props;
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
