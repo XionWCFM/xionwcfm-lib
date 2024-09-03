@@ -27,11 +27,9 @@ type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
 type SkeletonType = <C extends ElementType = SemanticHTMLContentSectionType>(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
 ) => ReactNode | null;
-//@ts-ignore
 export const Skeleton: SkeletonType = forwardRef(function Skeleton<C extends ElementType = "div">(
   { children, as, className, variant, w, h, ...rest }: Props<C>,
-  // ref?: PolymorphicRef<C>,
-  ref?: any,
+  ref?: PolymorphicRef<C>,
 ) {
   const Component = as || "div";
 

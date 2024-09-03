@@ -8,7 +8,6 @@ import {
   forwardRef,
 } from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
-import { Box } from "./box";
 import { cn } from "./external-utils/cn";
 
 const Root = ({ shouldScaleBackground = true, ...props }: ComponentProps<typeof DrawerPrimitive.Root>) => (

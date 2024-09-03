@@ -5,7 +5,7 @@ import { Box } from "./box";
 import { Button } from "./button";
 import { DialogPrimitives } from "./dialog";
 import { Paragraph } from "./paragraph";
-import { Spacing } from "./spacing";
+
 type ConfirmDialogProps = {
   isOpen: boolean;
   onClose: () => void;

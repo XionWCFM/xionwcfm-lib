@@ -20,11 +20,9 @@ type Props<C extends ElementType> = PolymorphicComponentProps<
 type SpacingType = <C extends ElementType = SemanticHTMLContentSectionType>(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
 ) => ReactNode | null;
-//@ts-ignore
 export const Spacing: SpacingType = forwardRef(function Spacing<C extends ElementType = "div">(
   { children, as, className, w, h, ...rest }: Props<C>,
-  // ref?: PolymorphicRef<C>,
-  ref?: any,
+  ref?: PolymorphicRef<C>,
 ) {
   const Component = as || "div";
 

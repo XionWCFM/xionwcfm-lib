@@ -10,8 +10,7 @@ type ChipType = <C extends ElementType = "div" | "button" | "a">(
 //@ts-ignore
 export const Chip: ChipType = forwardRef(function Chip<C extends ElementType = "div">(
   { children, as, className, variant, w, h, ...rest }: Props<C>,
-  // ref?: PolymorphicRef<C>,
-  ref?: any,
+  ref?: PolymorphicRef<C>,
 ) {
   const Component = as || "div";
 
