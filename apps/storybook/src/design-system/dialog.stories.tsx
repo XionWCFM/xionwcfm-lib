@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, DialogPrimitives } from "@xionwcfm/ui";
+import { Button, DialogPrimitives } from "@xionwcfm/xds";
 
 const Dialog = () => {
   return (

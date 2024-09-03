@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, ConfirmDialog } from "@xionwcfm/ui";
+import { Button, ConfirmDialog } from "@xionwcfm/xds";
 import { useState } from "react";
 
 const Dialog = () => {

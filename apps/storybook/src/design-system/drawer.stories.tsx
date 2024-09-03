@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@xionwcfm/ui";
-import { Drawer } from "@xionwcfm/ui/drawer";
+import { Button } from "@xionwcfm/xds";
+import { Drawer } from "@xionwcfm/xds";
 
 const ExampleDrawer = () => {
   return (

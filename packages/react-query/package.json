@@ -3,9 +3,7 @@
   "version": "0.0.2",
   "license": "MIT",
   "scripts": {
-    "build": "tsup",
-    "test": "vitest",
-    "test:ci": "vitest run"
+    "build": "tsup"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

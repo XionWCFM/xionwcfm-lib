@@ -1,3 +1,4 @@
+"use client";
 import { WritableAtom, useAtom, useAtomValue, useSetAtom } from "jotai";
 import { FunctionComponent, PropsWithChildren, createContext, useContext } from "react";
 

@@ -3,8 +3,8 @@ const colors = {
   current: "currentColor",
   transparent: "tranparent",
 
-  white: { DEFAULT: "#ffffff;" },
-  black: { DEFAULT: "#000000" },
+  white: { DEFAULT: "var(--white)" },
+  black: { DEFAULT: "var(--black)" },
 
   neutral: {
     "50": "var(--neutral-50)",
@@ -92,44 +92,44 @@ const colors = {
 };
 
 const borderRadius = {
-  xs: "var(--radius)",
-  sm: "calc(var(--radius) * 2)",
-  md: "calc(var(--radius) * 4)",
-  xl: "calc(var(--radius) * 8)",
-  circle: "50%",
-  full: "9999px",
+  xs: "var(--radius-xs)",
+  sm: "var(--radius-sm)",
+  md: "var(--radius-md)",
+  xl: "var(--radius-xl)",
+  circle: "var(--radius-circle)",
+  full: "var(--radius-full)",
 };
 
 const spacing = {
-  "0": "0px",
-  "2": "2px",
-  "4": "4px",
-  "6": "6px",
-  "8": "8px",
-  "12": "12px",
-  "16": "16px",
-  "20": "20px",
-  "24": "24px",
-  "28": "28px",
-  "32": "32px",
-  "36": "36px",
-  "40": "40px",
-  "44": "44px",
-  "48": "48px",
-  "64": "64px",
-  "76": "76px",
-  "88": "88px",
-  "100": "100px",
-  "128": "128px",
-  "256": "256px",
-  "384": "384px",
-  "512": "512px",
-  "768": "768px",
-  "1024": "1024px",
-  "1440": "1440px",
-  "1/3": "33.3%",
-  half: "50%",
-  full: "100%",
+  "0": "var(--spacing-0)",
+  "2": "var(--spacing-2)",
+  "4": "var(--spacing-4)",
+  "6": "var(--spacing-6)",
+  "8": "var(--spacing-8)",
+  "12": "var(--spacing-12)",
+  "16": "var(--spacing-16)",
+  "20": "var(--spacing-20)",
+  "24": "var(--spacing-24)",
+  "28": "var(--spacing-28)",
+  "32": "var(--spacing-32)",
+  "36": "var(--spacing-36)",
+  "40": "var(--spacing-40)",
+  "44": "var(--spacing-44)",
+  "48": "var(--spacing-48)",
+  "64": "var(--spacing-64)",
+  "76": "var(--spacing-76)",
+  "88": "var(--spacing-88)",
+  "100": "var(--spacing-100)",
+  "128": "var(--spacing-128)",
+  "256": "var(--spacing-256)",
+  "384": "var(--spacing-384)",
+  "512": "var(--spacing-512)",
+  "768": "var(--spacing-768)",
+  "1024": "var(--spacing-1024)",
+  "1440": "var(--spacing-1440)",
+  "1/3": "var(--spacing-1-3)",
+  half: "var(--spacing-half)",
+  full: "var(--spacing-full)",
 };
 
 const fontSize = {
@@ -148,67 +148,32 @@ const fontSize = {
 };
 
 const fontWeight = {
-  bold: "700",
-  "semi-bold": "600",
-  medium: "500",
-  regular: "400",
-  light: "300",
-  thin: "200",
+  bold: "var(--font-weight-bold)",
+  "semi-bold": "var(--font-weight-semi-bold)",
+  medium: "var(--font-weight-medium)",
+  regular: "var(--font-weight-regular)",
+  light: "var(--font-weight-light)",
+  thin: "var(--font-weight-thin)",
 };
 
 const lineHeight = {
-  denser: "100%",
-  tight: "133%",
-  normal: "150%",
-  loose: "180%",
-  looser: "200%",
+  denser: "var(--line-height-denser)",
+  tight: "var(--line-height-tight)",
+  normal: "var(--line-height-normal)",
+  loose: "var(--line-height-loose)",
+  looser: "var(--line-height-looser)",
 };
 
 const boxShadow = {
-  xs: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-  sm: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-  md: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-  lg: "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px",
+  xs: "var(--box-shadow-xs)",
+  sm: "var(--box-shadow-sm)",
+  md: "var(--box-shadow-md)",
+  lg: "var(--box-shadow-lg)",
 };
 
-const keyframes = {
-  "fade-in": {
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-  },
-  "fade-out": {
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-  },
-  "toast-slide-up": {
-    from: { transform: "translate(-50%,100%)" },
-    to: { transform: "translate(-50%,0)" },
-  },
-  "toast-slide-down": {
-    from: { transform: "translate(-50%,0)" },
-    to: { transform: "translate(-50%,100%)" },
-  },
-  "dialog-appear": {
-    from: { opacity: 0, transform: "translate(-50%, -48%) scale(0.96)" },
-    to: { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
-  },
-};
+const keyframes = {};
 
-const animation = {
-  "fade-in-100": "fade-in 100ms ease-in",
-  "fade-in-150": "fade-in 150ms ease-in",
-  "fade-in-200": "fade-in 200ms ease-in",
-  "fade-in-300": "fade-in 300ms ease-in",
-  "fade-in-500": "fade-in 500ms ease-in",
-  "fade-out-100": "fade-out 100ms ease-in",
-  "fade-out-150": "fade-out 150ms ease-in",
-  "fade-out-200": "fade-out 200ms ease-in",
-  "fade-out-300": "fade-out 300ms ease-in",
-  "fade-out-500": "fade-out 500ms ease-in",
-  "toast-slide-up": "toast-slide-up 300ms ease-in",
-  "toast-slide-down": "toast-slide-down 300ms ease-out",
-  "dialog-appear": "dialog-appear 150ms cubic-bezier(0.16, 1, 0.3, 1)",
-};
+const animation = {};
 
 const screens = {
   xs: "450px",

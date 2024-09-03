@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Input } from "@xionwcfm/ui";
+import { Input } from "@xionwcfm/xds";
 
 const meta: Meta<typeof Input> = {
   title: "Xds/Input",

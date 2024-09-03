@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { UnderlineInput } from "@xionwcfm/ui";
+import { UnderlineInput } from "@xionwcfm/xds";
 
 const meta: Meta<typeof UnderlineInput> = {
   title: "Xds/UnderlineInput",

@@ -6,10 +6,10 @@ import { Chip } from "./chip";
 import { ConfirmDialog } from "./confirm-dialog";
 import { DialogPrimitives } from "./dialog";
 import { Drawer } from "./drawer";
+import { cn } from "./external-utils/cn";
 import { Flex } from "./flex";
 import { Input } from "./input";
 import { Label } from "./label";
-import { UnderlineInput } from "./outline-input";
 import { Paragraph } from "./paragraph";
 import { Portal } from "./portal";
 import { RadioGroup } from "./radio-group";
@@ -19,8 +19,10 @@ import { Spinner } from "./spinner";
 import { Stack } from "./stack";
 import { Tabs } from "./tabs";
 import { Toaster, toast } from "./toast";
+import { UnderlineInput } from "./underline-input";
 
 export {
+  cn,
   Flex,
   Portal,
   UnderlineInput,

@@ -2,6 +2,8 @@ import React from "react";
 
 import type { Preview } from "@storybook/react";
 import "../src/css/index.css";
+import "@xionwcfm/xds/dist/style.css";
+
 const preview: Preview = {
   parameters: {
     controls: {

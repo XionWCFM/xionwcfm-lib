@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { FillInfoIcon } from "@xionwcfm/icon/fill-info-icon";
-import { Button } from "@xionwcfm/ui/button";
+import { Button } from "@xionwcfm/xds";
 import { useState } from "react";
 
 const options = ["default", "outline", "primary", "secondary", "ghost", "link", "icon", "emphasis"] as const;

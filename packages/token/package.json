@@ -1,8 +1,12 @@
 {
   "name": "@xionwcfm/token",
+  "version": "0.0.6",
+  "license": "MIT",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup && pnpm run copy:css",
+    "copy:css": "cp ./src/index.css ./dist/index.css"
   },
+  "main": "./dist/index.js",
   "exports": {
     ".": {
       "import": {
@@ -14,8 +18,12 @@
         "default": "./dist/index.js"
       }
     },
-    "./css": "./src/index.css"
+    "./style": "./dist/index.css"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist", "*.css"],
   "devDependencies": {
     "@xionwcfm/typescript-config": "workspace:*",
     "tsup": "^8.1.0",
