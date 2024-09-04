@@ -30,7 +30,7 @@ export const MutationBoundary = <TData, TError, TVariables = void, TContext = un
     filters: { mutationKey, exact, predicate: filters?.predicate },
   }) as MutationState<TData, TError, TVariables, TContext>[];
 
-  const currentMutation = mutations[0];
+  const currentMutation = mutations[mutations.length - 1];
 
   const isSuccess = currentMutation?.status === "success";
   const isError = currentMutation?.status === "error";

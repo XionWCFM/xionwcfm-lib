@@ -464,12 +464,21 @@ importers:
       '@xionwcfm/token':
         specifier: ^0.0.6
         version: 0.0.6
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       react-dom:
         specifier: '>=18'
         version: 18.3.1(react@18.3.1)
       sonner:
         specifier: ^1.5.0
         version: 1.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      tailwind-merge:
+        specifier: 1.14.0
+        version: 1.14.0
       vaul:
         specifier: ^0.9.1
         version: 0.9.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -501,12 +510,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.20(postcss@8.4.44)
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       cssnano:
         specifier: ^7.0.5
         version: 7.0.5(postcss@8.4.44)
@@ -546,9 +549,6 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.3.1
-      tailwind-merge:
-        specifier: 1.14.0
-        version: 1.14.0
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.10(ts-node@10.9.2(@types/node@20.16.3)(typescript@5.5.4))

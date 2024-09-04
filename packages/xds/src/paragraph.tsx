@@ -11,7 +11,7 @@ const paragraphVariants = cva(" whitespace-pre-wrap", {
   variants: {
     overflow: {
       default: "",
-      ellipsis: "whitespace-nowrap overflow-hidden max-w-[336px] text-ellipsis",
+      ellipsis: "whitespace-nowrap overflow-hidden  text-ellipsis",
     },
     leading: {
       default: "",

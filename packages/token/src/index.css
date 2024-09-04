@@ -39,17 +39,17 @@
   --success-900: #14532d;
   --success-950: #052e16;
 
-  --primary-50: #f0f5fe;   
-  --primary-100: #dde7fc;  
+  --primary-50: #f0f5fe;
+  --primary-100: #dde7fc;
   --primary-200: #c2d6fb;
-  --primary-300: #98bcf8; 
-  --primary-400: #6899f2;  
-  --primary-500: #4474ed; 
-  --primary-600: #2850e0;  
-  --primary-700: #2642cf;  
-  --primary-800: #2537a8;  
-  --primary-900: #233485; 
-  --primary-950: #1a2251;  
+  --primary-300: #98bcf8;
+  --primary-400: #6899f2;
+  --primary-500: #4474ed;
+  --primary-600: #2850e0;
+  --primary-700: #2642cf;
+  --primary-800: #2537a8;
+  --primary-900: #233485;
+  --primary-950: #1a2251;
 
   --warning-50: #fffbeb;
   --warning-100: #fef3c7;
@@ -125,14 +125,14 @@
   --box-shadow-xs: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --box-shadow-sm: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   --box-shadow-md: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --box-shadow-lg: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  --box-shadow-lg: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
 
   --line-height-denser: 100%;
   --line-height-tight: 133%;
   --line-height-normal: 150%;
   --line-height-loose: 180%;
   --line-height-looser: 200%;
-
 }
 .dark {
   --spacing: 2px;
