@@ -30,7 +30,7 @@
     "@xionwcfm/tailwindcss-config": "workspace:*",
     "@xionwcfm/token": "^0.0.6",
     "@xionwcfm/typescript-config": "workspace:*",
-    "@xionwcfm/xds": "workspace:*",
+    "@xionwcfm/xds": "*",
     "autoprefixer": "^10.4.19",
     "postcss": "^8",
     "postcss-import": "^16.1.0",

@@ -5,5 +5,9 @@
 # installation
 
 ```
-pƒnpm i @xionwcfm/react @xionwcfm/utils
+pnpm i @xionwcfm/react @xionwcfm/utils @xionwcfm/jotai @xionwcfm/react-query @xionwcfm/token @xionwcfm/xds
 ```
+
+# Details
+
+[]()

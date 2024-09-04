@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/xds",
-  "version": "0.0.8",
+  "version": "0.0.12",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -19,6 +19,26 @@
     },
     "./style": {
       "default": "./dist/style.css"
+    },
+    "./toast": {
+      "import": {
+        "types": "./dist/toast.d.mts",
+        "default": "./dist/toast.mjs"
+      },
+      "require": {
+        "types": "./dist/toast.d.ts",
+        "default": "./dist/toast.js"
+      }
+    },
+    "./drawer": {
+      "import": {
+        "types": "./dist/drawer.d.mts",
+        "default": "./dist/drawer.mjs"
+      },
+      "require": {
+        "types": "./dist/drawer.d.ts",
+        "default": "./dist/drawer.js"
+      }
     }
   },
   "files": ["dist"],
@@ -41,8 +61,6 @@
     "@xionwcfm/tailwindcss-config": "workspace:*",
     "@xionwcfm/typescript-config": "workspace:*",
     "autoprefixer": "^10.4.19",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
     "cssnano": "^7.0.5",
     "eslint": "^8.57.0",
     "postcss": "^8",
@@ -56,7 +74,6 @@
     "postcss-reduce-initial": "^7.0.2",
     "postcss-variable-compress": "^3.0.0",
     "react": "^18.2.0",
-    "tailwind-merge": "1.14.0",
     "tailwindcss": "^3.4.1",
     "tsup": "^8.1.0",
     "typescript": "^5.3.3"
@@ -88,6 +105,9 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "class-variance-authority": ">=0.7.0",
+    "clsx": ">=2",
+    "tailwind-merge": ">=1"
   }
 }
