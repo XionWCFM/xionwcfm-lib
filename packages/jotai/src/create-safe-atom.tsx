@@ -1,4 +1,3 @@
-"use client";
 import { WritableAtom, useAtom, useAtomValue, useSetAtom } from "jotai";
 import { FunctionComponent, PropsWithChildren, createContext, useContext } from "react";
 
@@ -17,15 +16,15 @@ export const createSafeAtom = <Value, Args extends unknown[] = unknown[], Result
     return <Context.Provider value={initialvalue}>{children}</Context.Provider>;
   };
 
-  Provider.with = <T extends Record<string, any>>(Component: FunctionComponent<T>) => {
-    return (props: T) => {
+  const ProviderWith =
+    <T extends Record<string, any>>(Component: FunctionComponent<T>) =>
+    (props: T) => {
       return (
         <Provider>
           <Component {...props} />
         </Provider>
       );
     };
-  };
 
   const useSetContextAtom = () => {
     return useSetAtom(useSafeContext());
@@ -37,11 +36,12 @@ export const createSafeAtom = <Value, Args extends unknown[] = unknown[], Result
     return useAtom(useSafeContext());
   };
 
-  const hooks = {
+  const returnValue = {
+    Provider: Provider,
+    with: ProviderWith,
     useAtom: useContextAtom,
     useAtomValue: useContextAtomValue,
     useSetAtom: useSetContextAtom,
   };
-
-  return [Provider, hooks] as const;
+  return returnValue;
 };

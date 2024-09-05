@@ -8,6 +8,7 @@ import { useCallbackRef } from "./use-callback-ref";
 import { useClickOutside } from "./use-click-outside";
 import { useDebounceCallback } from "./use-debounce-callback";
 import useDebounceValue from "./use-debounce-value";
+import { useDebouncedInputValue } from "./use-debounced-input-value";
 import { useDraft } from "./use-draft";
 import { useEventListener } from "./use-event-listener";
 import { useFocusWithin } from "./use-focus-within";
@@ -48,6 +49,7 @@ export {
   Separated,
   SwitchCase,
   useThrottleValue,
+  useDebouncedInputValue,
   useDebounceCallback,
   useDebounceValue,
   useImageStatus,
