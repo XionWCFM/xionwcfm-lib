@@ -1,9 +1,11 @@
 {
   "name": "@xionwcfm/jotai",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "license": "MIT",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "test": "vitest",
+    "test:ci": "vitest run"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
