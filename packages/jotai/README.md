@@ -1,6 +1,7 @@
 ![jotai thumbnail](./jotai-thumb.webp)
 
 # @xionwcfm/jotai
+[![npm version](https://img.shields.io/npm/v/@xionwcfm/jotai?color=000&labelColor=000&logo=npm&label=)](https://www.npmjs.com/package/@xionwcfm/jotai) [![npm](https://img.shields.io/npm/dm/@xionwcfm/jotai?color=000&labelColor=000)](https://www.npmjs.com/package/@xionwcfm/jotai) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@xionwcfm/jotai?color=000&labelColor=000)](https://www.npmjs.com/package/@xionwcfm/jotai)
 
 `@xionwcfm/jotai` is a small `12.2kb` library that wraps jotai. check the [@xionwcfm/jotai npm](https://www.npmjs.com/package/@xionwcfm/jotai)
 
@@ -273,3 +274,5 @@ It doesn't matter which atom you use. Just pass the atom as an argument.
 ## License
 
 MIT
+
+

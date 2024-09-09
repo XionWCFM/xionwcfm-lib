@@ -1,4 +1,4 @@
-const colors = {
+const colors = Object.freeze({
   inherit: "inherit",
   current: "currentColor",
   transparent: "tranparent",
@@ -89,18 +89,18 @@ const colors = {
     "900": "var(--primary-900)",
     "950": "var(--primary-950)",
   },
-};
+});
 
-const borderRadius = {
+const borderRadius = Object.freeze({
   xs: "var(--radius-xs)",
   sm: "var(--radius-sm)",
   md: "var(--radius-md)",
   xl: "var(--radius-xl)",
   circle: "var(--radius-circle)",
   full: "var(--radius-full)",
-};
+});
 
-const spacing = {
+const spacing = Object.freeze({
   "0": "var(--spacing-0)",
   "2": "var(--spacing-2)",
   "4": "var(--spacing-4)",
@@ -130,9 +130,9 @@ const spacing = {
   "1/3": "var(--spacing-1-3)",
   half: "var(--spacing-half)",
   full: "var(--spacing-full)",
-};
+});
 
-const fontSize = {
+const fontSize = Object.freeze({
   "size-12": "calc(var(--font-size) * 3.75)",
   "size-11": "calc(var(--font-size) * 3)",
   "size-10": "calc(var(--font-size) * 2.25)",
@@ -145,45 +145,45 @@ const fontSize = {
   "size-3": "calc(var(--font-size) * 0.75)",
   "size-2": "calc(var(--font-size) * 0.625)",
   "size-1": "calc(var(--font-size) * 0.5)",
-};
+});
 
-const fontWeight = {
+const fontWeight = Object.freeze({
   bold: "var(--font-weight-bold)",
   "semi-bold": "var(--font-weight-semi-bold)",
   medium: "var(--font-weight-medium)",
   regular: "var(--font-weight-regular)",
   light: "var(--font-weight-light)",
   thin: "var(--font-weight-thin)",
-};
+});
 
-const lineHeight = {
+const lineHeight = Object.freeze({
   denser: "var(--line-height-denser)",
   tight: "var(--line-height-tight)",
   normal: "var(--line-height-normal)",
   loose: "var(--line-height-loose)",
   looser: "var(--line-height-looser)",
-};
+});
 
-const boxShadow = {
+const boxShadow = Object.freeze({
   xs: "var(--box-shadow-xs)",
   sm: "var(--box-shadow-sm)",
   md: "var(--box-shadow-md)",
   lg: "var(--box-shadow-lg)",
-};
+});
 
 const keyframes = {};
 
 const animation = {};
 
-const screens = {
+const screens = Object.freeze({
   xs: "450px",
   sm: "640px",
   md: "768px",
   lg: "1024px",
   xl: "1280px",
-};
+});
 
-export const XION_STYLE = {
+export const XION_STYLE = Object.freeze({
   colors,
   borderRadius,
   spacing,
@@ -194,4 +194,4 @@ export const XION_STYLE = {
   keyframes,
   animation,
   screens,
-};
+});

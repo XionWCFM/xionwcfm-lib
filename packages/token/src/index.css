@@ -134,9 +134,3 @@
   --line-height-loose: 180%;
   --line-height-looser: 200%;
 }
-.dark {
-  --spacing: 2px;
-  --font-size: 1rem;
-  --white: 0 0% 100%;
-  --radius: 2px;
-}
