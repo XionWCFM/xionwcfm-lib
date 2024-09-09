@@ -10,5 +10,7 @@ export const createSafeContext = <T extends object>(initialValue: T | null) => {
     return value;
   };
 
-  return [Context.Provider, useContext] as const;
+  const Provider = Object.assign(Context.Provider, { Consumer: Context.Consumer });
+
+  return [Provider, useContext] as const;
 };
