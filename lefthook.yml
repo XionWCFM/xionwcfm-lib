@@ -1,17 +1,13 @@
 pre-push:
   parallel: true
   commands:
-    check:
-      run: pnpm run check:biome && git add .
-      stage_fixed: true
     test:
       run: pnpm run test:ci
-      
-pre-commit:
-  parallel: true
-  commands:
-    check:
-      run: pnpm run check:biome 
+    format:
+      run: |
+        pnpm run check:biome
+        if ! git diff --exit-code; then
+          git add .
+          git commit -m 'format code by biome'
+        fi
       stage_fixed: true
-    test:
-      run: pnpm run test:ci
