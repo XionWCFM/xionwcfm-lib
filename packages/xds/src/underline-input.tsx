@@ -1,3 +1,4 @@
+"use client";
 import { cva } from "class-variance-authority";
 import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useState } from "react";
 import { Box } from "./box";
@@ -45,13 +46,10 @@ const Wrapper = forwardRef<
 export const UnderlineInput = forwardRef<
   ElementRef<"input">,
   ComponentPropsWithoutRef<"input"> & { leftSlot?: ReactNode; rightSlot?: ReactNode }
->(function OutlineInput(props, ref) {
+>(function UnderlineInput(props, ref) {
   const { className, leftSlot, id, rightSlot, placeholder, onFocus, onBlur, onChange, ...rest } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(false);
-
-  const leftCss = leftSlot ? "pl-36" : "";
-  const rightCss = rightSlot ? "pr-36" : "";
   const htmlForId = id ?? `${Math.random()}`;
 
   return (
@@ -67,7 +65,7 @@ export const UnderlineInput = forwardRef<
         type="text"
         id={htmlForId}
         placeholder={placeholder}
-        className={cn(inputVariants(), leftCss, rightCss, className)}
+        className={cn(inputVariants(), leftSlot && "pl-36", rightSlot && "pr-36", className)}
         onFocus={(e) => {
           setIsFocused(true);
           onFocus?.(e);
