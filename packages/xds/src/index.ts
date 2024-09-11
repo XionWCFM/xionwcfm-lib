@@ -16,9 +16,9 @@ import { Skeleton } from "./skeleton";
 import { Spacing } from "./spacing";
 import { Spinner } from "./spinner";
 import { Stack } from "./stack";
+import { Switch } from "./switch";
 import { Tabs } from "./tabs";
 import { UnderlineInput } from "./underline-input";
-
 export {
   cn,
   Flex,
