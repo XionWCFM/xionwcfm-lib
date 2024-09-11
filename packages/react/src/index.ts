@@ -1,3 +1,5 @@
+import { createHoc } from "./create-hoc";
+import { type CreateNavigateRouterType, createNavigate } from "./create-navigate";
 import { createSafeContext } from "./create-safe-context";
 import { Debounce } from "./debounce";
 import { Deferred } from "./deferred";
@@ -45,6 +47,9 @@ import { useWindowScroll } from "./use-window-scroll";
 
 export {
   Deferred,
+  createNavigate,
+  createHoc,
+  type CreateNavigateRouterType,
   Debounce,
   Separated,
   SwitchCase,
