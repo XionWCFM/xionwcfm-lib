@@ -31,7 +31,7 @@ const Wrapper = forwardRef<
     <label
       ref={ref}
       className={cn(
-        "absolute left-0 top-0 translate-y-[6px] transition-all duration-100",
+        "absolute left-0 top-0 translate-y-[6px] transition-all duration-100 cursor-text",
         isFocused || hasValue ? " text-size-3 -translate-y-12" : "text-base top-2",
         isFocused ? " text-primary-500" : " text-gray-300",
       )}
@@ -44,18 +44,19 @@ const Wrapper = forwardRef<
 
 export const UnderlineInput = forwardRef<
   ElementRef<"input">,
-  ComponentPropsWithoutRef<"input"> & { leftSlot?: ReactNode; rightSlot?: ReactNode; htmlFor?: string }
+  ComponentPropsWithoutRef<"input"> & { leftSlot?: ReactNode; rightSlot?: ReactNode }
 >(function OutlineInput(props, ref) {
-  const { className, leftSlot, rightSlot, placeholder, htmlFor, onFocus, onBlur, onChange, ...rest } = props;
+  const { className, leftSlot, id, rightSlot, placeholder, onFocus, onBlur, onChange, ...rest } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(false);
 
   const leftCss = leftSlot ? "pl-36" : "";
   const rightCss = rightSlot ? "pr-36" : "";
+  const htmlForId = id ?? `${Math.random()}`;
 
   return (
     <Box className="relative">
-      <Wrapper isFocused={isFocused} hasValue={hasValue} htmlFor={htmlFor}>
+      <Wrapper isFocused={isFocused} hasValue={hasValue} htmlFor={htmlForId}>
         {placeholder}
       </Wrapper>
       <Box className="absolute top-[50%] translate-y-[-50%] translate-x-[12px] max-w-16 max-h-16 overflow-clip flex justify-center items-center">
@@ -64,6 +65,7 @@ export const UnderlineInput = forwardRef<
       <input
         ref={ref}
         type="text"
+        id={htmlForId}
         placeholder={placeholder}
         className={cn(inputVariants(), leftCss, rightCss, className)}
         onFocus={(e) => {
