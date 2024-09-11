@@ -18,7 +18,7 @@ export const InputStory: Story = {
   },
   decorators: (Story) => (
     <div className="flex min-h-screen p-16 flex-col gap-y-16">
-      <Story />
+      <Story /> <UnderlineInput placeholder="나이를 입력하세요" className="text-gray-800" />
     </div>
   ),
 };
