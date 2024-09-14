@@ -11,6 +11,7 @@ import { Input } from "./input";
 import { Label } from "./label";
 import { Paragraph } from "./paragraph";
 import { Portal } from "./portal";
+import { Pressable } from "./pressable";
 import { RadioGroup } from "./radio-group";
 import { Skeleton } from "./skeleton";
 import { Spacing } from "./spacing";
@@ -19,9 +20,12 @@ import { Stack } from "./stack";
 import { Switch } from "./switch";
 import { Tabs } from "./tabs";
 import { UnderlineInput } from "./underline-input";
+
 export {
   cn,
   Flex,
+  Pressable,
+  Switch,
   Portal,
   UnderlineInput,
   Label,

@@ -1,6 +1,6 @@
 import { VariantProps } from "class-variance-authority";
+import { spacingVariants } from "../variants/spacing-variants";
 import { formatResponsiveEnum } from "./responsive-enum";
-import { spacingVariants } from "./spacing-variants";
 import type { CssSpacingElementType, CssSpacingGapType, ResponsiveEnum, ResponsiveEnumProps } from "./type";
 
 export type SpacingSystemProps = Partial<Record<CssSpacingElementType, ResponsiveEnumProps<CssSpacingGapType>>>;

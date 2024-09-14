@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { ResponsiveEnumProps } from "./type";
+import { ResponsiveEnumProps } from "../internal-utils/type";
 
 export type TextSizeTypeProps = { size?: ResponsiveEnumProps<VariantProps<typeof textSizeVariants>["initial"]> };
 export const textSizeVariants = cva("", {

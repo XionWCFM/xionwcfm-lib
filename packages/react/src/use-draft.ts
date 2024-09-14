@@ -21,7 +21,16 @@ import { useCallback, useState } from "react";
 export const useDraft = <T>(initialState: T) => {
   const [draft, setDraft] = useState<T>();
   const value = draft ?? initialState;
-  const onChangeValue = useCallback((newValue: T) => setDraft(newValue), []);
+  const onChangeValue = useCallback(
+    (valueOrCallback: T | ((param: T) => T)) =>
+      setDraft((prev) => {
+        const prevValue = typeof prev === "undefined" ? initialState : prev;
+        const newValue =
+          typeof valueOrCallback === "function" ? (valueOrCallback as (param: T) => T)(prevValue) : valueOrCallback;
+        return newValue;
+      }),
+    [initialState],
+  );
 
   return [value, onChangeValue] as const;
 };

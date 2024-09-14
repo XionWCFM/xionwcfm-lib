@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { ResponsiveEnumProps } from "./type";
+import { ResponsiveEnumProps } from "../internal-utils/type";
 
 // FlexAlignTypeProps 타입 정의, align에 사이즈별로 적용할 수 있게 타입 정의
 export type FlexItemsTypeProps = {

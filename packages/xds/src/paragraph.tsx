@@ -4,8 +4,8 @@ import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./external-utils/cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
-import { TextSizeTypeProps, textSizeVariants } from "./internal-utils/text-size-variants";
 import type { SemanticHTMLTextContentType } from "./internal-utils/type";
+import { TextSizeTypeProps, textSizeVariants } from "./variants/text-size-variants";
 
 const paragraphVariants = cva(" whitespace-pre-wrap", {
   variants: {

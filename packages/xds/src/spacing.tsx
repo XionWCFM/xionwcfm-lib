@@ -6,8 +6,8 @@ import {
   PolymorphicComponentPropsWithRef,
   PolymorphicRef,
 } from "./internal-type/polymorphic";
-import { stackVariants } from "./internal-utils/stack-variants";
 import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
+import { stackVariants } from "./variants/stack-variants";
 
 type Props<C extends ElementType> = PolymorphicComponentProps<
   C,

@@ -7,14 +7,14 @@ import {
   PolymorphicRef,
 } from "./internal-type/polymorphic";
 import { SpacingSystemProps, getS } from "./internal-utils/get-s";
-import { HTypeProps, hVariants } from "./internal-utils/h-variants";
-import { MaxHTypeProps, maxHVariants } from "./internal-utils/max-h-variants";
-import { MaxWTypeProps, maxWVariants } from "./internal-utils/max-w-variants";
-import { MinHTypeProps, minHVariants } from "./internal-utils/min-h-variants";
-import { MinWTypeProps, minWVariants } from "./internal-utils/min-w-variants";
-import { PositionTypeProps, positionVariants } from "./internal-utils/position-variants";
 import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
-import { WTypeProps, wVariants } from "./internal-utils/w-variants";
+import { HTypeProps, hVariants } from "./variants/h-variants";
+import { MaxHTypeProps, maxHVariants } from "./variants/max-h-variants";
+import { MaxWTypeProps, maxWVariants } from "./variants/max-w-variants";
+import { MinHTypeProps, minHVariants } from "./variants/min-h-variants";
+import { MinWTypeProps, minWVariants } from "./variants/min-w-variants";
+import { PositionTypeProps, positionVariants } from "./variants/position-variants";
+import { WTypeProps, wVariants } from "./variants/w-variants";
 
 export type PolimophicWithSpacingSystemProps<C extends ElementType> = PolymorphicComponentProps<
   C,

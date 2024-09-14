@@ -1,7 +1,8 @@
-import { type ChangeEventHandler, useCallback, useState } from "react";
+import { type ChangeEventHandler, useCallback } from "react";
+import { useDraft } from "./use-draft";
 
 export function useInputState(initialValue = "", transformValue: (value: string) => string = echo) {
-  const [value, setValue] = useState(initialValue);
+  const [value, setValue] = useDraft(initialValue);
 
   const handleValueChange: ChangeEventHandler<HTMLElement & { value: string }> = useCallback(
     ({ target: { value } }) => {

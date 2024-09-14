@@ -3,8 +3,8 @@ import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./external-utils/cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
-import { stackVariants } from "./internal-utils/stack-variants";
 import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
+import { stackVariants } from "./variants/stack-variants";
 
 type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> & VariantProps<typeof stackVariants>;
 
