@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDraft } from "./use-draft";
 
 export default function useThrottleValue<T>(value: T, delay: number) {
-  const [throttleValue, setThrottleValue] = useState<T>(value);
+  const [throttleValue, setThrottleValue] = useDraft<T>(value);
   const throttling = React.useRef(false);
   useEffect(() => {
     if (throttling.current === false) {

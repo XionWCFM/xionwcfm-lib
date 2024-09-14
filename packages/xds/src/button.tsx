@@ -100,7 +100,6 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
             <Spinner />
           </Box>
         ) : null}
-
         {startIcon && !loading ? (
           <Box as="span" className="mr-2">
             {startIcon}
