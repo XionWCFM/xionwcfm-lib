@@ -1,4 +1,4 @@
-import { ReactNode, ComponentPropsWithoutRef, useRef, useEffect } from "react";
+import { ComponentPropsWithoutRef, ReactNode, useEffect, useRef } from "react";
 import { useIntersection } from "./use-intersection";
 import { usePreservedCallback } from "./use-preserved-callback";
 
