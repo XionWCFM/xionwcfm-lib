@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { useDraft } from "./use-draft";
 
 /**
  * 지연된 값을 반환하는 커스텀 훅입니다.
@@ -11,7 +12,7 @@ import React, { useEffect } from "react";
  * const debouncedValue = useDebounceValue(inputValue, 500);
  */
 export default function useDebounceValue<T>(value: T, delay: number) {
-  const [debouncedValue, setDebouncedValue] = React.useState<T>(value);
+  const [debouncedValue, setDebouncedValue] = useDraft<T>(value);
   useEffect(() => {
     const handler: NodeJS.Timeout = setTimeout(() => {
       setDebouncedValue(value);

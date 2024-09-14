@@ -1,7 +1,8 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
+import { useDraft } from "./use-draft";
 
 export const useBooleanState = (defaultValue = false): readonly [boolean, () => void, () => void, () => void] => {
-  const [bool, setBool] = useState(defaultValue);
+  const [bool, setBool] = useDraft(defaultValue);
 
   const setTrue = useCallback(() => {
     setBool(true);
