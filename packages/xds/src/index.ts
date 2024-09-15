@@ -6,9 +6,12 @@ import { Chip } from "./chip";
 import { ConfirmDialog } from "./confirm-dialog";
 import { DialogPrimitives } from "./dialog";
 import { cn } from "./external-utils/cn";
+import { FixedBottom } from "./fixed-bottom";
+import { FixedBottomCta } from "./fixed-bottom-cta";
 import { Flex } from "./flex";
 import { Input } from "./input";
 import { Label } from "./label";
+import { MobileViewLayout } from "./mobile-view-layout";
 import { Paragraph } from "./paragraph";
 import { Portal } from "./portal";
 import { Pressable } from "./pressable";
@@ -19,11 +22,16 @@ import { Spinner } from "./spinner";
 import { Stack } from "./stack";
 import { Switch } from "./switch";
 import { Tabs } from "./tabs";
+import { ThreeDotLoadingSpinner } from "./three-dot-loading-spinner";
 import { UnderlineInput } from "./underline-input";
 
 export {
   cn,
   Flex,
+  ThreeDotLoadingSpinner,
+  FixedBottomCta,
+  MobileViewLayout,
+  FixedBottom,
   Pressable,
   Switch,
   Portal,
