@@ -21,9 +21,9 @@ export const ConfirmDialog = (props: ConfirmDialogProps) => {
     <DialogPrimitives.Root open={isOpen} onOpenChange={onClose}>
       <DialogPrimitives.Portal>
         <DialogPrimitives.Overlay />
-        <DialogPrimitives.Content className="flex flex-col bg-white px-24 py-16 shadow-sm rounded-sm w-[calc(100vw-48px)] max-w-[440px]">
+        <DialogPrimitives.Content className="flex flex-col bg-white px-24 py-16 shadow-sm rounded-sm w-[calc(100vw-48px)] max-w-[416px]">
           <Box className=" items-center flex justify-between">
-            <Paragraph color={"gray-600"} weight={"regular"} size={"4"} responsive>
+            <Paragraph color={"gray-600"} weight={"regular"} size={"4"}>
               {props.title}
             </Paragraph>
             <DialogPrimitives.Close>
@@ -32,14 +32,7 @@ export const ConfirmDialog = (props: ConfirmDialogProps) => {
               </Button>
             </DialogPrimitives.Close>
           </Box>
-          <Paragraph
-            className=" mb-24 mt-4 xs:mt-8"
-            color={"gray-500"}
-            weight={"thin"}
-            size={"3"}
-            leading={"normal"}
-            responsive
-          >
+          <Paragraph className=" mb-24 mt-4 xs:mt-8" color={"gray-500"} weight={"thin"} size={"3"} leading={"normal"}>
             {description}
           </Paragraph>
           <Box className=" flex  justify-center items-center gap-x-8 xs:gap-x-16">

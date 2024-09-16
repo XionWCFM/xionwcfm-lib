@@ -3,7 +3,6 @@ import { cva } from "class-variance-authority";
 import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useState } from "react";
 import { Box } from "./box";
 import { cn } from "./external-utils/cn";
-
 const inputVariants = cva(
   `w-full focus:outline-none bg-inherit text-gray-500 
   duration-200 transition-colors
@@ -47,9 +46,9 @@ export const UnderlineInput = forwardRef<
   ElementRef<"input">,
   ComponentPropsWithoutRef<"input"> & { leftSlot?: ReactNode; rightSlot?: ReactNode }
 >(function UnderlineInput(props, ref) {
-  const { className, leftSlot, id, rightSlot, placeholder, onFocus, onBlur, onChange, ...rest } = props;
+  const { className, leftSlot, id, rightSlot, placeholder, value, onFocus, onBlur, onChange, ...rest } = props;
   const [isFocused, setIsFocused] = useState(false);
-  const [hasValue, setHasValue] = useState(false);
+  const [hasValue, setHasValue] = useState(() => Boolean(value));
   const htmlForId = id ?? `${Math.random()}`;
 
   return (
@@ -65,6 +64,7 @@ export const UnderlineInput = forwardRef<
         type="text"
         id={htmlForId}
         placeholder={placeholder}
+        value={value}
         className={cn(inputVariants(), leftSlot && "pl-36", rightSlot && "pr-36", className)}
         onFocus={(e) => {
           setIsFocused(true);
