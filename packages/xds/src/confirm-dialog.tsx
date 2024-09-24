@@ -23,18 +23,24 @@ export const ConfirmDialog = (props: ConfirmDialogProps) => {
         <DialogPrimitives.Overlay />
         <DialogPrimitives.Content className="flex flex-col bg-white px-24 py-16 shadow-sm rounded-sm w-[calc(100vw-48px)] max-w-[416px]">
           <Box className=" items-center flex justify-between">
-            <Paragraph color={"gray-600"} weight={"regular"} size={"4"}>
-              {props.title}
-            </Paragraph>
+            <DialogPrimitives.Title>
+              <Paragraph color={"gray-600"} weight={"regular"} size={"4"}>
+                {props.title}
+              </Paragraph>
+            </DialogPrimitives.Title>
+
             <DialogPrimitives.Close>
               <Button variant={"ghost"} size={"icon"}>
                 <Cross2Icon color={XION_STYLE.colors.gray[600]} />
               </Button>
             </DialogPrimitives.Close>
           </Box>
-          <Paragraph className=" mb-24 mt-4 xs:mt-8" color={"gray-500"} weight={"thin"} size={"3"} leading={"normal"}>
-            {description}
-          </Paragraph>
+          <DialogPrimitives.Description>
+            <Paragraph className=" mb-24 mt-4 xs:mt-8" color={"gray-500"} weight={"thin"} size={"3"} leading={"normal"}>
+              {description}
+            </Paragraph>
+          </DialogPrimitives.Description>
+
           <Box className=" flex  justify-center items-center gap-x-8 xs:gap-x-16">
             {primaryButton}
             {secondaryButton}

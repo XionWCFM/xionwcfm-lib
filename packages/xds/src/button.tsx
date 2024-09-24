@@ -11,6 +11,7 @@ export const buttonVariants = cva(
   rounded-md font-medium ring-offset-background relative 
   duration-200 transition-colors focus-visible:outline-none focus-visible:ring-2  
   focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
+ active:scale-[0.98]
   `,
   {
     variants: {
@@ -41,10 +42,10 @@ export const buttonVariants = cva(
       },
       size: {
         default: "",
-        sm: "  rounded-md px-12 py-6",
-        md: " rounded-md px-16 py-8",
-        lg: " rounded-md px-20 py-12",
-        full: " w-full  py-16  text-size-6",
+        sm: "  rounded-md px-12 py-4",
+        md: " rounded-md px-16 py-6",
+        lg: " rounded-md px-20 py-8",
+        full: " w-full  py-12  text-size-6",
         icon: "px-8 py-8",
       },
     },

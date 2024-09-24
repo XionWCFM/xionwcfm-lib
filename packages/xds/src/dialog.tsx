@@ -6,6 +6,8 @@ const Root = RadixDialog.Root;
 const Trigger = RadixDialog.Trigger;
 const Close = RadixDialog.Close;
 const Portal = RadixDialog.Portal;
+const Description = RadixDialog.Description;
+const Title = RadixDialog.Title;
 const Overlay = forwardRef<
   React.ElementRef<typeof RadixDialog.Overlay>,
   React.ComponentPropsWithoutRef<typeof RadixDialog.Overlay>
@@ -53,4 +55,6 @@ export const DialogPrimitives = {
   Close,
   Portal,
   Overlay,
+  Description,
+  Title,
 };

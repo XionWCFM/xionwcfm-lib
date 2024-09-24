@@ -32,6 +32,7 @@ const Wrapper = forwardRef<
       ref={ref}
       className={cn(
         "absolute left-0 top-0 translate-y-[6px] transition-all duration-100 cursor-text",
+        " font-light",
         isFocused || hasValue ? " text-size-3 -translate-y-12" : "text-base top-2",
         isFocused ? " text-primary-500" : " text-gray-300",
       )}
