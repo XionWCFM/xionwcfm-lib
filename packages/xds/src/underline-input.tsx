@@ -11,8 +11,9 @@ const inputVariants = cva(
     "duration-200 transition-colors",
     "border-b border-gray-200",
     "text-size-5 placeholder:sr-only ",
-    "focus:border-primary-400 disabled:bg-gray-100",
+    "focus:border-primary-400",
     " text-gray-600 font-light",
+    " disabled:bg-gray-100 disabled:rounded-sm disabled:border-none disabled:text-gray-500 ",
   ),
   {
     variants: {
@@ -38,8 +39,9 @@ const Wrapper = forwardRef<
       className={cn(
         "absolute left-0 top-0 translate-y-[6px] transition-all duration-100 cursor-text",
         " font-light",
-        isFocused || hasValue ? " text-size-3 -translate-y-12" : "text-base top-2",
+        isFocused || hasValue ? " text-size-3 -translate-y-16" : "text-base top-2",
         isFocused ? " text-primary-500" : " text-gray-300",
+
         className,
       )}
       {...rest}
@@ -57,7 +59,20 @@ export const UnderlineInput = forwardRef<
     label?: ComponentPropsWithoutRef<"label">;
   }
 >(function UnderlineInput(props, ref) {
-  const { className, leftSlot, id, rightSlot, placeholder, value, onFocus, onBlur, onChange, label, ...rest } = props;
+  const {
+    className,
+    disabled,
+    leftSlot,
+    id,
+    rightSlot,
+    placeholder,
+    value,
+    onFocus,
+    onBlur,
+    onChange,
+    label,
+    ...rest
+  } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(() => Boolean(value));
   const htmlForId = id ?? `${Math.random()}`;
@@ -70,7 +85,7 @@ export const UnderlineInput = forwardRef<
         isFocused={isFocused}
         hasValue={hasValue}
         htmlFor={htmlForId}
-        className={cn(leftSlot && !isFocused && isEmpty && " translate-x-36")}
+        className={cn(leftSlot && !isFocused && isEmpty && " translate-x-36", disabled && !isEmpty && " invisible")}
         {...label}
       >
         {placeholder}
@@ -79,6 +94,7 @@ export const UnderlineInput = forwardRef<
         {leftSlot}
       </Box>
       <input
+        disabled={disabled}
         ref={ref}
         type="text"
         id={htmlForId}

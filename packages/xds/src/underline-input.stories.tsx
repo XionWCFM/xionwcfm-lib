@@ -48,6 +48,53 @@ export const InputStory: Story = {
         id="hldelo"
         placeholder="나이를 입력하세요"
       />
+
+      <Paragraph size={"6"} color={"neutral-500"}>
+        disabled placeholder case
+      </Paragraph>
+      <UnderlineInput
+        disabled
+        leftSlot={
+          <RocketIcon
+            onClick={() => {
+              alert("leftslot");
+            }}
+          />
+        }
+        rightSlot={
+          <RocketIcon
+            onClick={() => {
+              alert("rightslot");
+            }}
+          />
+        }
+        id="hldsadelo"
+        placeholder="나이를 입력하세요"
+      />
+
+      <Paragraph size={"6"} color={"neutral-500"}>
+        disabled value case
+      </Paragraph>
+      <UnderlineInput
+        disabled
+        leftSlot={
+          <RocketIcon
+            onClick={() => {
+              alert("leftslot");
+            }}
+          />
+        }
+        rightSlot={
+          <RocketIcon
+            onClick={() => {
+              alert("rightslot");
+            }}
+          />
+        }
+        id="hldsadelo"
+        placeholder="나이를 입력하세요"
+        value={"24"}
+      />
     </div>
   ),
 };
