@@ -1,6 +1,7 @@
 import { RocketIcon } from "@radix-ui/react-icons";
 import type { Meta, StoryObj } from "@storybook/react";
 import { cn } from "./external-utils/cn";
+import { Paragraph } from "./paragraph";
 import { Pressable } from "./pressable";
 import { UnderlineInput } from "./underline-input";
 
@@ -21,20 +22,32 @@ export const InputStory: Story = {
   },
   decorators: (Story) => (
     <div className="flex min-h-screen p-16 flex-col gap-y-16">
+      <Paragraph size={"6"} color={"neutral-500"}>
+        아이콘이 없는 기본 케이스
+      </Paragraph>
       <Story />
-      <UnderlineInput value={"hello"} id="hlelo" placeholder="나이를 입력하세요" className="text-gray-800" />
+
+      <Paragraph size={"6"} color={"neutral-500"}>
+        leftSlot , rightSlot 케이스
+      </Paragraph>
       <UnderlineInput
-        leftSlot={<RocketIcon />}
-        value={"hello"}
-        id="hlelo"
+        leftSlot={
+          <RocketIcon
+            onClick={() => {
+              alert("leftslot");
+            }}
+          />
+        }
+        rightSlot={
+          <RocketIcon
+            onClick={() => {
+              alert("rightslot");
+            }}
+          />
+        }
+        id="hldelo"
         placeholder="나이를 입력하세요"
-        className="text-gray-800"
       />
-      <Pressable>
-        <div className={cn(" px-12 py-8 rounded-md")}>
-          <div>hello</div>
-        </div>
-      </Pressable>
     </div>
   ),
 };
