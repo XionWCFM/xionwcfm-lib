@@ -15,6 +15,7 @@ import { MobileViewLayout } from "./mobile-view-layout";
 import { Paragraph } from "./paragraph";
 import { Portal } from "./portal";
 import { Pressable } from "./pressable";
+import { Radio } from "./radio";
 import { RadioGroup } from "./radio-group";
 import { Skeleton } from "./skeleton";
 import { Spacing } from "./spacing";
@@ -28,6 +29,7 @@ import { UnderlineInput } from "./underline-input";
 export {
   cn,
   Flex,
+  Radio,
   ThreeDotLoadingSpinner,
   FixedBottomCta,
   MobileViewLayout,

@@ -23,12 +23,12 @@ export const InputStory: Story = {
   decorators: (Story) => (
     <div className="flex min-h-screen p-16 flex-col gap-y-16">
       <Paragraph size={"6"} color={"neutral-500"}>
-        아이콘이 없는 기본 케이스
+        No Icon
       </Paragraph>
       <Story />
 
       <Paragraph size={"6"} color={"neutral-500"}>
-        leftSlot , rightSlot 케이스
+        With leftSlot , rightSlot
       </Paragraph>
       <UnderlineInput
         leftSlot={
