@@ -4,6 +4,7 @@ import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useState }
 import { Box } from "./box";
 import { cn } from "./external-utils/cn";
 import { useDraft } from "./hooks/xds-use-draft";
+import { useUniqueId } from "./hooks/xds-use-unique-id";
 
 const inputVariants = cva(
   cn(
@@ -63,7 +64,7 @@ export const UnderlineInput = forwardRef<
     className,
     disabled,
     leftSlot,
-    id,
+    id: elementId,
     rightSlot,
     placeholder,
     value,
@@ -75,7 +76,8 @@ export const UnderlineInput = forwardRef<
   } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(() => Boolean(value));
-  const htmlForId = id ?? `${Math.random()}`;
+  const uniqueId = useUniqueId();
+  const id = elementId ?? uniqueId;
   const [inputValue, setInputValue] = useDraft<string>(typeof value === "string" ? value : "");
   const isEmpty = inputValue.length === 0;
 
@@ -84,7 +86,7 @@ export const UnderlineInput = forwardRef<
       <Wrapper
         isFocused={isFocused}
         hasValue={hasValue}
-        htmlFor={htmlForId}
+        htmlFor={id}
         className={cn(leftSlot && !isFocused && isEmpty && " translate-x-36", disabled && !isEmpty && " invisible")}
         {...label}
       >
@@ -97,7 +99,7 @@ export const UnderlineInput = forwardRef<
         disabled={disabled}
         ref={ref}
         type="text"
-        id={htmlForId}
+        id={id}
         placeholder={placeholder}
         value={value}
         className={cn(inputVariants(), leftSlot && "pl-36", rightSlot && "pr-36", className)}
