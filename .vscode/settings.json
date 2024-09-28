@@ -13,5 +13,6 @@
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "livePreview.defaultPreviewPath": "/packages/xds/storybook-static/index.html"
 }

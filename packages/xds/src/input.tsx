@@ -4,11 +4,12 @@ import { Box } from "./box";
 import { cn } from "./external-utils/cn";
 
 const inputVariants = cva(
-  ` w-full focus:outline-none bg-white text-gray-400 
+  ` w-full focus:outline-none bg-white text-neutral-700
   duration-200 transition-colors
   border border-gray-200 
   text-size-5 placeholder:text-gray-300 
   focus:border-primary-400 disabled:bg-gray-100
+   font-regular placeholder:font-light
     `,
   {
     variants: {

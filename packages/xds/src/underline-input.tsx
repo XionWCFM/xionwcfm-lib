@@ -3,12 +3,19 @@ import { cva } from "class-variance-authority";
 import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useState } from "react";
 import { Box } from "./box";
 import { cn } from "./external-utils/cn";
+import { useDraft } from "./hooks/xds-use-draft";
+import { useUniqueId } from "./hooks/xds-use-unique-id";
+
 const inputVariants = cva(
-  `w-full focus:outline-none bg-inherit text-gray-500 
-  duration-200 transition-colors
-  border-b border-gray-200
-  text-size-5 placeholder:sr-only
-  focus:border-primary-400 disabled:bg-gray-100`,
+  cn(
+    "w-full focus:outline-none bg-inherit",
+    "duration-200 transition-colors",
+    "border-b border-gray-200",
+    "text-size-5 placeholder:sr-only ",
+    "focus:border-primary-400",
+    " text-gray-600 font-light",
+    " disabled:bg-gray-100 disabled:rounded-sm disabled:border-none disabled:text-gray-500 ",
+  ),
   {
     variants: {
       size: {
@@ -33,8 +40,10 @@ const Wrapper = forwardRef<
       className={cn(
         "absolute left-0 top-0 translate-y-[6px] transition-all duration-100 cursor-text",
         " font-light",
-        isFocused || hasValue ? " text-size-3 -translate-y-12" : "text-base top-2",
+        isFocused || hasValue ? " text-size-3 -translate-y-16" : "text-base top-2",
         isFocused ? " text-primary-500" : " text-gray-300",
+
+        className,
       )}
       {...rest}
     >
@@ -45,25 +54,52 @@ const Wrapper = forwardRef<
 
 export const UnderlineInput = forwardRef<
   ElementRef<"input">,
-  ComponentPropsWithoutRef<"input"> & { leftSlot?: ReactNode; rightSlot?: ReactNode }
+  ComponentPropsWithoutRef<"input"> & {
+    leftSlot?: ReactNode;
+    rightSlot?: ReactNode;
+    label?: ComponentPropsWithoutRef<"label">;
+  }
 >(function UnderlineInput(props, ref) {
-  const { className, leftSlot, id, rightSlot, placeholder, value, onFocus, onBlur, onChange, ...rest } = props;
+  const {
+    className,
+    disabled,
+    leftSlot,
+    id: elementId,
+    rightSlot,
+    placeholder,
+    value,
+    onFocus,
+    onBlur,
+    onChange,
+    label,
+    ...rest
+  } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(() => Boolean(value));
-  const htmlForId = id ?? `${Math.random()}`;
+  const uniqueId = useUniqueId();
+  const id = elementId ?? uniqueId;
+  const [inputValue, setInputValue] = useDraft<string>(typeof value === "string" ? value : "");
+  const isEmpty = inputValue.length === 0;
 
   return (
     <Box className="relative">
-      <Wrapper isFocused={isFocused} hasValue={hasValue} htmlFor={htmlForId}>
+      <Wrapper
+        isFocused={isFocused}
+        hasValue={hasValue}
+        htmlFor={id}
+        className={cn(leftSlot && !isFocused && isEmpty && " translate-x-36", disabled && !isEmpty && " invisible")}
+        {...label}
+      >
         {placeholder}
       </Wrapper>
       <Box className="absolute top-[50%] translate-y-[-50%] translate-x-[12px] max-w-16 max-h-16 overflow-clip flex justify-center items-center">
         {leftSlot}
       </Box>
       <input
+        disabled={disabled}
         ref={ref}
         type="text"
-        id={htmlForId}
+        id={id}
         placeholder={placeholder}
         value={value}
         className={cn(inputVariants(), leftSlot && "pl-36", rightSlot && "pr-36", className)}
@@ -78,6 +114,7 @@ export const UnderlineInput = forwardRef<
         }}
         onChange={(e) => {
           setHasValue(!!e.target.value);
+          setInputValue(e.target.value);
           onChange?.(e);
         }}
         {...rest}

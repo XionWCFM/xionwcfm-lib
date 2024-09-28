@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FixedBottom } from "./fixed-bottom";
 import { FixedBottomCta } from "./fixed-bottom-cta";
 import { MobileViewLayout } from "./mobile-view-layout";
+import { Paragraph } from "./paragraph";
 
 const meta: Meta<typeof FixedBottomCta> = {
   title: "Xds/FixedBottomCta",
@@ -22,6 +23,7 @@ export const FixedBottomCtaStories: Story = {
 
       return (
         <MobileViewLayout>
+          <Paragraph>FixedBottom과 함께 사용하는 CTA 버튼입니다.</Paragraph>
           <FixedBottom>
             <FixedBottomCta
               loading={loading}

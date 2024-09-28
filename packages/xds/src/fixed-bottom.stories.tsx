@@ -17,7 +17,7 @@ export const FixedBottoms: Story = {
   decorators: [
     () => (
       <MobileViewLayout>
-        <FixedBottom>hello</FixedBottom>
+        <FixedBottom>화면 하단에 요소를 고정합니다.</FixedBottom>
       </MobileViewLayout>
     ),
   ],

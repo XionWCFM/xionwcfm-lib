@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/xds",
-  "version": "0.0.17",
+  "version": "0.0.25",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -48,7 +48,8 @@
     "build:no": "tailwindcss -i ./style.css -o dist/style.css --postcss",
     "generate:component": "turbo gen react-component",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "serve-storybook": "npx serve storybook-static"
   },
   "publishConfig": {
     "access": "public"
@@ -69,11 +70,12 @@
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@xionwcfm/icon": "workspace:*",
     "@xionwcfm/tailwindcss-config": "workspace:*",
+    "@xionwcfm/token": "^0.0.7",
     "@xionwcfm/typescript-config": "workspace:*",
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.5",
-    "@xionwcfm/icon": "workspace:*",
     "eslint": "^8.57.0",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8",
@@ -113,7 +115,6 @@
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@radix-ui/react-visually-hidden": "^1.1.0",
-    "@xionwcfm/token": "^0.0.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "sonner": "^1.5.0",

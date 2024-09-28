@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Paragraph } from "./paragraph";
 import { Switch } from "./switch";
 
 const SwitchExample = () => {
@@ -24,7 +25,18 @@ export const SwitchPrimitive: Story = {
   decorators: [
     () => (
       <div className=" min-h-screen p-16 flex flex-col">
+        <Paragraph>Example</Paragraph>
         <SwitchExample />
+
+        <Paragraph>active case</Paragraph>
+        <Switch.Root checked={true}>
+          <Switch.Thumb />
+        </Switch.Root>
+
+        <Paragraph>inactive case</Paragraph>
+        <Switch.Root checked={false}>
+          <Switch.Thumb />
+        </Switch.Root>
       </div>
     ),
   ],

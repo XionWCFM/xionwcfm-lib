@@ -373,9 +373,6 @@ importers:
       '@radix-ui/react-visually-hidden':
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@xionwcfm/token':
-        specifier: ^0.0.6
-        version: 0.0.6
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -446,6 +443,9 @@ importers:
       '@xionwcfm/tailwindcss-config':
         specifier: workspace:*
         version: link:../../configs/tailwind
+      '@xionwcfm/token':
+        specifier: ^0.0.7
+        version: 0.0.7
       '@xionwcfm/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript
@@ -2765,6 +2765,9 @@ packages:
 
   '@xionwcfm/token@0.0.6':
     resolution: {integrity: sha512-t0GHKPaxQ24CEdPrcebCDUGVJRf+zUkl55+AXClTaSYCdDAGw7OU4+4L05uqw5W+GJYUsgzJUUeMW4efdkFvzQ==}
+
+  '@xionwcfm/token@0.0.7':
+    resolution: {integrity: sha512-UiFma2mFJsCNCUuZ6cBRRIcwcZ36oShTtw5vHy40afx6R6jgPFyGayuhxMNz+m5pT6eI3raYrDVs/SYvat5Xtw==}
 
   '@xionwcfm/utils@0.0.2':
     resolution: {integrity: sha512-LiIzh4CQQwg3aq5QYUOc0r5Jvuwp+1yfMiMMoXM0wopOypIQtkbmIKGPuuc115iyEFdiw+VyEqygkAq3is/kRA==}
@@ -8385,6 +8388,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@xionwcfm/token@0.0.6': {}
+
+  '@xionwcfm/token@0.0.7': {}
 
   '@xionwcfm/utils@0.0.2': {}
 
