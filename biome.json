@@ -80,7 +80,8 @@
       "**/dist/*",
       "**/.next/*",
       "**/node_modules/*",
-      "*storybook.log"
+      "*storybook.log",
+      "storybook-static"
     ]
   }
 }
