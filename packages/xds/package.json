@@ -48,7 +48,7 @@
     "build:no": "tailwindcss -i ./style.css -o dist/style.css --postcss",
     "generate:component": "turbo gen react-component",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build -o storybook-static",
     "serve-storybook": "npx serve storybook-static"
   },
   "publishConfig": {
