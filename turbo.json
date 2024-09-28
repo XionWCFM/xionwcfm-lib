@@ -8,7 +8,7 @@
     },
     "build-storybook": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**", "storybook-static/**"]
+      "outputs": ["storybook-static/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
