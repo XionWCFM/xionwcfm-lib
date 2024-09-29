@@ -1,7 +1,9 @@
+import { GearIcon } from "@radix-ui/react-icons";
 import type { Meta, StoryObj } from "@storybook/react";
 import { FillInfoIcon } from "@xionwcfm/icon/fill-info-icon";
 import { useState } from "react";
 import { Button } from "./button";
+import { Paragraph } from "./paragraph";
 
 const options = ["default", "outline", "primary", "secondary", "ghost", "link", "icon", "emphasis"] as const;
 const withOutIcon = options.filter((item) => item !== "icon");
@@ -95,11 +97,18 @@ export const Buttons: Story = {
               </div>
             </div>
           ))}
+
           <div>
             <Button variant={"icon"} size={"icon"}>
               <FillInfoIcon />
             </Button>
           </div>
+
+          <Paragraph>ghost Icon</Paragraph>
+
+          <Button variant={"ghostIcon"} size={"icon"}>
+            <GearIcon />
+          </Button>
         </div>
       );
     },

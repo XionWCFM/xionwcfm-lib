@@ -39,6 +39,7 @@ export const buttonVariants = cva(
         active:opacity-90`,
         link: "hover:underline hover:underline-offset-4 ",
         icon: " border hover:bg-neutral-100 hover:bg-opacity-80 active:opacity-70",
+        ghostIcon: " hover:bg-neutral-100 hover:bg-opacity-80 active:opacity-70",
       },
       size: {
         default: "",
