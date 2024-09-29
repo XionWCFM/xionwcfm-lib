@@ -31,7 +31,7 @@ const DrawerOverlay = forwardRef<
   ElementRef<typeof DrawerPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Overlay ref={ref} className={`fixed inset-0 z-50 bg-black/80 ${className}`} {...props} />
+  <DrawerPrimitive.Overlay ref={ref} className={`fixed inset-0  bg-[rgba(0,0,0,0.4)]  ${className}`} {...props} />
 ));
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
@@ -41,7 +41,7 @@ const DrawerContent = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <DrawerPrimitive.Content
     ref={ref}
-    className={cn("fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-white ")}
+    className={cn("flex h-auto flex-col rounded-t-[10px] border bg-white ", className)}
     {...props}
   >
     <DrawerHandle className=" top-[16px] mb-8 h-6 w-[80px] rounded-full bg-gray-200" />
@@ -49,6 +49,7 @@ const DrawerContent = forwardRef<
     {children}
   </DrawerPrimitive.Content>
 ));
+
 DrawerContent.displayName = "DrawerContent";
 
 const DrawerHeader = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
