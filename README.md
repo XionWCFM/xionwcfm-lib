@@ -36,7 +36,7 @@ color , spacing 등 디자인에 필요한 토큰들을 정의합니다.
 
 css variables에 의존하기 때문에 사용 시 css를 import 하여 주세요
 
-[DesignSystem Figma]((https://www.figma.com/design/YcU2Y4i68qsLFupoxgssPh/Xion-Design-System?node-id=0-1&t=hn9cP9ogyD1wri0D-1))에서 더 많은 정보를 얻을 수 있습니다.
+[DesignSystem Figma](https://www.figma.com/design/YcU2Y4i68qsLFupoxgssPh/Xion-Design-System?node-id=0-1&t=hn9cP9ogyD1wri0D-1)에서 더 많은 정보를 얻을 수 있습니다.
 
 
 tailwindcss를 사용한다면 token을 다음과 같이 통합할 수 있습니다.
