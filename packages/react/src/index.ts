@@ -4,6 +4,7 @@ import { createSafeContext } from "./create-safe-context";
 import { Debounce } from "./debounce";
 import { DebounceEvent } from "./debounce-event";
 import { Deferred } from "./deferred";
+import { Iterator } from "./iterator";
 import { Separated } from "./separated";
 import { SwitchCase } from "./switch-case";
 import { ThrottleEvent } from "./throttle-event";
@@ -51,6 +52,7 @@ import { useWindowScroll } from "./use-window-scroll";
 
 export {
   Deferred,
+  Iterator,
   createNavigate,
   usePreservedReference,
   useDocumentTitle,

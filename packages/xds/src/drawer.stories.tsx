@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./button";
 import { Drawer } from "./drawer";
+import { FixedLayout } from "./fixed-layout";
 
 const ExampleDrawer = () => {
   return (
@@ -12,12 +13,14 @@ const ExampleDrawer = () => {
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay />
-        <Drawer.Content className=" ">
-          <div className={` h-[50vh]`}>
-            <Drawer.Header>Drawer Header</Drawer.Header>
-            <Drawer.Footer>Drawer Footer</Drawer.Footer>
-          </div>
-        </Drawer.Content>
+        <FixedLayout x={"normal"} b={"normal"}>
+          <Drawer.Content className=" ">
+            <div className={` h-[50vh]`}>
+              <Drawer.Header>Drawer Header</Drawer.Header>
+              <Drawer.Footer>Drawer Footer</Drawer.Footer>
+            </div>
+          </Drawer.Content>
+        </FixedLayout>
       </Drawer.Portal>
     </Drawer.Root>
   );

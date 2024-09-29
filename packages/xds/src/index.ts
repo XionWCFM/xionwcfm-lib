@@ -1,5 +1,7 @@
 import { Separator } from "@radix-ui/react-separator";
 import { AspectRatio } from "./aspect-ratio";
+import { BottomNavigation } from "./bottom-navigation";
+import { BottomSheet } from "./bottom-sheet";
 import { Box } from "./box";
 import { Button } from "./button";
 import { Chip } from "./chip";
@@ -8,6 +10,7 @@ import { DialogPrimitives } from "./dialog";
 import { cn } from "./external-utils/cn";
 import { FixedBottom } from "./fixed-bottom";
 import { FixedBottomCta } from "./fixed-bottom-cta";
+import { FixedLayout } from "./fixed-layout";
 import { Flex } from "./flex";
 import { Input } from "./input";
 import { Label } from "./label";
@@ -17,6 +20,7 @@ import { Portal } from "./portal";
 import { Pressable } from "./pressable";
 import { Radio } from "./radio";
 import { RadioGroup } from "./radio-group";
+import { Scrollable } from "./scrollable";
 import { Skeleton } from "./skeleton";
 import { Spacing } from "./spacing";
 import { Spinner } from "./spinner";
@@ -29,6 +33,10 @@ import { UnderlineInput } from "./underline-input";
 export {
   cn,
   Flex,
+  Scrollable,
+  BottomNavigation,
+  FixedLayout,
+  BottomSheet,
   Radio,
   ThreeDotLoadingSpinner,
   FixedBottomCta,
