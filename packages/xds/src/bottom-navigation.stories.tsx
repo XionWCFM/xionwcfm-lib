@@ -1,8 +1,8 @@
+import { BoxIcon, HomeIcon, RocketIcon } from "@radix-ui/react-icons";
 import type { Meta, StoryObj } from "@storybook/react";
-import { BottomSheet } from "./bottom-sheet";
-import { Button } from "./button";
-import { Scrollable } from "./scrollable";
-
+import { useState } from "react";
+import { BottomNavigation } from "./bottom-navigation";
+import { MobileViewLayout } from "./mobile-view-layout";
 const meta: Meta = {
   title: "Xds/BottomNavigation",
   tags: ["autodocs"],
@@ -12,31 +12,23 @@ export default meta;
 
 type Story = StoryObj;
 
-export const ScrollableBottomhSheet: Story = {
+export const BottomNavigationStory: Story = {
   args: {},
   decorators: [
-    () => (
-      <div className=" p-16 flex flex-col">
-        <BottomSheet.Root>
-          <BottomSheet.Trigger>
-            <Button variant={"emphasis"} size={"md"}>
-              Scrollable BottomhSheet Trigger
-            </Button>
-          </BottomSheet.Trigger>
-          <BottomSheet.Portal>
-            <BottomSheet.Overlay />
-            <BottomSheet.Content
-              title="sr-only title"
-              description="sr-only description"
-              handle={<BottomSheet.Handle />}
-            >
-              <Scrollable height="400px">
-                <div className=" min-h-screen">scrollable content</div>
-              </Scrollable>
-            </BottomSheet.Content>
-          </BottomSheet.Portal>
-        </BottomSheet.Root>
-      </div>
-    ),
+    () => {
+      const [open, onOpenChange] = useState(true);
+      return (
+        <>
+          <MobileViewLayout>
+            <button onClick={() => onOpenChange((p) => !p)}>네비게이션 토글</button>
+            <BottomNavigation.Root open={open}>
+              <BottomNavigation.Action icon={<HomeIcon />} value="home" label={"home"} />
+              <BottomNavigation.Action icon={<BoxIcon />} value="home3" label={"box"} />
+              <BottomNavigation.Action icon={<RocketIcon />} value="hi2" label={"rocket"} />
+            </BottomNavigation.Root>
+          </MobileViewLayout>
+        </>
+      );
+    },
   ],
 };

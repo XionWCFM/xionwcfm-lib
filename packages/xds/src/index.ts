@@ -1,5 +1,6 @@
 import { Separator } from "@radix-ui/react-separator";
 import { AspectRatio } from "./aspect-ratio";
+import { BottomNavigation } from "./bottom-navigation";
 import { BottomSheet } from "./bottom-sheet";
 import { Box } from "./box";
 import { Button } from "./button";
@@ -33,6 +34,7 @@ export {
   cn,
   Flex,
   Scrollable,
+  BottomNavigation,
   FixedLayout,
   BottomSheet,
   Radio,

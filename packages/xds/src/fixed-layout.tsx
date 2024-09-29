@@ -9,7 +9,7 @@ const xsLayoutCva = cva(" fixed ", {
       "spacing-16": "left-[50%] translate-x-[-50%] w-[calc(100vw-32px)] md:max-w-[calc(450px-32px)]",
     },
     b: {
-      normal: " bottom-0",
+      normal: " bottom-[0px]",
       "spacing-16": " bottom-16",
       "spacing-32": " bottom-32",
     },
