@@ -7,7 +7,7 @@ import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
 import { Spinner } from "./spinner";
 
 export const buttonVariants = cva(
-  `inline-flex items-center justify-center whitespace-nowrap 
+  ` items-center justify-center whitespace-nowrap 
   rounded-md font-medium ring-offset-background relative 
   duration-200 transition-colors focus-visible:outline-none focus-visible:ring-2  
   focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
@@ -80,6 +80,7 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
     loading,
     disabled,
     endIcon,
+    type,
     startIcon,
     asChild = false,
     ...rest
@@ -87,13 +88,17 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
   const slotClass = !!startIcon || !!endIcon ? "flex items-center justify-center gap-x-4" : "";
   const ComponentAs = as || "button";
+  const ariaLabel = props["aria-label"] ?? loading ? "loading progress" : "button";
+
   return (
     <Box
       as={ComponentAs}
+      type={type ?? "button"}
       asChild={asChild}
       ref={ref}
       className={cn(slotClass, buttonVariants({ variant, size }), className)}
       disabled={disabled || loading}
+      aria-label={ariaLabel}
       {...typedRest}
     >
       <>

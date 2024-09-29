@@ -26,7 +26,7 @@ const RadioOption = forwardRef(function RadioOption(
       <label
         className={cn(
           " cursor-pointer transition-all duration-200 rounded-sm flex justify-center items-center  h-full w-full",
-          " text-gray-400 font-light",
+          " text-gray-500 font-light",
           " p-8",
           " peer-checked:font-medium peer-checked:text-primary-500",
           " peer-disabled:opacity-30",
