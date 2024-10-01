@@ -2,7 +2,7 @@
 
 import { ComponentPropsWithoutRef, ReactNode } from "react";
 import { Box } from "./box";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { FixedLayout } from "./fixed-layout";
 import { createSafeContext } from "./hooks/xds-create-safe-context";
 import { useDraft } from "./hooks/xds-use-draft";

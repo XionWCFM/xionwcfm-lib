@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import {
   PolymorphicComponentProps,
   PolymorphicComponentPropsWithRef,

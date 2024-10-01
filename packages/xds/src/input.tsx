@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef } from "react";
 import { Box } from "./box";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 
 const inputVariants = cva(
   ` w-full focus:outline-none bg-white text-neutral-700

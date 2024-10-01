@@ -1,6 +1,6 @@
 import { RocketIcon } from "@radix-ui/react-icons";
 import type { Meta, StoryObj } from "@storybook/react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { Paragraph } from "./paragraph";
 import { Pressable } from "./pressable";
 import { UnderlineInput } from "./underline-input";

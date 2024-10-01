@@ -1,6 +1,6 @@
 import { type ElementType, type ReactNode, forwardRef } from "react";
 import type { PolimophicWithSpacingSystemProps } from "./box";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 
 type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C>;

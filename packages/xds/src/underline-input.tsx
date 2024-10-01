@@ -2,7 +2,7 @@
 import { cva } from "class-variance-authority";
 import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useState } from "react";
 import { Box } from "./box";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { useDraft } from "./hooks/xds-use-draft";
 import { useUniqueId } from "./hooks/xds-use-unique-id";
 

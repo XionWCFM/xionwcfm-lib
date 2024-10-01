@@ -9,7 +9,7 @@ import {
   cloneElement,
   forwardRef,
 } from "react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { useDraft } from "./hooks/xds-use-draft";
 import { useUniqueId } from "./hooks/xds-use-unique-id";
 

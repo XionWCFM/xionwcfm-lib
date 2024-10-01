@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { BottomSheet } from "./bottom-sheet";
 import { Button } from "./button";
+import { Input } from "./input";
 import { Scrollable } from "./scrollable";
 
 const meta: Meta = {
@@ -33,6 +34,25 @@ export const ScrollableBottomhSheet: Story = {
               <Scrollable height="400px">
                 <div className=" min-h-screen">scrollable content</div>
               </Scrollable>
+            </BottomSheet.Content>
+          </BottomSheet.Portal>
+        </BottomSheet.Root>
+
+        <div className=" h-128" />
+        <BottomSheet.Root>
+          <BottomSheet.Trigger>
+            <Button variant={"emphasis"} size={"md"}>
+              Input BottomhSheet Trigger
+            </Button>
+          </BottomSheet.Trigger>
+          <BottomSheet.Portal>
+            <BottomSheet.Overlay />
+            <BottomSheet.Content
+              title="sr-only title"
+              description="sr-only description"
+              handle={<BottomSheet.Handle />}
+            >
+              <Input />
             </BottomSheet.Content>
           </BottomSheet.Portal>
         </BottomSheet.Root>
