@@ -1,7 +1,7 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
 import type { SemanticHTMLTextContentType } from "./internal-utils/type";

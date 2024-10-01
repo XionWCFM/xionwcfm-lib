@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { PropsWithChildren } from "react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 
 const xsLayoutCva = cva(" fixed ", {
   variants: {

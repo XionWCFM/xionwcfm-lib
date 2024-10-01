@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 
 export const MobileViewLayout = (props: PropsWithChildren<{ className?: string }>) => {
   const { children, className } = props;

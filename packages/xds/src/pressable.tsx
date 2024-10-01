@@ -1,5 +1,5 @@
 import { Children, ReactElement, cloneElement } from "react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { pressAnimationVariants } from "./variants/press-animation-variants";
 
 export const Pressable = ({ children, className }: { className?: string; children: ReactElement }) => {

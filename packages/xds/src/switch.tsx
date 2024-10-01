@@ -1,6 +1,6 @@
 import * as SwitchPrimitives from "@radix-ui/react-switch";
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 
 const Root = forwardRef<
   ElementRef<typeof SwitchPrimitives.Root>,

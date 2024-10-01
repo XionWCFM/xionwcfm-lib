@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, PropsWithChildren, Ref, forwardRef } from "react";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { ThreeDotLoadingSpinner } from "./three-dot-loading-spinner";
 
 type FixedBottomCtaProps = ComponentPropsWithoutRef<"button"> & { loading?: boolean };

@@ -1,6 +1,6 @@
 import { ComponentProps, ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef } from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
-import { cn } from "./external-utils/cn";
+import { cn } from "./cn";
 import { FixedLayout } from "./fixed-layout";
 
 const Root = ({ shouldScaleBackground = true, ...props }: ComponentProps<typeof DrawerPrimitive.Root>) => (
@@ -56,7 +56,7 @@ const Content = forwardRef<
   ElementRef<typeof DrawerPrimitive.Content>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & { handle?: ReactNode; title: string; description: string }
 >(({ className, handle, children, title, description, ...props }, ref) => (
-  <FixedLayout x={"spacing-16"} b={"spacing-32"}>
+  <FixedLayout x={"spacing-16"} b={"spacing-16"}>
     <DrawerPrimitive.Content ref={ref} {...props}>
       <DrawerPrimitive.Title className=" sr-only">{title}</DrawerPrimitive.Title>
       <DrawerPrimitive.Description className=" sr-only">{description}</DrawerPrimitive.Description>
