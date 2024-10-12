@@ -47,11 +47,7 @@ export const ScrollableBottomhSheet: Story = {
           </BottomSheet.Trigger>
           <BottomSheet.Portal>
             <BottomSheet.Overlay />
-            <BottomSheet.Content
-              title="sr-only title"
-              description="sr-only description"
-              handle={<BottomSheet.Handle />}
-            >
+            <BottomSheet.Content title="sr-only title" description="sr-only description">
               <Input />
             </BottomSheet.Content>
           </BottomSheet.Portal>

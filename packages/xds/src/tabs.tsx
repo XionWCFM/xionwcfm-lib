@@ -1,19 +1,16 @@
 import {
   Children,
-  ComponentProps,
   ComponentPropsWithoutRef,
   PropsWithChildren,
   ReactElement,
   ReactNode,
   Ref,
-  cloneElement,
   forwardRef,
-  useContext,
-  useRef,
   useState,
 } from "react";
 import { cn } from "./cn";
 import { createSafeContext } from "./hooks/xds-create-safe-context";
+import { Pressable } from "./pressable";
 
 const [TabProvider, useTab] = createSafeContext<{ value: string; onValueChange: (value: string) => void }>(null);
 
@@ -43,7 +40,7 @@ const TransitionBar = (props: TransitionBarProps) => {
   const { checked, checkedIndex, numberOfChildren } = props;
   return (
     <div
-      className=" absolute duration-500 border-neutral-500 transition-all bottom-[-16px] border-b-[2px] z-0 "
+      className=" absolute duration-500 border-neutral-500 transition-all bottom-[0px] border-b-[2px] z-0 "
       style={{
         width: `calc((100% - 8px) / ${numberOfChildren})`,
         translate: `${checkedIndex * 100}%`,
@@ -69,7 +66,7 @@ export const List = forwardRef(
     const numberOfChildren = Children.count(children);
 
     return (
-      <nav className={cn("relative flex w-full mb-16", className)} {...otherProps} ref={ref}>
+      <nav className={cn("relative flex w-full mb-16 h-48", className)} {...otherProps} ref={ref}>
         <TransitionBar checked={checked} checkedIndex={checkedIndex} numberOfChildren={numberOfChildren} />
         {children}
       </nav>
@@ -90,6 +87,7 @@ export const Trigger = forwardRef(function TabTrigger(props: TriggerProps, ref?:
         " w-full text-neutral-500 duration-500 transition-all",
         " disabled:text-neutral-300",
         " data-[state=active]:text-neutral-700 data-[state=active]:font-bold",
+        " active:scale-105",
         className,
       )}
       onClick={(e) => {
