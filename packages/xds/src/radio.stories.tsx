@@ -59,6 +59,33 @@ export const InputStory: Story = {
             </Radio.Option>
           </Radio>
         </div>
+
+        <Paragraph>active case</Paragraph>
+
+        <Radio value={value} onChange={(e) => setValue(e.target.value)} variant={"pale"}>
+          <Radio.Option id="hello" value={"123"}>
+            옵션1
+          </Radio.Option>
+          <Radio.Option id="2worl" value={"234"}>
+            옵션2
+          </Radio.Option>
+          <Radio.Option id="asd" value={"3"}>
+            옵션3
+          </Radio.Option>
+        </Radio>
+        <div className=" bg-gray-100 p-16">
+          <Radio value={value} onChange={(e) => setValue(e.target.value)} variant={"primary"}>
+            <Radio.Option id="hello" value={"123"}>
+              옵션1
+            </Radio.Option>
+            <Radio.Option id="2worl" value={"234"}>
+              옵션2
+            </Radio.Option>
+            <Radio.Option id="asd" value={"3"}>
+              옵션3
+            </Radio.Option>
+          </Radio>
+        </div>
       </div>
     );
   },

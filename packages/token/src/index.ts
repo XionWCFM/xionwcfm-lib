@@ -171,9 +171,31 @@ const boxShadow = Object.freeze({
   lg: "var(--box-shadow-lg)",
 });
 
-const keyframes = {};
+const keyframes = Object.freeze({
+  fadeIn: {
+    "0%": { opacity: "0" },
+    "100%": { opacity: "1" },
+  },
+  fadeOut: {
+    "0%": { opacity: "1" },
+    "100%": { opacity: "0" },
+  },
+});
 
-const animation = {};
+const animation = Object.freeze({
+  "fadIn-0.5s": "fadeIn 0.5s ease-in-out",
+  "fadIn-1s": "fadeIn 1s ease-in-out",
+  "fadIn-2s": "fadeIn 1s ease-in-out",
+  "fadIn-3s": "fadeIn 1s ease-in-out",
+  "fadIn-4s": "fadeIn 1s ease-in-out",
+  "fadIn-5s": "fadeIn 1s ease-in-out",
+  "fadOut-0.5s": "fadeOut 0.5s ease-in-out",
+  "fadOut-1s": "fadeOut 1s ease-in-out",
+  "fadOut-2s": "fadeOut 2s ease-in-out",
+  "fadOut-3s": "fadeOut 3s ease-in-out",
+  "fadOut-4s": "fadeOut 4s ease-in-out",
+  "fadOut-5s": "fadeOut 5s ease-in-out",
+});
 
 const screens = Object.freeze({
   xs: "450px",

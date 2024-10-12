@@ -3,12 +3,12 @@ import { Drawer as DrawerPrimitive } from "vaul";
 import { cn } from "./cn";
 import { FixedLayout } from "./fixed-layout";
 
-const Root = ({ shouldScaleBackground = true, ...props }: ComponentProps<typeof DrawerPrimitive.Root>) => (
+export const Root = ({ shouldScaleBackground = true, ...props }: ComponentProps<typeof DrawerPrimitive.Root>) => (
   <DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} {...props} />
 );
 Root.displayName = "BottomSheetRoot";
 
-const Trigger = forwardRef<
+export const Trigger = forwardRef<
   ElementRef<typeof DrawerPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger>
 >((props, ref) => {
@@ -16,9 +16,9 @@ const Trigger = forwardRef<
   return <DrawerPrimitive.Trigger ref={ref} className={cn(className)} {...rest} />;
 });
 
-const Close = DrawerPrimitive.Close;
+export const Close = DrawerPrimitive.Close;
 
-const Handle = forwardRef<
+export const Handle = forwardRef<
   ElementRef<typeof DrawerPrimitive.Handle>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Handle>
 >((props, ref) => {
@@ -39,7 +39,7 @@ const Handle = forwardRef<
   );
 });
 
-const Overlay = forwardRef<
+export const Overlay = forwardRef<
   ElementRef<typeof DrawerPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
 >(({ className, style, ...props }, ref) => (
@@ -47,12 +47,12 @@ const Overlay = forwardRef<
 ));
 Overlay.displayName = "BottomSheetOverlay";
 
-const Portal = (props: ComponentProps<typeof DrawerPrimitive.Portal>) => {
+export const Portal = (props: ComponentProps<typeof DrawerPrimitive.Portal>) => {
   const { children, ...rest } = props;
   return <DrawerPrimitive.Portal {...rest}>{children}</DrawerPrimitive.Portal>;
 };
 
-const Content = forwardRef<
+export const Content = forwardRef<
   ElementRef<typeof DrawerPrimitive.Content>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & { handle?: ReactNode; title: string; description: string }
 >(({ className, handle, children, title, description, ...props }, ref) => (

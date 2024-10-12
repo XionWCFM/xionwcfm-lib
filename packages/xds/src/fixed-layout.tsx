@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { PropsWithChildren } from "react";
+import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { cn } from "./cn";
 
 const xsLayoutCva = cva(" fixed ", {
@@ -21,6 +21,13 @@ export const FixedLayout = ({
   x,
   b,
   className,
-}: PropsWithChildren<{ className?: string } & VariantProps<typeof xsLayoutCva>>) => {
-  return <div className={cn(xsLayoutCva({ x, b }), className)}>{children}</div>;
+  style,
+}: PropsWithChildren<
+  { className?: string } & Pick<ComponentPropsWithoutRef<"div">, "style"> & VariantProps<typeof xsLayoutCva>
+>) => {
+  return (
+    <div className={cn(xsLayoutCva({ x, b }), className)} style={style}>
+      {children}
+    </div>
+  );
 };
