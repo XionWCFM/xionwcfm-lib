@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/token",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "scripts": {
     "build": "tsup && pnpm run copy:css",
@@ -23,7 +23,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist", "*.css"],
+  "files": [
+    "dist",
+    "*.css"
+  ],
   "devDependencies": {
     "@xionwcfm/typescript-config": "workspace:*",
     "tsup": "^8.1.0",
