@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./button";
+import { Checkbox, NumberCheckbox } from "./checkbox";
 const meta: Meta = {
   title: "Xds/Checkbox",
   tags: ["autodocs"],
@@ -9,9 +9,19 @@ export default meta;
 
 type Story = StoryObj;
 
-export const CollapsibleStory: Story = {
+export const CheckboxStory: Story = {
   args: {},
   decorators: (Story) => {
-    return <></>;
+    return (
+      <div className=" flex flex-col gap-y-16">
+        <Checkbox />
+        <Checkbox disabled />
+        <NumberCheckbox>1</NumberCheckbox>
+        <NumberCheckbox>100</NumberCheckbox>
+        <div className=" ">
+          <NumberCheckbox disabled />
+        </div>
+      </div>
+    );
   },
 };
