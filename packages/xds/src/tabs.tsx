@@ -40,9 +40,9 @@ const TransitionBar = (props: TransitionBarProps) => {
   const { checked, checkedIndex, numberOfChildren } = props;
   return (
     <div
-      className=" absolute duration-500 border-neutral-500 transition-all bottom-[0px] border-b-[2px] z-0 "
+      className=" absolute duration-500 border-neutral-700 transition-all bottom-[-2px] border-b-[2px] z-0 "
       style={{
-        width: `calc((100% - 8px) / ${numberOfChildren})`,
+        width: `calc(100% / ${numberOfChildren})`,
         translate: `${checkedIndex * 100}%`,
         opacity: checked ? 1 : 0,
       }}
@@ -66,7 +66,11 @@ export const List = forwardRef(
     const numberOfChildren = Children.count(children);
 
     return (
-      <nav className={cn("relative flex w-full mb-16 h-48", className)} {...otherProps} ref={ref}>
+      <nav
+        className={cn("relative flex w-full mb-16 h-48  border-neutral-200 border-b-[2px]", className)}
+        {...otherProps}
+        ref={ref}
+      >
         <TransitionBar checked={checked} checkedIndex={checkedIndex} numberOfChildren={numberOfChildren} />
         {children}
       </nav>

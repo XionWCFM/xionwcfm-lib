@@ -13,7 +13,7 @@ const Root = ({ shouldScaleBackground = true, ...props }: ComponentProps<typeof 
 );
 Root.displayName = "Drawer";
 
-const DrawerTrigger = forwardRef<
+const Trigger = forwardRef<
   ElementRef<typeof DrawerPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger>
 >((props, ref) => {
@@ -21,21 +21,21 @@ const DrawerTrigger = forwardRef<
   return <DrawerPrimitive.Trigger {...rest} className={cn(className)} ref={ref} />;
 });
 
-const DrawerPortal = DrawerPrimitive.Portal;
+const Portal = DrawerPrimitive.Portal;
 
-const DrawerClose = DrawerPrimitive.Close;
+const Close = DrawerPrimitive.Close;
 
-const DrawerHandle = DrawerPrimitive.Handle;
+const Handle = DrawerPrimitive.Handle;
 
-const DrawerOverlay = forwardRef<
+const Overlay = forwardRef<
   ElementRef<typeof DrawerPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Overlay ref={ref} className={`fixed inset-0  bg-[rgba(0,0,0,0.4)]  ${className}`} {...props} />
 ));
-DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
+Overlay.displayName = DrawerPrimitive.Overlay.displayName;
 
-const DrawerContent = forwardRef<
+const Content = forwardRef<
   ElementRef<typeof DrawerPrimitive.Content>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
@@ -44,51 +44,52 @@ const DrawerContent = forwardRef<
     className={cn("flex h-auto flex-col rounded-t-[10px] border bg-white ", className)}
     {...props}
   >
-    <DrawerHandle className=" top-[16px] mb-8 h-6 w-[80px] rounded-full bg-gray-200" />
+    <Handle className=" top-[16px] mb-8 h-6 w-[80px] rounded-full bg-gray-200" />
 
     {children}
   </DrawerPrimitive.Content>
 ));
 
-DrawerContent.displayName = "DrawerContent";
+Content.displayName = "DrawerContent";
 
-const DrawerHeader = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
+const Header = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
   <div className={"grid gap-[6px] p-[16px] text-center sm:text-left"} {...props} />
 );
-DrawerHeader.displayName = "DrawerHeader";
+Header.displayName = "DrawerHeader";
 
-const DrawerFooter = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
+const Footer = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
   <div className={"mt-auto flex flex-col gap-[8px] p-[16px]"} {...props} />
 );
-DrawerFooter.displayName = "DrawerFooter";
+Footer.displayName = "DrawerFooter";
 
-const DrawerTitle = forwardRef<
+const Title = forwardRef<
   ElementRef<typeof DrawerPrimitive.Title>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Title ref={ref} className={"text-lg font-semibold leading-none tracking-tight"} {...props} />
 ));
-DrawerTitle.displayName = DrawerPrimitive.Title.displayName;
+Title.displayName = DrawerPrimitive.Title.displayName;
 
-const DrawerDescription = forwardRef<
+const Description = forwardRef<
   ElementRef<typeof DrawerPrimitive.Description>,
   ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Description ref={ref} className={"text-sm text-muted-foreground"} {...props} />
 ));
-DrawerDescription.displayName = DrawerPrimitive.Description.displayName;
+Description.displayName = DrawerPrimitive.Description.displayName;
 
-//@ts-nocheck
 export const Drawer = {
   Root,
-  Trigger: DrawerTrigger,
-  Portal: DrawerPortal,
-  Close: DrawerClose,
-  Handle: DrawerHandle,
-  Overlay: DrawerOverlay,
-  Content: DrawerContent,
-  Header: DrawerHeader,
-  Footer: DrawerFooter,
-  Title: DrawerTitle,
-  Description: DrawerDescription,
+  Trigger: Trigger,
+  Portal: Portal,
+  Close: Close,
+  Handle: Handle,
+  Overlay: Overlay,
+  Content: Content,
+  Header: Header,
+  Footer: Footer,
+  Title: Title,
+  Description: Description,
 };
+
+export { Root, Trigger, Portal, Close, Handle, Overlay, Content, Header, Footer, Title };

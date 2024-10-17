@@ -217,3 +217,5 @@ export const XION_STYLE = Object.freeze({
   animation,
   screens,
 });
+
+export const vars = XION_STYLE;

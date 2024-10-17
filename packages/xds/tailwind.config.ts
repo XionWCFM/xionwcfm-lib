@@ -1,22 +1,22 @@
 import baseConfig from "@xionwcfm/tailwindcss-config/base";
-import { XION_STYLE } from "@xionwcfm/token";
+import { XION_STYLE as vars } from "@xionwcfm/token";
 import type { Config } from "tailwindcss";
 const config: Config = {
   ...baseConfig,
   theme: {
-    colors: XION_STYLE.colors,
-    borderRadius: XION_STYLE.borderRadius,
-    spacing: XION_STYLE.spacing,
-    fontSize: XION_STYLE.fontSize,
-    fontWeight: XION_STYLE.fontWeight,
-    lineHeight: XION_STYLE.lineHeight,
-    boxShadow: XION_STYLE.boxShadow,
+    colors: vars.colors,
+    borderRadius: vars.borderRadius,
+    spacing: vars.spacing,
+    fontSize: vars.fontSize,
+    fontWeight: vars.fontWeight,
+    lineHeight: vars.lineHeight,
+    boxShadow: vars.boxShadow,
     extend: {
-      keyframes: XION_STYLE.keyframes as Config["theme"],
-      animation: XION_STYLE.animation,
-      screens: XION_STYLE.screens,
+      keyframes: vars.keyframes,
+      animation: vars.animation,
+      screens: vars.screens,
     },
   },
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./.storybook/**/*.{js,ts,jsx,tsx,mdx}"],
 };
 export default config;

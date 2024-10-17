@@ -9,9 +9,8 @@ import { Spinner } from "./spinner";
 export const buttonVariants = cva(
   ` items-center justify-center whitespace-nowrap 
   rounded-md font-medium ring-offset-background relative 
-  duration-200 transition-colors focus-visible:outline-none focus-visible:ring-2  
+  duration-500 transition-colors focus-visible:outline-none focus-visible:ring-2  
   focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
- active:scale-[0.98]
   `,
   {
     variants: {
@@ -37,17 +36,17 @@ export const buttonVariants = cva(
         ghost: ` rounded-sm
         hover:bg-neutral-200 hover:opacity-95
         active:opacity-90`,
-        link: "hover:underline hover:underline-offset-4 ",
+        link: "underline underline-offset-4 ",
         icon: " border hover:bg-neutral-100 hover:bg-opacity-80 active:opacity-70",
         ghostIcon: " hover:bg-neutral-100 hover:bg-opacity-80 active:opacity-70",
       },
       size: {
         default: "",
-        sm: "  rounded-md px-12 py-4",
-        md: " rounded-md px-16 py-6",
-        lg: " rounded-md px-20 py-8",
-        full: " w-full  py-12  text-size-6",
-        icon: "px-8 py-8",
+        sm: "  rounded-md px-12 py-4 active:scale-[0.98]",
+        md: " rounded-md px-16 py-6 active:scale-[0.98.5]",
+        lg: " rounded-md px-20 py-8 active:scale-[0.99]",
+        full: " w-full  py-12  text-size-6 active:scale-[0.997]",
+        icon: "px-8 py-8 active:scale-[0.98]",
       },
     },
   },

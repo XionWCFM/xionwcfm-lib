@@ -140,15 +140,18 @@ type TransitionBarProps = {
   checked: boolean;
 };
 
-const transitionBarVariants = cva(" absolute duration-500 transition-all top-4 bottom-[6px] left-4 z-0 rounded-sm ", {
-  variants: {
-    variant: {
-      pale: " bg-white",
-      gray: "bg-gray-200 shadow-[0_2px_4px_0_rgba(0,0,0,0.09)]",
-      primary: " bg-primary-500",
+const transitionBarVariants = cva(
+  " absolute duration-500 transition-all top-[4px] left-[4px] bottom-[4px] z-0 rounded-sm ",
+  {
+    variants: {
+      variant: {
+        pale: " bg-white",
+        gray: "bg-gray-200",
+        primary: " bg-primary-500",
+      },
     },
   },
-});
+);
 
 const TransitionBar = ({ checked, checkedIndex, numberOfChildren }: TransitionBarProps) => {
   const variant = useRadio();
