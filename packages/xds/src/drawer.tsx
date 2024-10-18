@@ -92,4 +92,4 @@ export const Drawer = {
   Description: Description,
 };
 
-export { Root, Trigger, Portal, Close, Handle, Overlay, Content, Header, Footer, Title };
+export { Root, Trigger, Portal, Close, Handle, Overlay, Content, Header, Footer, Title, Description };
