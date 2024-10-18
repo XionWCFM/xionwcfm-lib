@@ -35,7 +35,7 @@ type BoxType = <C extends ElementType = ElementType>(
   props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
 ) => ReactNode | null;
 
-export const Box: BoxType = forwardRef(function Box<C extends ElementType = "div">(
+export const Box = forwardRef(function Box<C extends ElementType = "div">(
   { children, as, className, asChild = false, ...rest }: PolimophicWithSpacingSystemProps<C>,
   ref?: PolymorphicRef<C>,
 ) {
@@ -86,4 +86,6 @@ export const Box: BoxType = forwardRef(function Box<C extends ElementType = "div
       {children}
     </SlottableComponent>
   );
-});
+}) as <C extends ElementType = ElementType>(
+  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
+) => ReactNode;
