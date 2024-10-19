@@ -11,7 +11,7 @@ export const List = forwardRef(function List<C extends ElementType = "ul">(
   const { className, children, ...rest } = props;
   return (
     //@ts-expect-error
-    <Box ref={ref} as={"ul"} className={cn(" flex flex-col gap-y-16", className)} {...rest}>
+    <Box ref={ref} as={"ul"} className={cn(" break-words flex flex-col gap-y-16", className)} {...rest}>
       {children}
     </Box>
   );
@@ -36,7 +36,7 @@ export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li
       ref={ref}
       as={"ul"}
       className={cn(
-        " flex rounded-sm gap-8 px-16 py-8 justify-between items-center ",
+        " flex rounded-sm gap-8 break-words px-16 py-8 w-full justify-between items-center ",
         " cursor-pointer duration-200  transition-all active:scale-[0.98]",
         highlighted && " bg-primary-50 bg-opacity-50 hover:bg-primary-100 active:bg-primary-100",
         !highlighted && " hover:bg-gray-100 active:bg-gray-100",
@@ -44,12 +44,12 @@ export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li
       )}
       {...rest}
     >
-      {left}
+      <div>{left}</div>
       {/* @ts-expect-error */}
-      <Box as={as} className=" h-full flex-grow flex flex-wrap overflow-hidden">
+      <Box as={as} className=" h-full flex-grow overflow-hidden flex ">
         {children}
       </Box>
-      {right}
+      <div>{right}</div>
     </Box>
   );
 }) as <C extends "li" | "button" | "a" = "li">(

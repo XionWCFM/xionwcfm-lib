@@ -31,10 +31,6 @@ export type PolimophicWithSpacingSystemProps<C extends ElementType> = Polymorphi
     MaxHTypeProps
 >;
 
-type BoxType = <C extends ElementType = ElementType>(
-  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
-) => ReactNode | null;
-
 export const Box = forwardRef(function Box<C extends ElementType = "div">(
   { children, as, className, asChild = false, ...rest }: PolimophicWithSpacingSystemProps<C>,
   ref?: PolymorphicRef<C>,
