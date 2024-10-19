@@ -4,6 +4,13 @@ import { List, Row } from "./list";
 const meta: Meta = {
   title: "Xds/List",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "List를 만들수 있는 컴포넌트입니다.",
+      },
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -15,20 +22,22 @@ export const ListStory: Story = {
   decorators: [
     () => (
       <>
-        <List className=" w-256">
-          <Row highlighted right={<ChevronRightIcon />}>
-            <div className=" flex flex-col">
-              <div>hellodddddddddddddddddddddddddddd</div>
-              <div>world</div>
-            </div>
-          </Row>
-          <Row left={<HomeIcon />} right={<ChevronRightIcon />}>
-            hello worldddddddddddddddddddsda
-          </Row>
-          <Row left={<HomeIcon />} right={<ChevronRightIcon />}>
-            hello world
-          </Row>
-        </List>
+        <div className=" w-256">
+          <List>
+            <Row highlighted right={<ChevronRightIcon />}>
+              <div className=" flex flex-col">
+                <div>hellodddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+                <div>world</div>
+              </div>
+            </Row>
+            <Row left={<HomeIcon />} right={<ChevronRightIcon />}>
+              hello worldddddddddddddddddddsda
+            </Row>
+            <Row left={<HomeIcon />} right={<ChevronRightIcon />}>
+              hello world
+            </Row>
+          </List>
+        </div>
       </>
     ),
   ],
