@@ -62,11 +62,7 @@ type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
   VariantProps<typeof buttonVariants> &
   ButtonOptionProps;
 
-type ButtonType = <C extends ElementType = SemanticHTMLContentSectionType>(
-  props: PolymorphicComponentPropsWithRef<C, Props<C>>,
-) => ReactNode | null;
-
-export const Button: ButtonType = forwardRef(function Button<C extends ElementType = "button">(
+export const Button = forwardRef(function Button<C extends ElementType = "button">(
   props: Props<C>,
   ref?: PolymorphicRef<C>,
 ) {
@@ -92,7 +88,7 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
   return (
     <Box
       as={ComponentAs}
-      type={type ?? "button"}
+      type={type}
       asChild={asChild}
       ref={ref}
       className={cn(slotClass, buttonVariants({ variant, size }), className)}
@@ -120,4 +116,7 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
       </>
     </Box>
   );
-});
+}) as <C extends ElementType = "button">(
+  props: PolymorphicComponentPropsWithRef<C, Props<C>>,
+  ref?: PolymorphicRef<C>,
+) => ReactNode;

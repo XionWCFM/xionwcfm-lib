@@ -1,8 +1,7 @@
 import { cva } from "class-variance-authority";
-import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef } from "react";
+import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useId } from "react";
 import { Box } from "./box";
 import { cn } from "./cn";
-import { useUniqueId } from "./hooks/xds-use-unique-id";
 
 const inputVariants = cva(
   ` w-full focus:outline-none bg-white text-neutral-700
@@ -38,7 +37,7 @@ export const Input = Object.assign(
   forwardRef<ElementRef<"input">, ComponentPropsWithoutRef<"input"> & { leftSlot?: ReactNode; rightSlot?: ReactNode }>(
     function Input(props, ref) {
       const { className, leftSlot, rightSlot, id: elementId, ...rest } = props;
-      const uniqueId = useUniqueId();
+      const uniqueId = useId();
       const id = elementId ?? uniqueId;
       const leftCss = leftSlot ? "pl-36" : "";
       const rightCss = rightSlot ? "pr-36" : "";

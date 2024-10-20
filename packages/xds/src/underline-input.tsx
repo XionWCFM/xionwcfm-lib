@@ -1,11 +1,10 @@
 "use client";
 
 import { cva } from "class-variance-authority";
-import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useState } from "react";
+import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useId, useState } from "react";
 import { Box } from "./box";
 import { cn } from "./cn";
 import { useDraft } from "./hooks/xds-use-draft";
-import { useUniqueId } from "./hooks/xds-use-unique-id";
 
 const inputVariants = cva(
   cn(
@@ -77,7 +76,7 @@ export const UnderlineInput = forwardRef<
   } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(() => Boolean(value));
-  const uniqueId = useUniqueId();
+  const uniqueId = useId();
   const id = elementId ?? uniqueId;
   const [inputValue, setInputValue] = useDraft<string>(typeof value === "string" ? value : "");
   const isEmpty = inputValue.length === 0;

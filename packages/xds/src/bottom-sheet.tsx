@@ -54,12 +54,16 @@ export const Portal = (props: ComponentProps<typeof DrawerPrimitive.Portal>) => 
 
 export const Content = forwardRef<
   ElementRef<typeof DrawerPrimitive.Content>,
-  ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & { handle?: ReactNode; title: string; description: string }
+  ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & {
+    handle?: ReactNode;
+    title?: string;
+    description?: string;
+  }
 >(({ className, handle, children, title, description, ...props }, ref) => (
   <FixedLayout x={"spacing-16"} b={"spacing-16"}>
     <DrawerPrimitive.Content ref={ref} {...props}>
-      <DrawerPrimitive.Title className=" sr-only">{title}</DrawerPrimitive.Title>
-      <DrawerPrimitive.Description className=" sr-only">{description}</DrawerPrimitive.Description>
+      {title && <DrawerPrimitive.Title className=" sr-only">{title}</DrawerPrimitive.Title>}
+      {description && <DrawerPrimitive.Description className=" sr-only">{description}</DrawerPrimitive.Description>}
       <div className={cn(" rounded-xl border bg-white min-h-[40vh] max-h-[500px] ")}>
         {handle}
         <div className=" px-16 py-16">{children}</div>
@@ -69,6 +73,9 @@ export const Content = forwardRef<
 ));
 
 Content.displayName = "DrawerContent";
+
+export const Title = DrawerPrimitive.Title;
+export const Description = DrawerPrimitive.Description;
 
 export const BottomSheet = {
   Root,
