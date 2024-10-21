@@ -16,12 +16,12 @@ const Dialog = () => {
         title="정말 수락하시겠습니까?"
         description={"여기서의 결정은 \n되돌릴 수 없어요"}
         primaryButton={
-          <Button className=" w-full py-12" variant={"primary"} size={"lg"} onClick={() => setOpen(false)}>
+          <Button w={"100%"} variant={"primary"} size={"lg"} onClick={() => setOpen(false)}>
             수락하기
           </Button>
         }
         secondaryButton={
-          <Button className=" w-full py12" variant={"secondary"} size={"lg"} onClick={() => setOpen(false)}>
+          <Button w={"100%"} variant={"secondary"} size={"lg"} onClick={() => setOpen(false)}>
             취소하기
           </Button>
         }

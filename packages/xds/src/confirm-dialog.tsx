@@ -3,7 +3,7 @@ import { XION_STYLE } from "@xionwcfm/token";
 import { ReactNode } from "react";
 import { Box } from "./box";
 import { Button } from "./button";
-import { DialogPrimitives } from "./dialog";
+import * as DialogPrimitives from "./dialog";
 import { Paragraph } from "./paragraph";
 
 type ConfirmDialogProps = {

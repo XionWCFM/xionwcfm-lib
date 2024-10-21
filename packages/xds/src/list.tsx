@@ -2,7 +2,6 @@ import { ElementType, ReactNode, forwardRef } from "react";
 import { Box, PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
-import { Pressable } from "./pressable";
 
 export const List = forwardRef(function List<C extends ElementType = "ul">(
   props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
@@ -37,8 +36,8 @@ export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li
       as={"ul"}
       className={cn(
         " flex rounded-sm gap-8 break-words px-16 py-8 w-full justify-between items-center ",
-        " cursor-pointer duration-200  transition-all active:scale-[0.98]",
-        highlighted && " bg-primary-50 bg-opacity-50 hover:bg-primary-100 active:bg-primary-100",
+        " cursor-pointer duration-200  transition-all hover:scale-[1.005] active:scale-[0.98]",
+        highlighted && " bg-primary-50 bg-opacity-50 ",
         !highlighted && " hover:bg-gray-100 active:bg-gray-100",
         className,
       )}
@@ -56,4 +55,20 @@ export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li
   props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & RowProps,
 ) => ReactNode;
 
-export const Text1Row = () => {};
+type Text2RowProps = {
+  top?: ReactNode;
+  bottom?: ReactNode;
+};
+
+export const Text2Row = forwardRef(function Text2Row<C extends "section" | "div" | "button" | "a" = "div">(
+  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & Text2RowProps,
+  ref: PolymorphicRef<C>,
+) {
+  const { className, top, bottom, children, ...rest } = props;
+  return (
+    <Box ref={ref} {...rest} className={cn("flex flex-col", className)}>
+      {top}
+      {bottom}
+    </Box>
+  );
+});

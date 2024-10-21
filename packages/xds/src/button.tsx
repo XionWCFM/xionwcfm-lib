@@ -3,8 +3,9 @@ import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
-import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
+import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
 import { Spinner } from "./spinner";
+import { wVariants } from "./variants/w-variants";
 
 export const buttonVariants = cva(
   ` items-center justify-center whitespace-nowrap 
@@ -78,6 +79,7 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
     type,
     startIcon,
     asChild = false,
+    w,
     ...rest
   } = props;
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
@@ -91,19 +93,19 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
       type={type}
       asChild={asChild}
       ref={ref}
-      className={cn(slotClass, buttonVariants({ variant, size }), className)}
+      className={cn(slotClass, buttonVariants({ variant, size }), wVariants(formatResponsiveEnum(w)), className)}
       disabled={disabled || loading}
       aria-label={ariaLabel}
       {...typedRest}
     >
       <>
         {loading ? (
-          <Box as="span" className=" absolute">
+          <Box as="span" className=" absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
             <Spinner />
           </Box>
         ) : null}
         {startIcon && !loading ? (
-          <Box as="span" className="mr-2">
+          <Box as="span" className=" mr-2">
             {startIcon}
           </Box>
         ) : null}
@@ -116,7 +118,7 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
       </>
     </Box>
   );
-}) as <C extends ElementType = "button">(
+}) as <C extends "button" | "a" | ElementType = "button">(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
   ref?: PolymorphicRef<C>,
 ) => ReactNode;

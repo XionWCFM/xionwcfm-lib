@@ -441,7 +441,9 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss -i ./style.css -o dist/style.css --minify --postcss",
@@ -462,6 +464,7 @@
     "@storybook/addon-interactions": "^8.3.6",
     "@storybook/addon-links": "^8.3.6",
     "@storybook/addon-onboarding": "^8.3.6",
+    "@storybook/addon-storysource": "^8.3.6",
     "@storybook/blocks": "^8.3.6",
     "@storybook/react": "^8.3.6",
     "@storybook/react-vite": "^8.3.6",
@@ -528,6 +531,8 @@
     "react-dom": ">=18"
   },
   "eslintConfig": {
-    "extends": ["plugin:storybook/recommended"]
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

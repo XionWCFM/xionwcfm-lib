@@ -1,6 +1,7 @@
-import { ChevronRightIcon, HomeIcon } from "@radix-ui/react-icons";
+import { ChevronRightIcon, HomeIcon, RocketIcon } from "@radix-ui/react-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { List, Row } from "./list";
+import { List, Row, Text2Row } from "./list";
+import { Paragraph } from "./paragraph";
 const meta: Meta = {
   title: "Xds/List",
   tags: ["autodocs"],
@@ -22,14 +23,44 @@ export const ListStory: Story = {
   decorators: [
     () => (
       <>
-        <div className=" w-256">
+        <div className=" w-[360px]">
           <List>
-            <Row highlighted right={<ChevronRightIcon />}>
-              <div className=" flex flex-col">
-                <div>hellodddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                <div>world</div>
-              </div>
+            <Row
+              left={
+                <div className=" w-32 h-32 rounded-full object-cover overflow-hidden">
+                  <img src="https://picsum.photos/200/300" alt="random" />
+                </div>
+              }
+              right={<ChevronRightIcon />}
+            >
+              <Text2Row
+                top={
+                  <Paragraph size={"4"} weight={"semi-bold"} color={"gray-700"}>
+                    image
+                  </Paragraph>
+                }
+                bottom={
+                  <Paragraph size={"4"} color={"gray-700"} weight={"light"}>
+                    hello
+                  </Paragraph>
+                }
+              />
             </Row>
+            <Row left={<RocketIcon />} highlighted right={<ChevronRightIcon />}>
+              <Text2Row
+                top={
+                  <Paragraph size={"6"} weight={"bold"} color={"neutral-800"}>
+                    hello
+                  </Paragraph>
+                }
+                bottom={
+                  <Paragraph size={"4"} color={"neutral-600"} weight={"light"}>
+                    world
+                  </Paragraph>
+                }
+              />
+            </Row>
+
             <Row left={<HomeIcon />} right={<ChevronRightIcon />}>
               hello worldddddddddddddddddddsda
             </Row>
