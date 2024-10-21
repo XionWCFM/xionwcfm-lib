@@ -10,7 +10,7 @@ export const List = forwardRef(function List<C extends ElementType = "ul">(
   const { className, children, ...rest } = props;
   return (
     //@ts-expect-error
-    <Box ref={ref} as={"ul"} className={cn(" break-words flex flex-col gap-y-16", className)} {...rest}>
+    <Box ref={ref} as={"ul"} className={cn(" break-words flex flex-col gap-y-8", className)} {...rest}>
       {children}
     </Box>
   );
