@@ -29,7 +29,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args) => (
-  <Switch.Root  {...args}>
+  <Switch.Root {...args}>
     <Switch.Thumb />
   </Switch.Root>
 );
