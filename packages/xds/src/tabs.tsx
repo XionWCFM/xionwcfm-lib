@@ -10,7 +10,6 @@ import {
 } from "react";
 import { cn } from "./cn";
 import { createSafeContext } from "./hooks/xds-create-safe-context";
-import { Pressable } from "./pressable";
 
 const [TabProvider, useTab] = createSafeContext<{ value: string; onValueChange: (value: string) => void }>(null);
 

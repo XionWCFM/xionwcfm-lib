@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./button";
-import { DialogPrimitives } from "./dialog";
+import * as DialogPrimitives from "./dialog";
 
 const Dialog = () => {
   return (
@@ -43,7 +43,9 @@ export const DialogPrimitive: Story = {
           </DialogPrimitives.Trigger>
           <DialogPrimitives.Portal>
             <DialogPrimitives.Overlay />
-            <DialogPrimitives.Content>hello</DialogPrimitives.Content>
+            <DialogPrimitives.Content className=" w-[300px] h-[300px] bg-white rounded-md">
+              hello
+            </DialogPrimitives.Content>
           </DialogPrimitives.Portal>
         </DialogPrimitives.Root>
       </div>

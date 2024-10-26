@@ -6,15 +6,15 @@ import {
   PolymorphicComponentPropsWithRef,
   PolymorphicRef,
 } from "./internal-type/polymorphic";
+import { formatClass } from "./internal-utils/format-class";
 import { SpacingSystemProps, getS } from "./internal-utils/get-s";
-import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
-import { HTypeProps, hVariants } from "./variants/h-variants";
-import { MaxHTypeProps, maxHVariants } from "./variants/max-h-variants";
-import { MaxWTypeProps, maxWVariants } from "./variants/max-w-variants";
-import { MinHTypeProps, minHVariants } from "./variants/min-h-variants";
-import { MinWTypeProps, minWVariants } from "./variants/min-w-variants";
-import { PositionTypeProps, positionVariants } from "./variants/position-variants";
-import { WTypeProps, wVariants } from "./variants/w-variants";
+import { HTypeProps } from "./variants/h-variants";
+import { MaxHTypeProps } from "./variants/max-h-variants";
+import { MaxWTypeProps } from "./variants/max-w-variants";
+import { MinHTypeProps } from "./variants/min-h-variants";
+import { MinWTypeProps } from "./variants/min-w-variants";
+import { PositionTypeProps } from "./variants/position-variants";
+import { WTypeProps } from "./variants/w-variants";
 
 export type PolimophicWithSpacingSystemProps<C extends ElementType> = PolymorphicComponentProps<
   C,
@@ -68,13 +68,13 @@ export const Box = forwardRef(function Box<C extends ElementType = "div">(
       ref={ref}
       className={cn(
         getS({ m, my, mx, mr, ml, mt, mb, p, py, px, pr, pl, pt, pb }),
-        positionVariants(formatResponsiveEnum(position)),
-        wVariants(formatResponsiveEnum(w)),
-        hVariants(formatResponsiveEnum(h)),
-        minWVariants(formatResponsiveEnum(minW)),
-        minHVariants(formatResponsiveEnum(minH)),
-        maxWVariants(formatResponsiveEnum(maxW)),
-        maxHVariants(formatResponsiveEnum(maxH)),
+        formatClass(position),
+        formatClass(w, "w"),
+        formatClass(h, "h"),
+        formatClass(minW, "min-w"),
+        formatClass(minH, "min-h"),
+        formatClass(maxW, "max-w"),
+        formatClass(maxH, "max-h"),
         className,
       )}
       {...omitSpacingRest}

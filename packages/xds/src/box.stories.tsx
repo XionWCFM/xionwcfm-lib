@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Box } from "./box";
+
 const keys = Object.keys({
   "0": "w-0",
   "4": "w-4",
@@ -102,4 +103,27 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {},
+};
+
+export const Spacing: Story = {
+  render: () => {
+    return (
+      <Box
+        className=" bg-primary-100  "
+        maxW={{
+          initial: "32",
+          xl: "64",
+        }}
+        px={{
+          md: "12",
+        }}
+        py={{
+          md: "20",
+          xl: "40",
+        }}
+      >
+        hello
+      </Box>
+    );
+  },
 };

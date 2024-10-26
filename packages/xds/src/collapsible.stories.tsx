@@ -16,7 +16,7 @@ export const CollapsibleStory: Story = {
     return (
       <>
         <Collapsible.Root>
-          <Collapsible.Trigger>
+          <Collapsible.Trigger asChild>
             <Button>hello</Button>
           </Collapsible.Trigger>
           <Collapsible.Content>

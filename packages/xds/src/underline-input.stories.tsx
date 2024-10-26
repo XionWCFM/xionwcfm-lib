@@ -1,100 +1,85 @@
-import { RocketIcon } from "@radix-ui/react-icons";
-import type { Meta, StoryObj } from "@storybook/react";
-import { cn } from "./cn";
-import { Paragraph } from "./paragraph";
-import { Pressable } from "./pressable";
+import { ClipboardIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { Meta, StoryObj } from "@storybook/react";
 import { UnderlineInput } from "./underline-input";
 
-const meta: Meta<typeof UnderlineInput> = {
+export default {
   title: "Xds/UnderlineInput",
   component: UnderlineInput,
   tags: ["autodocs"],
-} satisfies Meta<typeof UnderlineInput>;
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A customizable input field with an underline style. Supports left and right slots for icons or elements.",
+      },
+    },
+  },
+  argTypes: {
+    placeholder: {
+      control: { type: "text" },
+      description: "The placeholder text for the input.",
+    },
+    value: {
+      control: { type: "text" },
+      description: "The value of the input field.",
+    },
+    left: {
+      control: { type: "text" },
+      description: "An optional element or icon displayed on the left side of the input.",
+    },
+    right: {
+      control: { type: "text" },
+      description: "An optional element or icon displayed on the right side of the input.",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Disables the input field if set to true.",
+    },
+    onChange: {
+      action: "valueChanged",
+      description: "Callback function when the input value changes.",
+    },
+  },
+} as Meta;
 
-export default meta;
-
-type Story = StoryObj<typeof UnderlineInput>;
-
-export const InputStory: Story = {
+export const Default: StoryObj = {
   args: {
-    placeholder: "placeholder",
+    placeholder: "Enter text here...",
+    value: "",
     disabled: false,
   },
-  decorators: (Story) => (
-    <div className="flex min-h-screen p-16 flex-col gap-y-16">
-      <Paragraph size={"6"} color={"neutral-500"}>
-        No Icon
-      </Paragraph>
-      <Story />
+  render: (args) => <UnderlineInput {...args} />,
+};
 
-      <Paragraph size={"6"} color={"neutral-500"}>
-        With leftSlot , rightSlot
-      </Paragraph>
-      <UnderlineInput
-        leftSlot={
-          <RocketIcon
-            onClick={() => {
-              alert("leftslot");
-            }}
-          />
-        }
-        rightSlot={
-          <RocketIcon
-            onClick={() => {
-              alert("rightslot");
-            }}
-          />
-        }
-        id="hldelo"
-        placeholder="나이를 입력하세요"
-      />
+export const WithLeftIcon: StoryObj = {
+  args: {
+    placeholder: "Enter text here...",
+    left: <ClipboardIcon className="w-5 h-5 text-gray-500" />,
+  },
+  render: (args) => <UnderlineInput {...args} />,
+};
 
-      <Paragraph size={"6"} color={"neutral-500"}>
-        disabled placeholder case
-      </Paragraph>
-      <UnderlineInput
-        disabled
-        leftSlot={
-          <RocketIcon
-            onClick={() => {
-              alert("leftslot");
-            }}
-          />
-        }
-        rightSlot={
-          <RocketIcon
-            onClick={() => {
-              alert("rightslot");
-            }}
-          />
-        }
-        id="hldsadelo"
-        placeholder="나이를 입력하세요"
-      />
+export const WithRightIcon: StoryObj = {
+  args: {
+    placeholder: "Search here...",
+    right: <MagnifyingGlassIcon className="w-5 h-5 text-gray-500" />,
+  },
+  render: (args) => <UnderlineInput {...args} />,
+};
 
-      <Paragraph size={"6"} color={"neutral-500"}>
-        disabled value case
-      </Paragraph>
-      <UnderlineInput
-        disabled
-        leftSlot={
-          <RocketIcon
-            onClick={() => {
-              alert("leftslot");
-            }}
-          />
-        }
-        rightSlot={
-          <RocketIcon
-            onClick={() => {
-              alert("rightslot");
-            }}
-          />
-        }
-        id="hldsadelo"
-        placeholder="나이를 입력하세요"
-        value={"24"}
-      />
-    </div>
-  ),
+export const WithBothIcons: StoryObj = {
+  args: {
+    placeholder: "Search clipboard...",
+    left: <ClipboardIcon className="w-5 h-5 text-gray-500" />,
+    right: <MagnifyingGlassIcon className="w-5 h-5 text-gray-500" />,
+  },
+  render: (args) => <UnderlineInput {...args} />,
+};
+
+export const Disabled: StoryObj = {
+  args: {
+    placeholder: "Can't type here...",
+    disabled: true,
+  },
+  render: (args) => <UnderlineInput {...args} />,
 };

@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/xds",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -462,6 +462,7 @@
     "@storybook/addon-interactions": "^8.3.6",
     "@storybook/addon-links": "^8.3.6",
     "@storybook/addon-onboarding": "^8.3.6",
+    "@storybook/addon-storysource": "^8.3.6",
     "@storybook/blocks": "^8.3.6",
     "@storybook/react": "^8.3.6",
     "@storybook/react-vite": "^8.3.6",

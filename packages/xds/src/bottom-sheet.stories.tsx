@@ -19,7 +19,7 @@ export const ScrollableBottomhSheet: Story = {
     () => (
       <div className=" p-16 flex flex-col">
         <BottomSheet.Root>
-          <BottomSheet.Trigger>
+          <BottomSheet.Trigger asChild>
             <Button variant={"emphasis"} size={"md"}>
               Scrollable BottomhSheet Trigger
             </Button>
@@ -40,7 +40,7 @@ export const ScrollableBottomhSheet: Story = {
 
         <div className=" h-128" />
         <BottomSheet.Root>
-          <BottomSheet.Trigger>
+          <BottomSheet.Trigger asChild>
             <Button variant={"emphasis"} size={"md"}>
               Input BottomhSheet Trigger
             </Button>

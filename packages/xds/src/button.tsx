@@ -3,7 +3,7 @@ import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
-import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
+import { formatClass } from "./internal-utils/format-class";
 import { Spinner } from "./spinner";
 
 export const buttonVariants = cva(
@@ -62,11 +62,7 @@ type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
   VariantProps<typeof buttonVariants> &
   ButtonOptionProps;
 
-type ButtonType = <C extends ElementType = SemanticHTMLContentSectionType>(
-  props: PolymorphicComponentPropsWithRef<C, Props<C>>,
-) => ReactNode | null;
-
-export const Button: ButtonType = forwardRef(function Button<C extends ElementType = "button">(
+export const Button = forwardRef(function Button<C extends ElementType = "button">(
   props: Props<C>,
   ref?: PolymorphicRef<C>,
 ) {
@@ -82,6 +78,7 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
     type,
     startIcon,
     asChild = false,
+    w,
     ...rest
   } = props;
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
@@ -92,22 +89,22 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
   return (
     <Box
       as={ComponentAs}
-      type={type ?? "button"}
+      type={type}
       asChild={asChild}
       ref={ref}
-      className={cn(slotClass, buttonVariants({ variant, size }), className)}
+      className={cn(slotClass, buttonVariants({ variant, size }), formatClass(w, "w"), className)}
       disabled={disabled || loading}
       aria-label={ariaLabel}
       {...typedRest}
     >
       <>
         {loading ? (
-          <Box as="span" className=" absolute">
+          <Box as="span" className=" absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
             <Spinner />
           </Box>
         ) : null}
         {startIcon && !loading ? (
-          <Box as="span" className="mr-2">
+          <Box as="span" className=" mr-2">
             {startIcon}
           </Box>
         ) : null}
@@ -120,4 +117,7 @@ export const Button: ButtonType = forwardRef(function Button<C extends ElementTy
       </>
     </Box>
   );
-});
+}) as <C extends "button" | "a" | ElementType = "button">(
+  props: PolymorphicComponentPropsWithRef<C, Props<C>>,
+  ref?: PolymorphicRef<C>,
+) => ReactNode;

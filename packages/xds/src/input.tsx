@@ -1,8 +1,7 @@
 import { cva } from "class-variance-authority";
-import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef } from "react";
+import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useId } from "react";
 import { Box } from "./box";
 import { cn } from "./cn";
-import { useUniqueId } from "./hooks/xds-use-unique-id";
 
 const inputVariants = cva(
   ` w-full focus:outline-none bg-white text-neutral-700
@@ -35,28 +34,26 @@ const Wrapper = forwardRef<ElementRef<"label">, ComponentPropsWithoutRef<"label"
 );
 
 export const Input = Object.assign(
-  forwardRef<ElementRef<"input">, ComponentPropsWithoutRef<"input"> & { leftSlot?: ReactNode; rightSlot?: ReactNode }>(
+  forwardRef<ElementRef<"input">, ComponentPropsWithoutRef<"input"> & { left?: ReactNode; right?: ReactNode }>(
     function Input(props, ref) {
-      const { className, leftSlot, rightSlot, id: elementId, ...rest } = props;
-      const uniqueId = useUniqueId();
-      const id = elementId ?? uniqueId;
-      const leftCss = leftSlot ? "pl-36" : "";
-      const rightCss = rightSlot ? "pr-36" : "";
+      const { className, left, right, id: elementId, ...rest } = props;
+      const leftCss = left ? "pl-36" : "";
+      const rightCss = right ? "pr-36" : "";
 
       return (
-        <Box className=" relative" as="label" id={id} htmlFor={id}>
+        <Box className=" w-full relative">
           <Box className=" absolute top-[50%] translate-y-[-50%] translate-x-[12px] max-w-16 max-h-16  overflow-clip flex justify-center items-center ">
-            {leftSlot}
+            {left}
           </Box>
           <input
-            id={id}
+            id={elementId}
             ref={ref}
             type="text"
             className={cn(inputVariants(), leftCss, rightCss, className)}
             {...rest}
           />
           <Box className=" absolute top-[50%] translate-y-[-50%] right-0 translate-x-[-12px] max-w-16 max-h-16  overflow-clip flex justify-center items-center ">
-            {rightSlot}
+            {right}
           </Box>
         </Box>
       );

@@ -1,11 +1,10 @@
 "use client";
 
 import { cva } from "class-variance-authority";
-import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useState } from "react";
+import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef, useId, useState } from "react";
 import { Box } from "./box";
 import { cn } from "./cn";
 import { useDraft } from "./hooks/xds-use-draft";
-import { useUniqueId } from "./hooks/xds-use-unique-id";
 
 const inputVariants = cva(
   cn(
@@ -56,17 +55,17 @@ const Wrapper = forwardRef<
 export const UnderlineInput = forwardRef<
   ElementRef<"input">,
   ComponentPropsWithoutRef<"input"> & {
-    leftSlot?: ReactNode;
-    rightSlot?: ReactNode;
+    left?: ReactNode;
+    right?: ReactNode;
     label?: ComponentPropsWithoutRef<"label">;
   }
 >(function UnderlineInput(props, ref) {
   const {
     className,
     disabled,
-    leftSlot,
+    left,
     id: elementId,
-    rightSlot,
+    right,
     placeholder,
     value,
     onFocus,
@@ -77,7 +76,7 @@ export const UnderlineInput = forwardRef<
   } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(() => Boolean(value));
-  const uniqueId = useUniqueId();
+  const uniqueId = useId();
   const id = elementId ?? uniqueId;
   const [inputValue, setInputValue] = useDraft<string>(typeof value === "string" ? value : "");
   const isEmpty = inputValue.length === 0;
@@ -88,13 +87,13 @@ export const UnderlineInput = forwardRef<
         isFocused={isFocused}
         hasValue={hasValue}
         htmlFor={id}
-        className={cn(leftSlot && !isFocused && isEmpty && " translate-x-36", disabled && !isEmpty && " invisible")}
+        className={cn(left && !isFocused && isEmpty && " translate-x-36", disabled && !isEmpty && " invisible")}
         {...label}
       >
         {placeholder}
       </Wrapper>
       <Box className="absolute top-[50%] translate-y-[-50%] translate-x-[12px] max-w-16 max-h-16 overflow-clip flex justify-center items-center">
-        {leftSlot}
+        {left}
       </Box>
       <input
         disabled={disabled}
@@ -103,7 +102,7 @@ export const UnderlineInput = forwardRef<
         id={id}
         placeholder={placeholder}
         value={value}
-        className={cn(inputVariants(), leftSlot && "pl-36", rightSlot && "pr-36", className)}
+        className={cn(inputVariants(), left && "pl-36", right && "pr-36", className)}
         onFocus={(e) => {
           setIsFocused(true);
           onFocus?.(e);
@@ -121,7 +120,7 @@ export const UnderlineInput = forwardRef<
         {...rest}
       />
       <Box className="absolute top-[50%] translate-y-[-50%] right-0 translate-x-[-12px] max-w-16 max-h-16 overflow-clip flex justify-center items-center">
-        {rightSlot}
+        {right}
       </Box>
     </Box>
   );

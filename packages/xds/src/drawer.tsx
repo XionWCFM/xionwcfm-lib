@@ -78,18 +78,4 @@ const Description = forwardRef<
 ));
 Description.displayName = DrawerPrimitive.Description.displayName;
 
-export const Drawer = {
-  Root,
-  Trigger: Trigger,
-  Portal: Portal,
-  Close: Close,
-  Handle: Handle,
-  Overlay: Overlay,
-  Content: Content,
-  Header: Header,
-  Footer: Footer,
-  Title: Title,
-  Description: Description,
-};
-
 export { Root, Trigger, Portal, Close, Handle, Overlay, Content, Header, Footer, Title, Description };

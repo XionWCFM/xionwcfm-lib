@@ -416,6 +416,9 @@ importers:
       '@storybook/addon-onboarding':
         specifier: ^8.3.6
         version: 8.3.6(react@18.3.1)(storybook@8.3.6)
+      '@storybook/addon-storysource':
+        specifier: ^8.3.6
+        version: 8.3.6(storybook@8.3.6)
       '@storybook/blocks':
         specifier: ^8.3.6
         version: 8.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)
@@ -1852,6 +1855,11 @@ packages:
     peerDependencies:
       storybook: ^8.3.6
 
+  '@storybook/addon-storysource@8.3.6':
+    resolution: {integrity: sha512-L35BJj8vO+jIHSVjCCygoQCHSPt6wiviOLkOMgY1KluslXGHfwHd5am5y9sy4YuFl21SyFPw525/yZj9SLgqpA==}
+    peerDependencies:
+      storybook: ^8.3.6
+
   '@storybook/addon-toolbars@8.3.6':
     resolution: {integrity: sha512-FJH+lRoZXENfpMR/G09ZqB0TmL/k6bv07GN1ysoVs420tKRgjfz6uXaZz5COrhcdISr5mTNmG+mw9x7xXTfX3Q==}
     peerDependencies:
@@ -1964,6 +1972,11 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  '@storybook/source-loader@8.3.6':
+    resolution: {integrity: sha512-czgQVFMsqeXe0pXjbore8X91gUOnpVVIv2dWsgS2UN9sHh+4B/Uevxx6Lz21074aynGO4bNti1BETGelejIM6w==}
+    peerDependencies:
+      storybook: ^8.3.6
 
   '@storybook/test@8.3.6':
     resolution: {integrity: sha512-WIc8LzK9jaEw+e3OiweEM2j3cppPzsWod59swuf6gDBf176EQLIyjtVc+Kh3qO4NNkcL+lwmqaLPjOxlBLaDbg==}
@@ -6350,6 +6363,13 @@ snapshots:
       storybook: 8.3.6
       ts-dedent: 2.2.0
 
+  '@storybook/addon-storysource@8.3.6(storybook@8.3.6)':
+    dependencies:
+      '@storybook/source-loader': 8.3.6(storybook@8.3.6)
+      estraverse: 5.3.0
+      storybook: 8.3.6
+      tiny-invariant: 1.3.3
+
   '@storybook/addon-toolbars@8.3.6(storybook@8.3.6)':
     dependencies:
       storybook: 8.3.6
@@ -6514,6 +6534,14 @@ snapshots:
     optionalDependencies:
       '@storybook/test': 8.3.6(storybook@8.3.6)
       typescript: 5.5.4
+
+  '@storybook/source-loader@8.3.6(storybook@8.3.6)':
+    dependencies:
+      '@storybook/csf': 0.1.11
+      estraverse: 5.3.0
+      lodash: 4.17.21
+      prettier: 3.3.3
+      storybook: 8.3.6
 
   '@storybook/test@8.3.6(storybook@8.3.6)':
     dependencies:

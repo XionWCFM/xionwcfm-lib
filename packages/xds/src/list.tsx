@@ -2,7 +2,6 @@ import { ElementType, ReactNode, forwardRef } from "react";
 import { Box, PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
-import { Pressable } from "./pressable";
 
 export const List = forwardRef(function List<C extends ElementType = "ul">(
   props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
@@ -11,7 +10,7 @@ export const List = forwardRef(function List<C extends ElementType = "ul">(
   const { className, children, ...rest } = props;
   return (
     //@ts-expect-error
-    <Box ref={ref} as={"ul"} className={cn(" break-words flex flex-col gap-y-16", className)} {...rest}>
+    <Box ref={ref} as={"ul"} className={cn(" break-words flex flex-col", className)} {...rest}>
       {children}
     </Box>
   );
@@ -23,13 +22,16 @@ type RowProps = {
   left?: ReactNode;
   right?: ReactNode;
   highlighted?: boolean;
+  noanimation?: boolean;
 };
+
+const isString = (value: unknown): value is string => typeof value === "string";
 
 export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li">(
   props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & RowProps,
   ref: PolymorphicRef<C>,
 ) {
-  const { as, className, children, left, right, highlighted, ...rest } = props;
+  const { as, className, children, left, right, highlighted, noanimation, ...rest } = props;
   return (
     //@ts-expect-error
     <Box
@@ -37,23 +39,37 @@ export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li
       as={"ul"}
       className={cn(
         " flex rounded-sm gap-8 break-words px-16 py-8 w-full justify-between items-center ",
-        " cursor-pointer duration-200  transition-all active:scale-[0.98]",
-        highlighted && " bg-primary-50 bg-opacity-50 hover:bg-primary-100 active:bg-primary-100",
+        " cursor-pointer duration-200  transition-all ",
+        !noanimation && " hover:scale-[1.005] active:scale-[0.98]",
+        highlighted && " bg-primary-50 bg-opacity-50 ",
         !highlighted && " hover:bg-gray-100 active:bg-gray-100",
         className,
       )}
       {...rest}
     >
-      <div>{left}</div>
-      {/* @ts-expect-error */}
-      <Box as={as} className=" h-full flex-grow overflow-hidden flex ">
-        {children}
-      </Box>
-      <div>{right}</div>
+      {isString(left) ? <div>{left}</div> : left}
+      {isString(children) ? <div className=" flex-grow">{children}</div> : children}
+      {isString(right) ? <div>{right}</div> : right}
     </Box>
   );
 }) as <C extends "li" | "button" | "a" = "li">(
   props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & RowProps,
 ) => ReactNode;
 
-export const Text1Row = () => {};
+type Text2RowProps = {
+  top?: ReactNode;
+  bottom?: ReactNode;
+};
+
+export const Text2Row = forwardRef(function Text2Row<C extends "section" | "div" | "button" | "a" = "div">(
+  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & Text2RowProps,
+  ref: PolymorphicRef<C>,
+) {
+  const { className, top, bottom, children, ...rest } = props;
+  return (
+    <Box ref={ref} {...rest} className={cn("flex flex-grow flex-col", className)}>
+      {top}
+      {bottom}
+    </Box>
+  );
+});

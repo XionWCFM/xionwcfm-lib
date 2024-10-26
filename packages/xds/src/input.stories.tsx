@@ -5,8 +5,25 @@ import { Paragraph } from "./paragraph";
 
 const meta: Meta<typeof Input> = {
   title: "Xds/Input",
+  args: {
+    value: "",
+    disabled: false,
+    left: undefined,
+    right: undefined,
+    placeholder: "placeholder",
+    className: "",
+  },
+  argTypes: {
+    value: { control: "text" },
+    placeholder: { control: "text" },
+    className: { control: "text" },
+    disabled: { control: "boolean" },
+    left: { control: "text", description: "Input Props : React.ReactNode" },
+    right: { control: "text", description: "Input Props : React.ReactNode" },
+  },
   component: Input,
   tags: ["autodocs"],
+  render: (props) => <Input {...props} />,
 } satisfies Meta<typeof Input>;
 
 export default meta;
@@ -18,18 +35,4 @@ export const InputStory: Story = {
     placeholder: "placeholder",
     disabled: false,
   },
-  decorators: (Story) => (
-    <div className="flex min-h-screen p-16 flex-col gap-y-16">
-      <Paragraph>Default</Paragraph>
-      <Story />
-      <Paragraph>Left Slot Case</Paragraph>
-      <Input leftSlot={<QuestionMarkCircledIcon />} />
-      <Paragraph>Right Slot Case</Paragraph>
-      <Input rightSlot={<QuestionMarkCircledIcon />} />
-      <Paragraph>Disabled</Paragraph>
-      <Input disabled placeholder="placeholder" />
-      <Paragraph>Disabled With Value</Paragraph>
-      <Input disabled value={"value"} />
-    </div>
-  ),
 };

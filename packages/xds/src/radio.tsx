@@ -9,11 +9,11 @@ import {
   Ref,
   cloneElement,
   forwardRef,
+  useId,
 } from "react";
 import { cn } from "./cn";
 import { createSafeContext } from "./hooks/xds-create-safe-context";
 import { useDraft } from "./hooks/xds-use-draft";
-import { useUniqueId } from "./hooks/xds-use-unique-id";
 
 type RadioVariants = "pale" | "gray" | "primary";
 
@@ -34,7 +34,7 @@ const RadioOption = forwardRef(function RadioOption(
   ref: Ref<HTMLInputElement>,
 ) {
   const { className, children, id: elementId, ...rest } = props;
-  const uniqueId = useUniqueId();
+  const uniqueId = useId();
   const id = elementId ?? uniqueId;
   const variant = useRadio();
   return (

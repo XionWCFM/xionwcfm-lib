@@ -2,14 +2,15 @@ import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
+import { formatClass } from "./internal-utils/format-class";
 import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
 import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
 import { FlexItemsTypeProps, flexItemsVariants } from "./variants/flex-align-variants";
 import { FlexDirectionTypeProps, flexDirectionVariants } from "./variants/flex-direction-variants";
 import { FlexJustifyTypeProps, flexJustifyVariants } from "./variants/flex-justify-variants";
 import { GapTypeProps, gapVariants } from "./variants/gap-variants";
-import { HTypeProps, hVariants } from "./variants/h-variants";
-import { WTypeProps, wVariants } from "./variants/w-variants";
+import { HTypeProps } from "./variants/h-variants";
+import { WTypeProps } from "./variants/w-variants";
 
 type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
   FlexItemsTypeProps &
@@ -33,14 +34,19 @@ export const Stack: StackType = forwardRef(function Stack<C extends ElementType 
     <Box
       as={as}
       ref={ref}
+      px={"4"}
+      py={{
+        initial: "4",
+        xl: "20",
+      }}
       className={cn(
         " flex flex-col",
-        flexItemsVariants(formatResponsiveEnum(items)),
-        flexDirectionVariants(formatResponsiveEnum(direction)),
-        flexJustifyVariants(formatResponsiveEnum(justify)),
-        wVariants(formatResponsiveEnum(w)),
-        hVariants(formatResponsiveEnum(h)),
-        gapVariants(formatResponsiveEnum(gap)),
+        formatClass(items, "items"),
+        formatClass(direction, "flex"),
+        formatClass(justify, "justify"),
+        formatClass(gap, "gap"),
+        formatClass(w, "w"),
+        formatClass(h, "h"),
         className,
       )}
       {...typedRest}

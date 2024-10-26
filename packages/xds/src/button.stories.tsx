@@ -14,6 +14,10 @@ const meta: Meta<typeof Button> = {
   tags: ["autodocs"],
   args: { children: "Primary" },
   argTypes: {
+    as: {
+      control: "select",
+      options: ["button", "a"],
+    },
     variant: {
       control: "select",
       options: options,
@@ -35,7 +39,7 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Buttons: Story = {
-  args: { appName: "Primary", children: "Button" },
+  args: { children: "Button" },
   decorators: [
     (Story) => {
       const [loading, setLoading] = useState(false);
@@ -44,6 +48,14 @@ export const Buttons: Story = {
           <div className=" mb-36">
             <Story />
           </div>
+          <Button
+            as={"a"}
+            w={{
+              xl: "100%",
+            }}
+          >
+            dsa
+          </Button>
           {withOutIcon.map((variant) => (
             <div className=" py-12 gap-y-16 flex flex-wrap flex-col" key={variant}>
               <p className=" text-size-8 font-bold">{`${variant} case`}</p>
