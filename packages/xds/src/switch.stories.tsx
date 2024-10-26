@@ -1,43 +1,59 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Paragraph } from "./paragraph";
-import { Switch } from "./switch";
+import { Meta, StoryFn } from "@storybook/react";
+import * as Switch from "./switch";
 
-const SwitchExample = () => {
-  return (
-    <Switch.Root>
-      <Switch.Thumb />
-    </Switch.Root>
-  );
+export default {
+  title: "Xds/Switch",
+  component: Switch.Root,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "A toggle switch component with customizable states, built with Radix UI Switch Primitives.",
+      },
+    },
+  },
+  argTypes: {
+    checked: {
+      control: { type: "boolean" },
+      description: "Defines whether the switch is checked or not.",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Disables the switch if set to true.",
+    },
+    onCheckedChange: {
+      action: "checkedChanged",
+      description: "Callback function that triggers when the switch state changes.",
+    },
+  },
+} as Meta;
+
+const Template: StoryFn = (args) => (
+  <Switch.Root  {...args}>
+    <Switch.Thumb />
+  </Switch.Root>
+);
+
+export const Default: StoryFn = Template.bind({});
+Default.args = {
+  checked: false,
+  disabled: false,
 };
 
-const meta: Meta<typeof SwitchExample> = {
-  title: "Xds/Switch",
-  component: SwitchExample,
-  tags: ["autodocs"],
-} satisfies Meta<typeof SwitchExample>;
+export const Checked: StoryFn = Template.bind({});
+Checked.args = {
+  checked: true,
+  disabled: false,
+};
 
-export default meta;
+export const Disabled: StoryFn = Template.bind({});
+Disabled.args = {
+  checked: false,
+  disabled: true,
+};
 
-type Story = StoryObj<typeof SwitchExample>;
-
-export const SwitchPrimitive: Story = {
-  args: {},
-  decorators: [
-    () => (
-      <div className=" min-h-screen p-16 flex flex-col">
-        <Paragraph>Example</Paragraph>
-        <SwitchExample />
-
-        <Paragraph>active case</Paragraph>
-        <Switch.Root checked={true}>
-          <Switch.Thumb />
-        </Switch.Root>
-
-        <Paragraph>inactive case</Paragraph>
-        <Switch.Root checked={false}>
-          <Switch.Thumb />
-        </Switch.Root>
-      </div>
-    ),
-  ],
+export const CheckedDisabled: StoryFn = Template.bind({});
+CheckedDisabled.args = {
+  checked: true,
+  disabled: true,
 };

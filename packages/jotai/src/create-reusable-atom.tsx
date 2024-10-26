@@ -1,17 +1,16 @@
 import { Atom, useAtomValue, useSetAtom } from "jotai";
 import { WritableAtom } from "jotai";
 import { atom, useAtom } from "jotai";
-import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useMemo } from "react";
+import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext } from "react";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const createReusableAtom = <T,>(value: T) => {
   type ReturnValue = [Awaited<T>, Dispatch<SetStateAction<Awaited<T>>>];
   const UseAtomContext = createContext<null | Atom<T>>(null);
 
   const Provider = (props: PropsWithChildren<{ value?: T | null }>) => {
-    const refValue = usePreservedReference<any>(props.value ?? value);
-    const memoAtom = useMemo(() => atom<T>(refValue), [refValue]);
+    const [memoAtom] = useState(() => atom<T>(props.value ?? value));
     return <UseAtomContext.Provider value={memoAtom}>{props.children}</UseAtomContext.Provider>;
   };
 
@@ -45,25 +44,3 @@ export const createReusableAtom = <T,>(value: T) => {
     useAtomValue: useAtomValueContext,
   };
 };
-
-// biome-ignore lint/complexity/noBannedTypes: <explanation>
-type NotNullishValue = {};
-
-function usePreservedReference<T extends NotNullishValue>(
-  value: T,
-  areValuesEqual: (a: T, b: T) => boolean = areDeeplyEqual,
-) {
-  const [reference, setReference] = useState<T>(value);
-
-  useEffect(() => {
-    if (!areValuesEqual(value, reference)) {
-      setReference(value);
-    }
-  }, [areValuesEqual, reference, value]);
-
-  return reference;
-}
-
-function areDeeplyEqual<T extends NotNullishValue>(x: T, y: T) {
-  return JSON.stringify(x) === JSON.stringify(y);
-}

@@ -3,9 +3,8 @@ import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
-import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
+import { formatClass } from "./internal-utils/format-class";
 import { Spinner } from "./spinner";
-import { wVariants } from "./variants/w-variants";
 
 export const buttonVariants = cva(
   ` items-center justify-center whitespace-nowrap 
@@ -93,7 +92,7 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
       type={type}
       asChild={asChild}
       ref={ref}
-      className={cn(slotClass, buttonVariants({ variant, size }), wVariants(formatResponsiveEnum(w)), className)}
+      className={cn(slotClass, buttonVariants({ variant, size }), formatClass(w, "w"), className)}
       disabled={disabled || loading}
       aria-label={ariaLabel}
       {...typedRest}

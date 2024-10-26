@@ -2,7 +2,7 @@ import * as SwitchPrimitives from "@radix-ui/react-switch";
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
 import { cn } from "./cn";
 
-const Root = forwardRef<
+export const Root = forwardRef<
   ElementRef<typeof SwitchPrimitives.Root>,
   ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(function SwitchRoot(props, forwardRef) {
@@ -19,7 +19,7 @@ const Root = forwardRef<
   );
 });
 
-const Thumb = forwardRef<
+export const Thumb = forwardRef<
   ElementRef<typeof SwitchPrimitives.Thumb>,
   ComponentPropsWithoutRef<typeof SwitchPrimitives.Thumb>
 >(function SwitchThumb(props, forwardRef) {

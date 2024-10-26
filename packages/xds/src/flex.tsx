@@ -1,12 +1,19 @@
-import type { VariantProps } from "class-variance-authority";
-import { type ElementType, type ReactNode, forwardRef } from "react";
+import { type ElementType, type ReactNode, forwardRef  } from "react";
 import { Box, type PolimophicWithSpacingSystemProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
+import { formatClass } from "./internal-utils/format-class";
 import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
-import { stackVariants } from "./variants/stack-variants";
+import { FlexItemsTypeProps } from "./variants/flex-align-variants";
+import { FlexDirectionTypeProps } from "./variants/flex-direction-variants";
+import { FlexJustifyTypeProps } from "./variants/flex-justify-variants";
+import { GapTypeProps } from "./variants/gap-variants";
 
-type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> & VariantProps<typeof stackVariants>;
+type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
+  FlexDirectionTypeProps &
+  GapTypeProps &
+  FlexJustifyTypeProps &
+  FlexItemsTypeProps;
 
 type FlexType = <C extends ElementType = SemanticHTMLContentSectionType>(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
@@ -15,20 +22,29 @@ export const Flex: FlexType = forwardRef(function Flex<C extends ElementType = "
   props: Props<C>,
   ref?: PolymorphicRef<C>,
 ) {
-  const { children, direction, gap, w, h, justify, items: align, className, as, ...rest } = props;
+  const { children, direction, gap, w, h, justify, items, className, as, ...rest } = props;
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
   return (
     <Box
       as={as}
       ref={ref}
       className={cn(
-        " flex",
-        stackVariants({ direction: direction ?? "row", gap, w, h, justify, items: align }),
+        "flex",
+        formatClass(direction, "flex"),
+        formatClass(gap, "gap"),
+        formatClass(justify, "justify"),
+        formatClass(items, "items"),
         className,
       )}
+      w={w}
+      h={h}
       {...typedRest}
     >
       {children}
     </Box>
   );
 });
+
+const Hi = () => {
+  return <Flex direction={"column"}></Flex>;
+};
