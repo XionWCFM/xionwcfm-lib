@@ -49,10 +49,12 @@ import useThrottleValue from "./use-throttle-value";
 import { useToggleState } from "./use-toggle-state";
 import { useWindowEvent } from "./use-window-event";
 import { useWindowScroll } from "./use-window-scroll";
+import { When } from "./when";
 
 export {
   Deferred,
   Iterator,
+  When,
   createNavigate,
   usePreservedReference,
   useDocumentTitle,

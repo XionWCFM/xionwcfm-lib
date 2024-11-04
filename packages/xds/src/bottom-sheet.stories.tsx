@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { BottomSheet } from "./bottom-sheet";
 import { Button } from "./button";
 import { Input } from "./input";
+import { Paragraph } from "./paragraph";
 import { Scrollable } from "./scrollable";
+import { Stack } from "./stack";
 
 const meta: Meta = {
   title: "Xds/BottomSheet",
@@ -55,4 +57,29 @@ export const ScrollableBottomhSheet: Story = {
       </div>
     ),
   ],
+};
+
+export const ImageBottomSheet: Story = {
+  render: () => {
+    return (
+      <div>
+        <BottomSheet.Root>
+          <BottomSheet.Trigger asChild>
+            <Button variant={"emphasis"} size={"md"}>
+              Image BottomhSheet Trigger
+            </Button>
+          </BottomSheet.Trigger>
+          <BottomSheet.Portal>
+            <BottomSheet.Overlay />
+            <BottomSheet.Content
+              className=" bg-cover bg-center"
+              style={{ backgroundImage: "url(https://picsum.photos/200/300)" }}
+              title="sr-only title"
+              description="sr-only description"
+            ></BottomSheet.Content>
+          </BottomSheet.Portal>
+        </BottomSheet.Root>
+      </div>
+    );
+  },
 };

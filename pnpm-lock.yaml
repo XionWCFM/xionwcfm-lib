@@ -453,8 +453,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/tailwind
       '@xionwcfm/token':
-        specifier: ^0.0.8
-        version: 0.0.8
+        specifier: workspace:*
+        version: link:../token
       '@xionwcfm/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript
@@ -2252,9 +2252,6 @@ packages:
 
   '@xionwcfm/token@0.0.6':
     resolution: {integrity: sha512-t0GHKPaxQ24CEdPrcebCDUGVJRf+zUkl55+AXClTaSYCdDAGw7OU4+4L05uqw5W+GJYUsgzJUUeMW4efdkFvzQ==}
-
-  '@xionwcfm/token@0.0.8':
-    resolution: {integrity: sha512-KEaO19J0gDZCfZEBVhsnKPQnVWiMBV2xvSkqVmg5J7togb972kRsLnlco7gDYL+jES3VS3W0VjARwAOWMq1rJA==}
 
   '@xionwcfm/utils@0.0.2':
     resolution: {integrity: sha512-LiIzh4CQQwg3aq5QYUOc0r5Jvuwp+1yfMiMMoXM0wopOypIQtkbmIKGPuuc115iyEFdiw+VyEqygkAq3is/kRA==}
@@ -6913,8 +6910,6 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@xionwcfm/token@0.0.6': {}
-
-  '@xionwcfm/token@0.0.8': {}
 
   '@xionwcfm/utils@0.0.2': {}
 

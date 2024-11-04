@@ -1,6 +1,6 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
-import { Box, type PolimophicWithSpacingSystemProps } from "./box";
+import { Box, type BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { formatResponsiveEnum } from "./internal-utils/responsive-enum";
@@ -127,8 +127,7 @@ const paragraphVariants = cva(" whitespace-pre-wrap", {
 
 type ParagraphVariantType = Omit<VariantProps<typeof paragraphVariants>, "responsive">;
 
-type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
-  ParagraphVariantType & { responsive?: boolean } & TextSizeTypeProps;
+type Props<C extends ElementType> = BoxProps<C> & ParagraphVariantType & { responsive?: boolean } & TextSizeTypeProps;
 
 type ParagraphType = <C extends ElementType = SemanticHTMLTextContentType>(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
@@ -139,7 +138,7 @@ export const Paragraph: ParagraphType = forwardRef(function Paragraph<C extends 
   ref?: PolymorphicRef<C>,
 ) {
   const { overflow, size, color, leading, weight, responsive, className, children, as, ...rest } = props;
-  const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
+  const typedRest = rest as PolymorphicComponentPropsWithRef<C, BoxProps<C>>;
   const sizeVariant = formatResponsiveEnum(size);
   return (
     <Box

@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/jotai",
-  "version": "0.0.11",
+  "version": "0.1.5",
   "license": "MIT",
   "scripts": {
     "build": "tsup",
@@ -25,7 +25,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^16.0.0",

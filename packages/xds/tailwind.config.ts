@@ -1,5 +1,5 @@
 import baseConfig from "@xionwcfm/tailwindcss-config/base";
-import { XION_STYLE as vars } from "@xionwcfm/token";
+import { vars } from "@xionwcfm/token";
 import type { Config } from "tailwindcss";
 const config: Config = {
   ...baseConfig,

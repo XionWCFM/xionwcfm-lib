@@ -1,11 +1,38 @@
-const colors = Object.freeze({
+export const colors = Object.freeze({
   inherit: "inherit",
   current: "currentColor",
   transparent: "tranparent",
 
-  white: { DEFAULT: "var(--white)" },
-  black: { DEFAULT: "var(--black)" },
-
+  white: {
+    DEFAULT: "var(--white)",
+    "50": "var(--white-50)",
+    "100": "var(--white-100)",
+    "150": "var(--white-150)",
+    "200": "var(--white-200)",
+    "300": "var(--white-300)",
+    "400": "var(--white-400)",
+    "500": "var(--white-500)",
+    "600": "var(--white-600)",
+    "700": "var(--white-700)",
+    "800": "var(--white-800)",
+    "900": "var(--white-900)",
+    "950": "var(--white-950)",
+  },
+  black: {
+    DEFAULT: "var(--black)",
+    "50": "var(--black-50)",
+    "100": "var(--black-100)",
+    "150": "var(--black-150)",
+    "200": "var(--black-200)",
+    "300": "var(--black-300)",
+    "400": "var(--black-400)",
+    "500": "var(--black-500)",
+    "600": "var(--black-600)",
+    "700": "var(--black-700)",
+    "800": "var(--black-800)",
+    "900": "var(--black-900)",
+    "950": "var(--black-950)",
+  },
   neutral: {
     "50": "var(--neutral-50)",
     "100": "var(--neutral-100)",
@@ -91,7 +118,7 @@ const colors = Object.freeze({
   },
 });
 
-const borderRadius = Object.freeze({
+export const borderRadius = Object.freeze({
   xs: "var(--radius-xs)",
   sm: "var(--radius-sm)",
   md: "var(--radius-md)",
@@ -100,7 +127,7 @@ const borderRadius = Object.freeze({
   full: "var(--radius-full)",
 });
 
-const spacing = Object.freeze({
+export const spacing = Object.freeze({
   "0": "var(--spacing-0)",
   "2": "var(--spacing-2)",
   "4": "var(--spacing-4)",
@@ -132,7 +159,7 @@ const spacing = Object.freeze({
   full: "var(--spacing-full)",
 });
 
-const fontSize = Object.freeze({
+export const fontSize = Object.freeze({
   "size-12": "calc(var(--font-size) * 3.75)",
   "size-11": "calc(var(--font-size) * 3)",
   "size-10": "calc(var(--font-size) * 2.25)",
@@ -147,7 +174,7 @@ const fontSize = Object.freeze({
   "size-1": "calc(var(--font-size) * 0.5)",
 });
 
-const fontWeight = Object.freeze({
+export const fontWeight = Object.freeze({
   bold: "var(--font-weight-bold)",
   "semi-bold": "var(--font-weight-semi-bold)",
   medium: "var(--font-weight-medium)",
@@ -156,7 +183,7 @@ const fontWeight = Object.freeze({
   thin: "var(--font-weight-thin)",
 });
 
-const lineHeight = Object.freeze({
+export const lineHeight = Object.freeze({
   denser: "var(--line-height-denser)",
   tight: "var(--line-height-tight)",
   normal: "var(--line-height-normal)",
@@ -164,14 +191,14 @@ const lineHeight = Object.freeze({
   looser: "var(--line-height-looser)",
 });
 
-const boxShadow = Object.freeze({
+export const boxShadow = Object.freeze({
   xs: "var(--box-shadow-xs)",
   sm: "var(--box-shadow-sm)",
   md: "var(--box-shadow-md)",
   lg: "var(--box-shadow-lg)",
 });
 
-const keyframes = Object.freeze({
+export const keyframes = Object.freeze({
   fadeIn: {
     "0%": { opacity: "0" },
     "100%": { opacity: "1" },
@@ -182,7 +209,7 @@ const keyframes = Object.freeze({
   },
 });
 
-const animation = Object.freeze({
+export const animation = Object.freeze({
   "fadIn-0.5s": "fadeIn 0.5s ease-in-out",
   "fadIn-1s": "fadeIn 1s ease-in-out",
   "fadIn-2s": "fadeIn 1s ease-in-out",
@@ -197,7 +224,7 @@ const animation = Object.freeze({
   "fadOut-5s": "fadeOut 5s ease-in-out",
 });
 
-const screens = Object.freeze({
+export const screens = Object.freeze({
   xs: "450px",
   sm: "640px",
   md: "768px",
@@ -205,11 +232,53 @@ const screens = Object.freeze({
   xl: "1280px",
 });
 
+export const opacity = Object.freeze({
+  "0": "var(--opacity-0)",
+  "5": "var(--opacity-5)",
+  "10": "var(--opacity-10)",
+  "15": "var(--opacity-15)",
+  "20": "var(--opacity-20)",
+  "25": "var(--opacity-25)",
+  "30": "var(--opacity-30)",
+  "35": "var(--opacity-35)",
+  "40": "var(--opacity-40)",
+  "45": "var(--opacity-45)",
+  "50": "var(--opacity-50)",
+  "55": "var(--opacity-55)",
+  "60": "var(--opacity-60)",
+  "65": "var(--opacity-65)",
+  "70": "var(--opacity-70)",
+  "75": "var(--opacity-75)",
+  "80": "var(--opacity-80)",
+  "85": "var(--opacity-85)",
+  "90": "var(--opacity-90)",
+  "95": "var(--opacity-95)",
+  "100": "var(--opacity-100)",
+});
+
+export const $semanticColors = Object.freeze({})
+
+export const $semanticOpacity = Object.freeze({})
+
+export const $semanticBorderRadius = Object.freeze({})
+
+export const $semanticPadding = Object.freeze({})
+
+export const $semanticMargin = Object.freeze({})
+
+export const $semanticFontSize = Object.freeze({})
+
+export const $semanticGap = Object.freeze({})
+
+
 export const XION_STYLE = Object.freeze({
-  colors,
-  borderRadius,
-  spacing,
-  fontSize,
+  colors:{...colors , ...$semanticColors},
+  opacity: { ...opacity, ...$semanticOpacity },
+  borderRadius: { ...borderRadius, ...$semanticBorderRadius },
+  spacing: { ...spacing, ...$semanticPadding },
+  margin: { ...spacing, ...$semanticMargin },
+  fontSize: { ...fontSize, ...$semanticFontSize },
+  gap: { ...spacing, ...$semanticGap },
   fontWeight,
   lineHeight,
   boxShadow,

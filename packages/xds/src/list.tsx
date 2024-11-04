@@ -1,10 +1,10 @@
 import { ElementType, ReactNode, forwardRef } from "react";
-import { Box, PolimophicWithSpacingSystemProps } from "./box";
+import { Box, BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 
 export const List = forwardRef(function List<C extends ElementType = "ul">(
-  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
+  props: PolymorphicComponentPropsWithRef<C, BoxProps<C>>,
   ref: PolymorphicRef<C>,
 ) {
   const { className, children, ...rest } = props;
@@ -14,9 +14,7 @@ export const List = forwardRef(function List<C extends ElementType = "ul">(
       {children}
     </Box>
   );
-}) as <C extends ElementType = "ul">(
-  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
-) => ReactNode;
+}) as <C extends ElementType = "ul">(props: PolymorphicComponentPropsWithRef<C, BoxProps<C>>) => ReactNode;
 
 type RowProps = {
   left?: ReactNode;
@@ -28,7 +26,7 @@ type RowProps = {
 const isString = (value: unknown): value is string => typeof value === "string";
 
 export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li">(
-  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & RowProps,
+  props: PolymorphicComponentPropsWithRef<C, BoxProps<C>> & RowProps,
   ref: PolymorphicRef<C>,
 ) {
   const { as, className, children, left, right, highlighted, noanimation, ...rest } = props;
@@ -53,7 +51,7 @@ export const Row = forwardRef(function Row<C extends "li" | "button" | "a" = "li
     </Box>
   );
 }) as <C extends "li" | "button" | "a" = "li">(
-  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & RowProps,
+  props: PolymorphicComponentPropsWithRef<C, BoxProps<C>> & RowProps,
 ) => ReactNode;
 
 type Text2RowProps = {
@@ -62,7 +60,7 @@ type Text2RowProps = {
 };
 
 export const Text2Row = forwardRef(function Text2Row<C extends "section" | "div" | "button" | "a" = "div">(
-  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>> & Text2RowProps,
+  props: PolymorphicComponentPropsWithRef<C, BoxProps<C>> & Text2RowProps,
   ref: PolymorphicRef<C>,
 ) {
   const { className, top, bottom, children, ...rest } = props;

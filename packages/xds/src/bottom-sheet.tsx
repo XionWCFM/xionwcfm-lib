@@ -59,12 +59,12 @@ export const Content = forwardRef<
     title?: string;
     description?: string;
   }
->(({ className, handle, children, title, description, ...props }, ref) => (
+>(({ className, handle, children, title, description, style, ...props }, ref) => (
   <FixedLayout x={"spacing-16"} b={"spacing-16"}>
     <DrawerPrimitive.Content ref={ref} {...props}>
       {title && <DrawerPrimitive.Title className=" sr-only">{title}</DrawerPrimitive.Title>}
       {description && <DrawerPrimitive.Description className=" sr-only">{description}</DrawerPrimitive.Description>}
-      <div className={cn(" rounded-xl border bg-white min-h-[40vh] max-h-[500px] ")}>
+      <div className={cn(" relative rounded-xl w-full h-full border bg-white min-h-[40vh]  ", className)} style={style}>
         {handle}
         <div className=" px-16 py-16">{children}</div>
       </div>

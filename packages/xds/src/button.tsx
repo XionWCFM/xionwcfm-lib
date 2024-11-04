@@ -1,6 +1,6 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
-import { Box, type PolimophicWithSpacingSystemProps } from "./box";
+import { Box, type BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { formatClass } from "./internal-utils/format-class";
@@ -58,9 +58,7 @@ type ButtonOptionProps = {
   loading?: boolean;
 };
 
-type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
-  VariantProps<typeof buttonVariants> &
-  ButtonOptionProps;
+type Props<C extends ElementType> = BoxProps<C> & VariantProps<typeof buttonVariants> & ButtonOptionProps;
 
 export const Button = forwardRef(function Button<C extends ElementType = "button">(
   props: Props<C>,
@@ -81,7 +79,7 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
     w,
     ...rest
   } = props;
-  const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
+  const typedRest = rest as PolymorphicComponentPropsWithRef<C, BoxProps<C>>;
   const slotClass = !!startIcon || !!endIcon ? "flex items-center justify-center gap-x-4" : "";
   const ComponentAs = as || "button";
   const ariaLabel = props["aria-label"] ?? loading ? "loading progress" : "button";
