@@ -82,4 +82,4 @@ export const Box = forwardRef(function Box<C extends ElementType = "div">(
       {children}
     </SlottableComponent>
   );
-}) as <C extends ElementType = ElementType>(props: PolymorphicComponentPropsWithRef<C, BoxProps<C>>) => ReactNode;
+}) as <C extends ElementType = ElementType>(props: BoxProps<C>) => ReactNode | null;

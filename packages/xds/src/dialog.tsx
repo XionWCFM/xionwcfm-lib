@@ -21,7 +21,7 @@ export const Overlay = forwardRef<
           `
         data-[state=open]:animate-in data-[state=open]:fade-in-0
         data-[state=closed]:animate-out data-[state=closed]:fade-out-0  
-        z-30 fixed   inset-0 backdrop-blur  bg-[rgba(0,0,0,0.4)]
+        fixed inset-0 backdrop-blur  bg-[rgba(0,0,0,0.4)]
         `,
         className,
       )}

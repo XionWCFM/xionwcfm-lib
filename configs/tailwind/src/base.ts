@@ -76,7 +76,7 @@ const config: Config = {
   safelist: [
     {
       pattern:
-        /(gap|gap-x|gap-y|p|py|px|pl|pr|pt|pb|m|mt|mb|ml|mr|mx|my|w|h|min-w|min-h|max-w|max-h)-(0|2|4|6|8|12|16|20|24|28|32|36|40|44|48|64|76|88|100|128|256|384|512|768|1024|1440|1\/3|half|full)/,
+        /(gap|gap-x|gap-y|p|py|px|pl|pr|pt|pb|m|mt|mb|ml|mr|mx|my|w|h|min-w|min-h|max-w|max-h)-(0|2|4|6|8|12|16|20|24|28|32|36|40|44|48|64|76|88|100|128|256|384|512|768|1024|1440|1\/3|2\/3|2\/4|3\/4|half|full|100%)/,
       variants: ["xs", "md", "xl"],
     },
     {

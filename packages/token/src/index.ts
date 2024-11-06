@@ -5,33 +5,37 @@ export const colors = Object.freeze({
 
   white: {
     DEFAULT: "var(--white)",
-    "50": "var(--white-50)",
-    "100": "var(--white-100)",
-    "150": "var(--white-150)",
-    "200": "var(--white-200)",
-    "300": "var(--white-300)",
-    "400": "var(--white-400)",
-    "500": "var(--white-500)",
-    "600": "var(--white-600)",
-    "700": "var(--white-700)",
-    "800": "var(--white-800)",
-    "900": "var(--white-900)",
-    "950": "var(--white-950)",
+  },
+  "white-alpha": {
+    "50": "var(--white-alpha-50)",
+    "100": "var(--white-alpha-100)",
+    "150": "var(--white-alpha-150)",
+    "200": "var(--white-alpha-200)",
+    "300": "var(--white-alpha-300)",
+    "400": "var(--white-alpha-400)",
+    "500": "var(--white-alpha-500)",
+    "600": "var(--white-alpha-600)",
+    "700": "var(--white-alpha-700)",
+    "800": "var(--white-alpha-800)",
+    "900": "var(--white-alpha-900)",
+    "950": "var(--white-alpha-950)",
   },
   black: {
     DEFAULT: "var(--black)",
-    "50": "var(--black-50)",
-    "100": "var(--black-100)",
-    "150": "var(--black-150)",
-    "200": "var(--black-200)",
-    "300": "var(--black-300)",
-    "400": "var(--black-400)",
-    "500": "var(--black-500)",
-    "600": "var(--black-600)",
-    "700": "var(--black-700)",
-    "800": "var(--black-800)",
-    "900": "var(--black-900)",
-    "950": "var(--black-950)",
+  },
+  "black-alpha": {
+    "50": "var(--black-alpha-50)",
+    "100": "var(--black-alpha-100)",
+    "150": "var(--black-alpha-150)",
+    "200": "var(--black-alpha-200)",
+    "300": "var(--black-alpha-300)",
+    "400": "var(--black-alpha-400)",
+    "500": "var(--black-alpha-500)",
+    "600": "var(--black-alpha-600)",
+    "700": "var(--black-alpha-700)",
+    "800": "var(--black-alpha-800)",
+    "900": "var(--black-alpha-900)",
+    "950": "var(--black-alpha-950)",
   },
   neutral: {
     "50": "var(--neutral-50)",
@@ -154,7 +158,11 @@ export const spacing = Object.freeze({
   "768": "var(--spacing-768)",
   "1024": "var(--spacing-1024)",
   "1440": "var(--spacing-1440)",
-  "1/3": "var(--spacing-1-3)",
+  "1/3": "33.3%",
+  "2/3": "66.6%",
+  "1/4": "25%",
+  "3/4": "75%",
+  "100%": "100%",
   half: "var(--spacing-half)",
   full: "var(--spacing-full)",
 });
@@ -256,23 +264,25 @@ export const opacity = Object.freeze({
   "100": "var(--opacity-100)",
 });
 
-export const $semanticColors = Object.freeze({})
+export const $semanticColors = Object.freeze({
+  "overlay-dim": "var(--overlay-dim)",
+  "overlay-low": "var(--overlay-low)",
+});
 
-export const $semanticOpacity = Object.freeze({})
+export const $semanticOpacity = Object.freeze({});
 
-export const $semanticBorderRadius = Object.freeze({})
+export const $semanticBorderRadius = Object.freeze({});
 
-export const $semanticPadding = Object.freeze({})
+export const $semanticPadding = Object.freeze({});
 
-export const $semanticMargin = Object.freeze({})
+export const $semanticMargin = Object.freeze({});
 
-export const $semanticFontSize = Object.freeze({})
+export const $semanticFontSize = Object.freeze({});
 
-export const $semanticGap = Object.freeze({})
-
+export const $semanticGap = Object.freeze({});
 
 export const XION_STYLE = Object.freeze({
-  colors:{...colors , ...$semanticColors},
+  colors: { ...colors, ...$semanticColors },
   opacity: { ...opacity, ...$semanticOpacity },
   borderRadius: { ...borderRadius, ...$semanticBorderRadius },
   spacing: { ...spacing, ...$semanticPadding },

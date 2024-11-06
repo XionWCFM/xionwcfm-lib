@@ -72,11 +72,13 @@ export const ImageBottomSheet: Story = {
           <BottomSheet.Portal>
             <BottomSheet.Overlay />
             <BottomSheet.Content
-              className=" bg-cover bg-center"
+              className=" bg-cover bg-center min-h-[40vh]"
               style={{ backgroundImage: "url(https://picsum.photos/200/300)" }}
               title="sr-only title"
               description="sr-only description"
-            ></BottomSheet.Content>
+            >
+              <Stack className=" inset-0 bg-white-50">dsasa</Stack>
+            </BottomSheet.Content>
           </BottomSheet.Portal>
         </BottomSheet.Root>
       </div>

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { ReactNode } from "react";
 import { Button } from "./button";
 import * as DialogPrimitives from "./dialog";
 
@@ -43,12 +44,40 @@ export const DialogPrimitive: Story = {
           </DialogPrimitives.Trigger>
           <DialogPrimitives.Portal>
             <DialogPrimitives.Overlay />
-            <DialogPrimitives.Content className=" w-[300px] h-[300px] bg-white rounded-md">
-              hello
-            </DialogPrimitives.Content>
+            <DialogPrimitives.Content className=" w-[300px] h-[300px] bg-white rounded-md"></DialogPrimitives.Content>
           </DialogPrimitives.Portal>
         </DialogPrimitives.Root>
       </div>
     ),
   ],
+};
+
+const NestedDialogExample = ({ children }: { children?: ReactNode }) => {
+  return (
+    <DialogPrimitives.Root>
+      <DialogPrimitives.Trigger>
+        <Button variant={"emphasis"} size={"md"}>
+          열어보기
+        </Button>
+      </DialogPrimitives.Trigger>
+      <DialogPrimitives.Portal>
+        <DialogPrimitives.Overlay />
+        <DialogPrimitives.Content className=" w-[300px] h-[300px] bg-white rounded-md">
+          {children}
+        </DialogPrimitives.Content>
+      </DialogPrimitives.Portal>
+    </DialogPrimitives.Root>
+  );
+};
+
+export const NestiedDialog: Story = {
+  render: () => {
+    return (
+      <NestedDialogExample>
+        <NestedDialogExample>
+          <NestedDialogExample />
+        </NestedDialogExample>
+      </NestedDialogExample>
+    );
+  },
 };

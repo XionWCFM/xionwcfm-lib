@@ -41,6 +41,26 @@
         "default": "./dist/accordion.js"
       }
     },
+    "./justify-between": {
+      "import": {
+        "types": "./dist/justify-between.d.mts",
+        "default": "./dist/justify-between.mjs"
+      },
+      "require": {
+        "types": "./dist/justify-between.d.ts",
+        "default": "./dist/justify-between.js"
+      }
+    },
+    "./justify-end": {
+      "import": {
+        "types": "./dist/justify-end.d.mts",
+        "default": "./dist/justify-end.mjs"
+      },
+      "require": {
+        "types": "./dist/justify-end.d.ts",
+        "default": "./dist/justify-end.js"
+      }
+    },
     "./alert-dialog": {
       "import": {
         "types": "./dist/alert-dialog.d.mts",
@@ -452,9 +472,7 @@
       }
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss -i ./style.css -o dist/style.css --minify --postcss",
@@ -542,8 +560,6 @@
     "react-dom": ">=18"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "extends": ["plugin:storybook/recommended"]
   }
 }

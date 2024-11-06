@@ -8,6 +8,7 @@ import {
 import { Drawer as DrawerPrimitive } from "vaul";
 import { cn } from "./cn";
 
+
 const Root = ({ shouldScaleBackground = true, ...props }: ComponentProps<typeof DrawerPrimitive.Root>) => (
   <DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} {...props} />
 );

@@ -25,32 +25,33 @@
   --opacity-95: 0.95;
   --opacity-100: 1;
 
-  --black-50: rgba(0, 0, 0, 0.05);
-  --black-100: rgba(0, 0, 0, 0.1);
-  --black-150: rgba(0, 0, 0, 0.15);
-  --black-200: rgba(0, 0, 0, 0.2);
-  --black-300: rgba(0, 0, 0, 0.3);
-  --black-400: rgba(0, 0, 0, 0.4);
-  --black-500: rgba(0, 0, 0, 0.5);
-  --black-600: rgba(0, 0, 0, 0.6);
-  --black-700: rgba(0, 0, 0, 0.7);
-  --black-800: rgba(0, 0, 0, 0.8);
-  --black-900: rgba(0, 0, 0, 0.9);
-  --black-950: rgba(0, 0, 0, 0.95);
+  --black-alpha-50: rgba(0, 0, 0, 0.05);
+  --black-alpha-100: rgba(0, 0, 0, 0.1);
+  --black-alpha-150: rgba(0, 0, 0, 0.15);
+  --black-alpha-200: rgba(0, 0, 0, 0.2);
+  --black-alpha-300: rgba(0, 0, 0, 0.3);
+  --black-alpha-400: rgba(0, 0, 0, 0.4);
+  --black-alpha-500: rgba(0, 0, 0, 0.5);
+  --black-alpha-600: rgba(0, 0, 0, 0.6);
+  --black-alpha-700: rgba(0, 0, 0, 0.7);
+  --black-alpha-800: rgba(0, 0, 0, 0.8);
+  --black-alpha-900: rgba(0, 0, 0, 0.9);
+  --black-alpha-950: rgba(0, 0, 0, 0.95);
 
-  --white-50: rgba(255, 255, 255, 0.05);
-  --white-100: rgba(255, 255, 255, 0.1);
-  --white-150: rgba(255, 255, 255, 0.15);
-  --white-200: rgba(255, 255, 255, 0.2);
-  --white-300: rgba(255, 255, 255, 0.3);
-  --white-400: rgba(255, 255, 255, 0.4);
-  --white-500: rgba(255, 255, 255, 0.5);
-  --white-600: rgba(255, 255, 255, 0.6);
-  --white-700: rgba(255, 255, 255, 0.7);
-  --white-800: rgba(255, 255, 255, 0.8);
-  --white-900: rgba(255, 255, 255, 0.9);
-  --white-950: rgba(255, 255, 255, 0.95);
+  --white-alpha-50: rgba(255, 255, 255, 0.05);
+  --white-alpha-100: rgba(255, 255, 255, 0.1);
+  --white-alpha-150: rgba(255, 255, 255, 0.15);
+  --white-alpha-200: rgba(255, 255, 255, 0.2);
+  --white-alpha-300: rgba(255, 255, 255, 0.3);
+  --white-alpha-400: rgba(255, 255, 255, 0.4);
+  --white-alpha-500: rgba(255, 255, 255, 0.5);
+  --white-alpha-600: rgba(255, 255, 255, 0.6);
+  --white-alpha-700: rgba(255, 255, 255, 0.7);
+  --white-alpha-800: rgba(255, 255, 255, 0.8);
+  --white-alpha-900: rgba(255, 255, 255, 0.9);
+  --white-alpha-950: rgba(255, 255, 255, 0.95);
 
+  --neutral-0: #ffffff;
   --neutral-50: #fafafa;
   --neutral-100: #f4f4f5;
   --neutral-200: #e4e4e7;
@@ -63,6 +64,7 @@
   --neutral-900: #18181b;
   --neutral-950: #09090b;
 
+  --gray-0: #ffffff;
   --gray-50: #f5f5f5;
   --gray-100: #efefef;
   --gray-200: #dcdcdc;
@@ -98,6 +100,18 @@
   --primary-800: #2537a8;
   --primary-900: #233485;
   --primary-950: #1a2251;
+
+  --primary-alpha-50: rgba(240, 245, 254, 0.05);
+  --primary-alpha-100: rgba(221, 231, 252, 0.1);
+  --primary-alpha-200: rgba(194, 214, 251, 0.15);
+  --primary-alpha-300: rgba(152, 188, 248, 0.2);
+  --primary-alpha-400: rgba(104, 153, 242, 0.3);
+  --primary-alpha-500: rgba(68, 116, 237, 0.4);
+  --primary-alpha-600: rgba(40, 80, 224, 0.5);
+  --primary-alpha-700: rgba(38, 66, 207, 0.6);
+  --primary-alpha-800: rgba(37, 55, 168, 0.7);
+  --primary-alpha-900: rgba(35, 52, 133, 0.8);
+  --primary-alpha-950: rgba(26, 34, 81, 0.95);
 
   --warning-50: #fffbeb;
   --warning-100: #fef3c7;
@@ -184,6 +198,7 @@
 }
 
 .dark {
+  --neutral-0: #141414;
   --neutral-50: #1a1a1a;
   --neutral-100: #2b2b2b;
   --neutral-200: #3c3c3c;
@@ -195,6 +210,7 @@
   --neutral-800: #d0d0d0;
   --neutral-900: #eaeaea;
 
+  --gray-0: #181818;
   --gray-50: #1e1e1e;
   --gray-100: #333333;
   --gray-200: #4a4a4a;
@@ -296,6 +312,18 @@
     --primary-700: #9de1ff;
     --primary-800: #cdeeff;
     --primary-900: #eaffff;
+
+    --primary-dark-alpha-50: rgba(10, 46, 87, 0.05);
+    --primary-dark-alpha-100: rgba(12, 63, 120, 0.1);
+    --primary-dark-alpha-200: rgba(16, 83, 155, 0.15);
+    --primary-dark-alpha-300: rgba(19, 107, 189, 0.2);
+    --primary-dark-alpha-400: rgba(21, 133, 225, 0.3);
+    --primary-dark-alpha-500: rgba(58, 167, 246, 0.4);
+    --primary-dark-alpha-600: rgba(109, 196, 255, 0.5);
+    --primary-dark-alpha-700: rgba(157, 225, 255, 0.6);
+    --primary-dark-alpha-800: rgba(205, 238, 255, 0.7);
+    --primary-dark-alpha-900: rgba(234, 255, 255, 0.8);
+    --primary-dark-alpha-950: rgba(234, 255, 255, 0.95);
 
     --warning-50: #3b2903;
     --warning-100: #5c3b05;

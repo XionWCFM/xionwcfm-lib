@@ -64,7 +64,7 @@ export const Content = forwardRef<
     <DrawerPrimitive.Content ref={ref} {...props}>
       {title && <DrawerPrimitive.Title className=" sr-only">{title}</DrawerPrimitive.Title>}
       {description && <DrawerPrimitive.Description className=" sr-only">{description}</DrawerPrimitive.Description>}
-      <div className={cn(" relative rounded-xl w-full h-full border bg-white min-h-[40vh]  ", className)} style={style}>
+      <div className={cn(" relative rounded-xl w-full h-full border bg-white ", className)} style={style}>
         {handle}
         <div className=" px-16 py-16">{children}</div>
       </div>
