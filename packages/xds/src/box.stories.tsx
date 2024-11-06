@@ -7,12 +7,24 @@ const meta: Meta = {
   parameters: {
     docs: {
       description: {
-        component: `
-Box는 레이아웃을 구성하는 기본 컴포넌트입니다.
-`,
+        component: "Box는 레이아웃을 구성하는 기본 컴포넌트입니다.",
       },
     },
   },
+  argTypes: {
+    as: {
+      description: '렌더링할 HTML 요소나 컴포넌트',
+      type: { name: 'string' }
+    },
+    asChild: {
+      description: '자식 요소를 슬롯으로 사용할지 여부',
+      type: { name: 'boolean' }
+    },
+    className: {
+      description: '추가 스타일링을 위한 클래스',
+      type: { name: 'string' }
+    }
+  }
 } satisfies Meta;
 
 export default meta;
@@ -96,6 +108,98 @@ export const DimensionsBox: Story = {
       </Box>
       <Box h="32" className=" bg-warning-200">
         Min width box
+      </Box>
+    </Box>
+  ),
+};
+
+export const FlexLayoutBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Flex 레이아웃을 구현하는 Box입니다. 복잡한 레이아웃 구성에 활용됩니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="space-y-4">
+      <Box className="flex gap-4">
+        <Box className="flex-1 bg-blue-100 p-16">Flex 1</Box>
+        <Box className="flex-1 bg-green-100 p-16">Flex 1</Box>
+        <Box className="flex-2 bg-red-100 p-16">Flex 2</Box>
+      </Box>
+      <Box className="flex justify-between">
+        <Box className="bg-blue-100 p-16">Left</Box>
+        <Box className="bg-green-100 p-16">Right</Box>
+      </Box>
+    </Box>
+  ),
+};
+
+export const GridLayoutBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Grid 레이아웃을 구현하는 Box입니다. 그리드 시스템이 필요한 경우에 사용됩니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="grid grid-cols-3 gap-4">
+      <Box className="bg-blue-100 p-16">Grid Item 1</Box>
+      <Box className="bg-green-100 p-16">Grid Item 2</Box>
+      <Box className="bg-red-100 p-16">Grid Item 3</Box>
+      <Box className="bg-yellow-100 p-16">Grid Item 4</Box>
+      <Box className="bg-purple-100 p-16">Grid Item 5</Box>
+      <Box className="bg-pink-100 p-16">Grid Item 6</Box>
+    </Box>
+  ),
+};
+
+export const ResponsiveBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "반응형 레이아웃을 구현하는 Box입니다. 화면 크기에 따라 다른 스타일을 적용할 수 있습니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="space-y-4">
+      <Box className="bg-blue-100 p-4 sm:p-8 md:p-16 lg:p-24">
+        Responsive Padding
+      </Box>
+      <Box className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <Box className="bg-green-100 p-16">Item 1</Box>
+        <Box className="bg-green-100 p-16">Item 2</Box>
+        <Box className="bg-green-100 p-16">Item 3</Box>
+        <Box className="bg-green-100 p-16">Item 4</Box>
+      </Box>
+    </Box>
+  ),
+};
+
+export const CardBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "카드 형태의 Box입니다. 콘텐츠를 카드 형태로 표시할 때 사용됩니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Box className="p-16 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+        <Box className="text-lg font-semibold mb-2">Card Title</Box>
+        <Box className="text-gray-600">Card content goes here</Box>
+      </Box>
+      <Box className="p-16 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+        <Box className="text-lg font-semibold mb-2">Card Title</Box>
+        <Box className="text-gray-600">Card content goes here</Box>
+      </Box>
+      <Box className="p-16 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+        <Box className="text-lg font-semibold mb-2">Card Title</Box>
+        <Box className="text-gray-600">Card content goes here</Box>
       </Box>
     </Box>
   ),

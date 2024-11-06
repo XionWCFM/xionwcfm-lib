@@ -313,17 +313,17 @@
     --primary-800: #cdeeff;
     --primary-900: #eaffff;
 
-    --primary-dark-alpha-50: rgba(10, 46, 87, 0.05);
-    --primary-dark-alpha-100: rgba(12, 63, 120, 0.1);
-    --primary-dark-alpha-200: rgba(16, 83, 155, 0.15);
-    --primary-dark-alpha-300: rgba(19, 107, 189, 0.2);
-    --primary-dark-alpha-400: rgba(21, 133, 225, 0.3);
-    --primary-dark-alpha-500: rgba(58, 167, 246, 0.4);
-    --primary-dark-alpha-600: rgba(109, 196, 255, 0.5);
-    --primary-dark-alpha-700: rgba(157, 225, 255, 0.6);
-    --primary-dark-alpha-800: rgba(205, 238, 255, 0.7);
-    --primary-dark-alpha-900: rgba(234, 255, 255, 0.8);
-    --primary-dark-alpha-950: rgba(234, 255, 255, 0.95);
+    --primary-alpha-50: rgba(10, 46, 87, 0.05);
+    --primary-alpha-100: rgba(12, 63, 120, 0.1);
+    --primary-alpha-200: rgba(16, 83, 155, 0.15);
+    --primary-alpha-300: rgba(19, 107, 189, 0.2);
+    --primary-alpha-400: rgba(21, 133, 225, 0.3);
+    --primary-alpha-500: rgba(58, 167, 246, 0.4);
+    --primary-alpha-600: rgba(109, 196, 255, 0.5);
+    --primary-alpha-700: rgba(157, 225, 255, 0.6);
+    --primary-alpha-800: rgba(205, 238, 255, 0.7);
+    --primary-alpha-900: rgba(234, 255, 255, 0.8);
+    --primary-alpha-950: rgba(234, 255, 255, 0.95);
 
     --warning-50: #3b2903;
     --warning-100: #5c3b05;

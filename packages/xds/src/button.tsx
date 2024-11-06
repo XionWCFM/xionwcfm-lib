@@ -15,6 +15,10 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default: "",
+        secondaryLow: ` bg-primary-alpha-300 text-primary-700
+         hover:opacity-95
+        active:opacity-90
+        `,
         outline: `
         border border-neutral-200 text-neutral-600 
         hover:opacity-90 hover:bg-neutral-200 hover:border-neutral-300

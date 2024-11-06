@@ -120,6 +120,21 @@ export const colors = Object.freeze({
     "900": "var(--primary-900)",
     "950": "var(--primary-950)",
   },
+
+  "primary-alpha": {
+    "50": "var(--primary-alpha-50)",
+    "100": "var(--primary-alpha-100)",
+    "150": "var(--primary-alpha-150)",
+    "200": "var(--primary-alpha-200)",
+    "300": "var(--primary-alpha-300)",
+    "400": "var(--primary-alpha-400)",
+    "500": "var(--primary-alpha-500)",
+    "600": "var(--primary-alpha-600)",
+    "700": "var(--primary-alpha-700)",
+    "800": "var(--primary-alpha-800)",
+    "900": "var(--primary-alpha-900)",
+    "950": "var(--primary-alpha-950)",
+  },
 });
 
 export const borderRadius = Object.freeze({
