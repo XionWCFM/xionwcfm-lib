@@ -1,0 +1,75 @@
+name: Enforce PR Title Format with Comments
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  validate-title:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check PR Title and Manage Comments
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prTitle = context.payload.pull_request.title;
+            const prNumber = context.payload.pull_request.number;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+
+            console.log("PR Title:", prTitle);
+
+            const validTitleRegex = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9-_]+\))?:\s.+$/;
+            const commentIdentifier = "**🔍 PR 제목 확인 봇**";
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: repoOwner,
+              repo: repoName,
+              issue_number: prNumber,
+            });
+
+            const botComment = comments.find(comment => comment.body.includes(commentIdentifier));
+
+            if (!validTitleRegex.test(prTitle)) {
+              console.log("❌ Invalid PR title detected.");
+
+              const invalidMessage = commentIdentifier + "\n\n" +
+                "❌ PR 제목이 잘못되었습니다. 컨벤셔널 커밋 형식에 맞춰주세요.\n\n" +
+                "예:\n" +
+                "- feat: 새로운 로그인 기능 추가\n" +
+                "- fix: 잘못된 API 호출 수정\n" +
+                "- feat(react-native): React Native 관련 기능 추가\n\n" +
+                "👉 참고: [컨벤셔널 커밋 가이드](https://www.conventionalcommits.org)";
+
+              if (botComment) {
+                console.log("🔄 Updating existing bot comment.");
+                await github.rest.issues.updateComment({
+                  owner: repoOwner,
+                  repo: repoName,
+                  comment_id: botComment.id,
+                  body: invalidMessage,
+                });
+              } else {
+                console.log("📝 Creating new bot comment.");
+                await github.rest.issues.createComment({
+                  owner: repoOwner,
+                  repo: repoName,
+                  issue_number: prNumber,
+                  body: invalidMessage,
+                });
+              }
+
+              throw new Error("Invalid PR title.");
+            }
+
+            console.log("✅ PR title is valid.");
+
+            if (botComment) {
+              console.log("🗑️ Deleting bot comment.");
+              await github.rest.issues.deleteComment({
+                owner: repoOwner,
+                repo: repoName,
+                comment_id: botComment.id,
+              });
+            }

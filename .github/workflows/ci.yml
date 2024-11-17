@@ -1,0 +1,23 @@
+name: CI/CD
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-format-check:
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup-node      
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm ci:lint
+
+      - name: Test
+        run: pnpm ci:test
+
+      - name: Build
+        run: pnpm ci:build

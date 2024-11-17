@@ -1,0 +1,27 @@
+name: Knip
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    types: [opened, synchronize, reopened]
+env:
+  CI: ${{ vars.CI }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  knip:
+    name: Knip
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup-node
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm ci:knip
+
+      - name: Run Knip
+        id: knip
+        run: pnpm ci:knip > knip-output.txt || true

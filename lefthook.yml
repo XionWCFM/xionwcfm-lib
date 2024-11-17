@@ -1,6 +1,42 @@
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: |
+        npx commitlint --edit || {
+          echo "❌ 커밋 메시지가 형식에 맞지 않아요"
+          echo ""
+          echo "🔍 Conventinal Commits Docs"
+          echo "https://www.conventionalcommits.org/ko/v1.0.0"
+          echo ""
+          echo "Conventional Commit 규칙에 맞게 메시지를 작성해주세요."
+          echo ""
+          echo "✅ Examples:"
+          echo "  feat: ~~기능을 개발했어요"
+          echo "  fix: ~~버그를 고쳤어요"
+          echo "  docs: 문서를 수정했어요"
+          echo "  style: 코드 포맷을 변경했어요"
+          echo "  refactor: 기능 변경을 하지 않고 코드를 개선했어요"
+          echo ""
+          echo "👀 사용 가능한 옵션이에요:"
+          echo "  feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+          exit 1
+        }
+        
 pre-push:
   parallel: true
   commands:
+    branch-protection:
+      run: |
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        protected_branches=("main" "dev")
+
+        for protected in "${protected_branches[@]}"; do
+          if [[ "$branch" == "$protected" ]]; then
+            echo "❌ Direct push to '$branch' branch is not allowed."
+            echo "   Please create a pull request instead."
+            exit 1
+          fi
+        done
     test:
       run: pnpm run test:ci
     format:
