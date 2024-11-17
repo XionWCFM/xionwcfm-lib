@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-pnpm
+      - uses: ./.github/actions/pnpm-setup-node      
 
     - name: 'Install Deps'
       run: pnpm install --frozen-lockfile
