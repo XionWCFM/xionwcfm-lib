@@ -17,11 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/pnpm-setup-node
+      - uses: ./.github/actions/pnpm-setup-node      
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Knip      
       - run: pnpm ci:knip
 
-      - name: Run Knip
+      - name: Result
         id: knip
         run: pnpm ci:knip > knip-output.txt || true
