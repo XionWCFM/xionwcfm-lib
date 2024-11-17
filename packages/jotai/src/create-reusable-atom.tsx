@@ -61,9 +61,3 @@ export const createReusableAtom = <T,>(value: T) => {
     useDrivedAtom: useDerivedAtom,
   };
 };
-
-const hi = createReusableAtom({ name: "str", hi: "sdas" });
-
-const Hel = () => {
-  const he = hi.useDrivedAtom((param) => ({ hello: param.hi }));
-};
