@@ -27,7 +27,7 @@
   "files": ["dist", "*.css"],
   "devDependencies": {
     "@xionwcfm/typescript-config": "workspace:*",
-    "tsup": "^8.1.0",
-    "typescript": "latest"
+    "tsup": "catalog:",
+    "typescript": "catalog:"
   }
 }

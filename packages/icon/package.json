@@ -14,10 +14,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/react": "^18",
+    "@types/react": "catalog:react18",
     "@xionwcfm/typescript-config": "workspace:*",
-    "tsup": "^8.1.0",
-    "typescript": "latest"
+    "tsup": "catalog:",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
     "react": "^18",

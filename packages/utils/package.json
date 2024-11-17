@@ -112,10 +112,10 @@
     }
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
+    "@types/node": "catalog:",
     "@xionwcfm/typescript-config": "workspace:*",
-    "tsup": "^8.1.0",
-    "typescript": "latest"
+    "tsup": "catalog:",
+    "typescript": "catalog:"
   },
   "publishConfig": {
     "access": "public"
