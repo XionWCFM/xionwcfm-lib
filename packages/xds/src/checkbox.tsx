@@ -25,6 +25,28 @@ export const Checkbox = forwardRef<
   );
 });
 
+export const SquareCheckbox = forwardRef<
+  ElementRef<typeof CheckBoxPrimitves.Root>,
+  ComponentPropsWithoutRef<typeof CheckBoxPrimitves.Root>
+>(function SquareCheckbox({ className, ...props }, ref) {
+  return (
+    <CheckBoxPrimitves.Root
+      className={cn(
+        "group flex items-center border border-gray-200 rounded-sm data-[state=checked]:border-primary-500 justify-center appearance-none size-24",
+        " disabled:opacity-50 disabled:cursor-not-allowed",
+        " duration-200 transition-colors",
+        className,
+      )}
+      {...props}
+      ref={ref}
+    >
+      <CheckBoxPrimitves.Indicator>
+        <CheckIcon className={cn(" text-primary-500 size-20  ", "group-disabled:hidden")} />
+      </CheckBoxPrimitves.Indicator>
+    </CheckBoxPrimitves.Root>
+  );
+});
+
 export const CircleCheckbox = forwardRef<
   ElementRef<typeof CheckBoxPrimitves.Root>,
   ComponentPropsWithoutRef<typeof CheckBoxPrimitves.Root>

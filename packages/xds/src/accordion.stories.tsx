@@ -2,6 +2,7 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import * as Accordion from "./accordion";
+import { Checkbox, CircleCheckbox } from "./checkbox";
 
 const meta: Meta = {
   title: "Xds/Accordion",
@@ -102,8 +103,7 @@ export const NestedAccordion: Story = {
   parameters: {
     docs: {
       description: {
-        story:
-          "아코디언 내부에 다른 아코디언을 중첩하여 계층적인 구조를 표현할 수 있습니다. 복잡한 카테고리나 메뉴 구조에 적합합니다.",
+        story: "아코디언을 중첩해야하는 경우 최대 2번까지만 중첩해서 사용하도록 합니다.",
       },
     },
   },
@@ -130,77 +130,11 @@ export const NestedAccordion: Story = {
   },
 };
 
-export const CustomizedAccordion: Story = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "아코디언의 스타일과 동작을 커스터마이징한 예시입니다. 프로젝트의 디자인 시스템에 맞춰 스타일을 변경할 수 있습니다.",
-      },
-    },
-  },
-  render: () => {
-    const [isOpen, setIsOpen] = useState<string[]>([]);
-
-    return (
-      <Accordion.Root
-        type="multiple"
-        value={isOpen}
-        onValueChange={setIsOpen}
-        className="rounded-lg border border-gray-200"
-      >
-        <Accordion.Item value="1" className="border-b border-gray-200">
-          <Accordion.Trigger
-            className="w-full bg-gray-50 p-4 hover:bg-gray-100"
-            right={
-              <ChevronDownIcon
-                className={`transition-transform duration-200 ${isOpen.includes("1") ? "rotate-180" : ""}`}
-              />
-            }
-          >
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-green-500" />
-              Active Projects
-            </div>
-          </Accordion.Trigger>
-          <Accordion.Content className="p-4">
-            <div className="space-y-2">
-              <div className="rounded-md bg-gray-100 p-2">Project Alpha</div>
-              <div className="rounded-md bg-gray-100 p-2">Project Beta</div>
-            </div>
-          </Accordion.Content>
-        </Accordion.Item>
-        <Accordion.Item value="2">
-          <Accordion.Trigger
-            className="w-full bg-gray-50 p-4 hover:bg-gray-100"
-            right={
-              <ChevronDownIcon
-                className={`transition-transform duration-200 ${isOpen.includes("2") ? "rotate-180" : ""}`}
-              />
-            }
-          >
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-yellow-500" />
-              Pending Reviews
-            </div>
-          </Accordion.Trigger>
-          <Accordion.Content className="p-4">
-            <div className="space-y-2">
-              <div className="rounded-md bg-gray-100 p-2">Review #123</div>
-              <div className="rounded-md bg-gray-100 p-2">Review #456</div>
-            </div>
-          </Accordion.Content>
-        </Accordion.Item>
-      </Accordion.Root>
-    );
-  },
-};
-
 export const FAQAccordion: Story = {
   parameters: {
     docs: {
       description: {
-        story: "FAQ 섹션을 구현한 아코디언입니다. 질문과 답변 형식의 콘텐츠에 적합합니다.",
+        story: "FAQ 섹션을 구현한 아코디언입니다. ",
       },
     },
   },
@@ -235,7 +169,7 @@ export const NavigationAccordion: Story = {
   parameters: {
     docs: {
       description: {
-        story: "네비게이션 메뉴를 구현한 아코디언입니다. 복잡한 메뉴 구조를 효과적으로 표현할 수 있습니다.",
+        story: "사이드바와 조합하여 사용할 수 있습니다.",
       },
     },
   },
@@ -275,7 +209,7 @@ export const FilterAccordion: Story = {
   parameters: {
     docs: {
       description: {
-        story: "필터 옵션을 구현한 아코디언입니다. 검색 결과나 상품 목록의 필터링에 적합합니다.",
+        story: "필터링이 필요한 경우 체크박스 컴포넌트와 조합할 수 있습니다.",
       },
     },
   },
@@ -293,10 +227,9 @@ export const FilterAccordion: Story = {
               <div className="space-y-2 p-2">
                 {["0-50,000원", "50,000-100,000원", "100,000원 이상"].map((range) => (
                   <label key={range} className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
+                    <Checkbox
                       checked={selectedFilters.includes(range)}
-                      onChange={() => {
+                      onCheckedChange={() => {
                         setSelectedFilters((prev) =>
                           prev.includes(range) ? prev.filter((item) => item !== range) : [...prev, range],
                         );

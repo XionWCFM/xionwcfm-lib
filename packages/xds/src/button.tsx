@@ -1,9 +1,11 @@
+import { colors } from "@xionwcfm/token";
 import { type VariantProps, cva } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { Spinner } from "./spinner";
+import { ThreeDotLoadingSpinner } from "./three-dot-loading-spinner";
 
 export const buttonVariants = cva(
   `items-center justify-center whitespace-nowrap 
@@ -110,7 +112,7 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
       <>
         {loading ? (
           <Box as="span" className=" absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
-            <Spinner />
+            <Spinner color={"primary"} />
           </Box>
         ) : null}
         {startIcon && !loading ? (
@@ -130,4 +132,4 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
 }) as <C extends "button" | "a" | ElementType = "button">(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
   ref?: PolymorphicRef<C>,
-) => ReactNode;
+) => JSX.Element;

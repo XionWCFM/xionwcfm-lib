@@ -10,7 +10,7 @@ type ConfirmDialogProps = {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
-  description?: string;
+  description?: ReactNode;
   primaryButton?: ReactNode;
   secondaryButton?: ReactNode;
 };

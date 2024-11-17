@@ -61,7 +61,7 @@ export const IconOnlyNavigation: Story = {
   parameters: {
     docs: {
       description: {
-        story: "아이콘만 사용하는 미니멀한 디자인의 하단 네비게이션입니다.",
+        story: "필요한 경우 아이콘만 사용할 수 있습니다.",
       },
     },
   },
@@ -131,7 +131,7 @@ export const NotificationBadge: Story = {
             icon={
               <div className="relative">
                 <HomeIcon />
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" />
+                <span className="absolute -top-4 -right-4 w-8 h-8 bg-danger-400 rounded-full" />
               </div>
             }
             label="알림"

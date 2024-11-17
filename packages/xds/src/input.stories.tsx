@@ -1,8 +1,8 @@
-import { MagnifyingGlassIcon, QuestionMarkCircledIcon } from "@radix-ui/react-icons";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Input } from "./input";
 import { Button } from "./button";
+import { Input } from "./input";
 
 const meta: Meta = {
   title: "Xds/Input",
@@ -16,23 +16,23 @@ const meta: Meta = {
   },
   argTypes: {
     value: {
-      description: '입력 필드의 값',
-      type: { name: 'string' }
+      description: "입력 필드의 값",
+      type: { name: "string" },
     },
     placeholder: {
-      description: '입력 필드의 플레이스홀더',
-      type: { name: 'string' }
+      description: "입력 필드의 플레이스홀더",
+      type: { name: "string" },
     },
     disabled: {
-      description: '입력 필드의 비활성화 상태',
-      type: { name: 'boolean' }
+      description: "입력 필드의 비활성화 상태",
+      type: { name: "boolean" },
     },
     type: {
-      description: '입력 필드의 타입',
-      control: 'select',
-      options: ['text', 'password', 'email', 'number']
-    }
-  }
+      description: "입력 필드의 타입",
+      control: "select",
+      options: ["text", "password", "email", "number"],
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -65,26 +65,22 @@ export const SearchInput: Story = {
     },
   },
   render: () => {
-    const [value, setValue] = useState('');
-    
+    const [value, setValue] = useState("");
+
     return (
       <div className="w-[300px]">
         <div className="relative">
-          <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-          <Input 
+          <Input
+            left={<MagnifyingGlassIcon />}
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="검색어를 입력하세요"
-            className="pl-10"
+            right={
+              <Button variant="ghost" size="icon">
+                ✕
+              </Button>
+            }
           />
-          {value && (
-            <button 
-              onClick={() => setValue('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-            >
-              ✕
-            </button>
-          )}
         </div>
       </div>
     );
@@ -101,28 +97,28 @@ export const FormInput: Story = {
   },
   render: () => {
     const [values, setValues] = useState({
-      username: '',
-      email: '',
+      username: "",
+      email: "",
     });
     const [errors, setErrors] = useState<Record<string, string>>({});
 
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       const newErrors: Record<string, string> = {};
-      
+
       if (!values.username) {
-        newErrors.username = '사용자 이름을 입력해주세요.';
+        newErrors.username = "사용자 이름을 입력해주세요.";
       }
       if (!values.email) {
-        newErrors.email = '이메일을 입력해주세요.';
+        newErrors.email = "이메일을 입력해주세요.";
       } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        newErrors.email = '올바른 이메일 형식이 아닙니다.';
+        newErrors.email = "올바른 이메일 형식이 아닙니다.";
       }
 
       setErrors(newErrors);
-      
+
       if (Object.keys(newErrors).length === 0) {
-        alert('제출 성공!');
+        alert("제출 성공!");
       }
     };
 
@@ -132,27 +128,23 @@ export const FormInput: Story = {
           <label className="block text-sm font-medium mb-1">사용자 이름</label>
           <Input
             value={values.username}
-            onChange={(e) => setValues(prev => ({ ...prev, username: e.target.value }))}
+            onChange={(e) => setValues((prev) => ({ ...prev, username: e.target.value }))}
             placeholder="사용자 이름"
-            className={errors.username ? 'border-red-500' : ''}
+            className={errors.username ? "border-red-500" : ""}
           />
-          {errors.username && (
-            <p className="text-red-500 text-sm mt-1">{errors.username}</p>
-          )}
+          {errors.username && <p className="text-red-500 text-sm mt-1">{errors.username}</p>}
         </div>
-        
+
         <div>
           <label className="block text-sm font-medium mb-1">이메일</label>
           <Input
             type="email"
             value={values.email}
-            onChange={(e) => setValues(prev => ({ ...prev, email: e.target.value }))}
+            onChange={(e) => setValues((prev) => ({ ...prev, email: e.target.value }))}
             placeholder="example@email.com"
-            className={errors.email ? 'border-red-500' : ''}
+            className={errors.email ? "border-red-500" : ""}
           />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-          )}
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
         </div>
 
         <Button type="submit" className="w-full">
@@ -173,15 +165,8 @@ export const DisabledInput: Story = {
   },
   render: () => (
     <div className="space-y-4 w-[300px]">
-      <Input 
-        value="읽기 전용 정보"
-        disabled
-      />
-      <Input 
-        value="시스템 생성 ID"
-        disabled
-        className="bg-gray-50"
-      />
+      <Input value="읽기 전용 정보" disabled />
+      <Input value="시스템 생성 ID" disabled className="bg-gray-50" />
     </div>
   ),
 };
@@ -196,7 +181,7 @@ export const PasswordInput: Story = {
   },
   render: () => {
     const [showPassword, setShowPassword] = useState(false);
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState("");
 
     return (
       <div className="w-[300px]">
@@ -212,7 +197,7 @@ export const PasswordInput: Story = {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
-            {showPassword ? '숨기기' : '표시'}
+            {showPassword ? "숨기기" : "표시"}
           </button>
         </div>
       </div>

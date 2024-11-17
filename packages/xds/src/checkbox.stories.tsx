@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Button } from "./button";
-import { Checkbox, CircleCheckbox, NumberCheckbox } from "./checkbox";
+import { Checkbox, CircleCheckbox, NumberCheckbox, SquareCheckbox } from "./checkbox";
 import { List, Row } from "./list";
 
 const meta: Meta = {
@@ -56,6 +55,27 @@ export const BasicCheckbox: Story = {
           <Row left={<Checkbox checked={checked} />}>이용약관에 동의합니다</Row>
         </List>
         <Checkbox disabled />
+      </div>
+    );
+  },
+};
+
+export const SquareStyleCheckbox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "네모난 체크박스입니다.",
+      },
+    },
+  },
+  render: () => {
+    const [checked, setChecked] = useState(false);
+    return (
+      <div className="flex flex-col gap-y-16">
+        <List as="button" onClick={() => setChecked(!checked)}>
+          <Row left={<SquareCheckbox checked={checked} />}>이용약관에 동의합니다</Row>
+        </List>
+        <SquareCheckbox disabled />
       </div>
     );
   },

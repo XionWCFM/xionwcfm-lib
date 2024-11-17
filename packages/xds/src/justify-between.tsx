@@ -14,4 +14,4 @@ export const JustifyBetween = forwardRef(function JustifyBetween<C extends Eleme
 ) {
   const { className } = props;
   return <Box ref={ref} {...props} className={cn("flex justify-between", className)} />;
-});
+}) as <C extends ElementType = "div">(props: BoxProps<C>, ref?: PolymorphicRef<C>) => JSX.Element;
