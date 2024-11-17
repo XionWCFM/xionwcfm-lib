@@ -1,8 +1,8 @@
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { Button } from "./button";
 import * as Collapsible from "./collapsible";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 const meta: Meta = {
   title: "Xds/Collapsible",
@@ -16,14 +16,14 @@ const meta: Meta = {
   },
   argTypes: {
     open: {
-      description: '콘텐츠의 펼침 상태',
-      type: { name: 'boolean' }
+      description: "콘텐츠의 펼침 상태",
+      type: { name: "boolean" },
     },
     onOpenChange: {
-      description: '상태 변경 시 호출되는 함수',
-      type: { name: 'function' }
-    }
-  }
+      description: "상태 변경 시 호출되는 함수",
+      type: { name: "function" },
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -40,15 +40,13 @@ export const BasicCollapsible: Story = {
   },
   render: () => {
     const [open, setOpen] = useState(false);
-    
+
     return (
       <Collapsible.Root open={open} onOpenChange={setOpen}>
         <Collapsible.Trigger asChild>
-          <Button 
+          <Button
             variant="outline"
-            endIcon={
-              <ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
-            }
+            endIcon={<ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />}
           >
             상세 정보 보기
           </Button>
@@ -72,16 +70,14 @@ export const ListCollapsible: Story = {
   },
   render: () => {
     const [open, setOpen] = useState(false);
-    
+
     return (
       <Collapsible.Root open={open} onOpenChange={setOpen}>
         <Collapsible.Trigger asChild>
-          <Button 
+          <Button
             variant="ghost"
             className="w-full justify-between"
-            endIcon={
-              <ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
-            }
+            endIcon={<ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />}
           >
             최근 주문 내역 (3)
           </Button>
@@ -92,10 +88,7 @@ export const ListCollapsible: Story = {
             { id: 2, date: "2024-02-28", item: "상품 B" },
             { id: 3, date: "2024-02-27", item: "상품 C" },
           ].map((order) => (
-            <div 
-              key={order.id}
-              className="p-4 bg-gray-50 rounded-md flex justify-between items-center"
-            >
+            <div key={order.id} className="p-4 bg-gray-50 rounded-md flex justify-between items-center">
               <span>{order.item}</span>
               <span className="text-gray-500 text-sm">{order.date}</span>
             </div>
@@ -117,11 +110,11 @@ export const NestedCollapsible: Story = {
   render: () => {
     const [parentOpen, setParentOpen] = useState(false);
     const [childOpen, setChildOpen] = useState(false);
-    
+
     return (
       <Collapsible.Root open={parentOpen} onOpenChange={setParentOpen}>
         <Collapsible.Trigger asChild>
-          <Button 
+          <Button
             variant="outline"
             endIcon={
               <ChevronDownIcon className={`transition-transform duration-200 ${parentOpen ? "rotate-180" : ""}`} />
@@ -133,10 +126,10 @@ export const NestedCollapsible: Story = {
         <Collapsible.Content className="mt-2 p-4 bg-gray-50 rounded-md">
           <div className="space-y-4">
             <p>메인 카테고리 내용</p>
-            
+
             <Collapsible.Root open={childOpen} onOpenChange={setChildOpen}>
               <Collapsible.Trigger asChild>
-                <Button 
+                <Button
                   variant="ghost"
                   size="sm"
                   endIcon={

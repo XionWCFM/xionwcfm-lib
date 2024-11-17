@@ -21,7 +21,7 @@ commit-msg:
           echo "  feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
           exit 1
         }
-        
+
 pre-push:
   parallel: true
   commands:
@@ -39,11 +39,3 @@ pre-push:
         done
     test:
       run: pnpm run test:ci
-    format:
-      run: |
-        pnpm run check:biome
-        if ! git diff --exit-code; then
-          git add .
-          git commit -m 'format code by biome'
-        fi
-      stage_fixed: true

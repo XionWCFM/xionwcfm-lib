@@ -24,10 +24,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "*.css"
-  ],
+  "files": ["dist", "*.css"],
   "devDependencies": {
     "@xionwcfm/typescript-config": "workspace:*",
     "tsup": "^8.1.0",
