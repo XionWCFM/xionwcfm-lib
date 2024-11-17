@@ -16,9 +16,7 @@ jobs:
 
     - name: 'Install Deps'
       run: pnpm install --frozen-lockfile
-    - name: 'Run Vitest'
-      run: pnpm ci:test
-      
+
     - name: 'Test'
       run: pnpm vitest --coverage.enabled true
 
