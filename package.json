@@ -1,12 +1,11 @@
 {
-  "name": "turbo-repo",
+  "name": "@internal/root",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "build:p": "turbo build --filter './packages/*'",
     "build:storybook": "turbo build-storybook",
     "storybook": "turbo storybook",
-    "push:origin": "git push origin $(git symbolic-ref --short HEAD)",
     "lint": "turbo lint",
     "test": "turbo run test",
     "test:ci": "turbo run test:ci",
@@ -14,21 +13,23 @@
     "check:biome": "npx @biomejs/biome check --write .",
     "format:biome": "npx @biomejs/biome format --write .",
     "clean:all": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules && pnpm store prune && pnpm install",
-    "comment:ci": "node ./.github/scripts/comment-ci.js"
+    "ci:lint": "npx @biomejs/biome lint .",
+    "ci:knip": "pnpm knip --no-exit-code",
+    "ci:build": "turbo build --filter './packages/*'",
+    "ci:test": "turbo run test:ci"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@vitest/coverage-v8": "^2.1.5",
     "@xionwcfm/typescript-config": "workspace:*",
-    "prettier": "^3.2.5",
-    "turbo": "^2.2.3",
-    "typescript": "^5.4.5",
-    "vitest": "^2.0.5"
+    "broken-link-checker": "^0.7.8",
+    "knip": "^5.37.1",
+    "lefthook": "^1.8.2",
+    "turbo": "^2.3.0",
+    "typescript": "catalog:",
+    "vitest": "^2.1.5"
   },
-  "packageManager": "pnpm@9.7.0",
-  "engines": {
-    "node": ">=18"
-  },
-  "dependencies": {
-    "lefthook": "^1.6.16"
-  }
+  "packageManager": "pnpm@9.13.2"
 }

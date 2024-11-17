@@ -1,0 +1,30 @@
+name: 'Vitest Report Coverage'
+on: 
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup-node      
+
+    - name: 'Install Deps'
+      run: pnpm install --frozen-lockfile
+
+    - name: 'Test'
+      run: pnpm vitest --coverage.enabled true
+
+    - name: 'Report Coverage'
+      if: always() 
+      uses:  davelosert/vitest-coverage-report-action@v2
+
+    - name: Upload results to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}

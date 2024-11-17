@@ -1,14 +1,15 @@
+import { colors } from "@xionwcfm/token";
 import { type VariantProps, cva } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
-import { Box, type PolimophicWithSpacingSystemProps } from "./box";
+import { Box, type BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
-import { formatClass } from "./internal-utils/format-class";
 import { Spinner } from "./spinner";
+import { ThreeDotLoadingSpinner } from "./three-dot-loading-spinner";
 
 export const buttonVariants = cva(
-  ` items-center justify-center whitespace-nowrap 
-  rounded-md font-medium ring-offset-background relative 
+  `items-center justify-center whitespace-nowrap 
+  rounded-sm font-medium ring-offset-background relative 
   duration-500 transition-colors focus-visible:outline-none focus-visible:ring-2  
   focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
   `,
@@ -16,6 +17,10 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default: "",
+        secondaryLow: ` bg-primary-alpha-300 text-primary-700
+         hover:opacity-95
+        active:opacity-90
+        `,
         outline: `
         border border-neutral-200 text-neutral-600 
         hover:opacity-90 hover:bg-neutral-200 hover:border-neutral-300
@@ -29,11 +34,11 @@ export const buttonVariants = cva(
         emphasis: `
         bg-primary-500 text-gray-50 hover:opacity-95 active:opacity-90 
         `,
-        secondary: ` rounded-sm bg-neutral-100 text-neutral-600
+        secondary: ` bg-neutral-100 text-neutral-600
          hover:opacity-80  hover:bg-neutral-200
          active:opacity-70
         `,
-        ghost: ` rounded-sm
+        ghost: ` 
         hover:bg-neutral-200 hover:opacity-95
         active:opacity-90`,
         link: "underline underline-offset-4 ",
@@ -42,11 +47,18 @@ export const buttonVariants = cva(
       },
       size: {
         default: "",
-        sm: "  rounded-md px-12 py-4 active:scale-[0.98]",
-        md: " rounded-md px-16 py-6 active:scale-[0.98.5]",
-        lg: " rounded-md px-20 py-8 active:scale-[0.99]",
-        full: " w-full  py-12  text-size-6 active:scale-[0.997]",
-        icon: "px-8 py-8 active:scale-[0.98]",
+        sm: "   px-12 py-4 ",
+        md: " px-16 py-6 ",
+        lg: "  px-20 py-8 ",
+        full: " w-full py-12 px-24 text-size-6 ",
+        icon: "px-8 py-8 ",
+      },
+      rounded: {
+        default: "",
+        sm: "rounded-sm",
+        md: "rounded-md",
+        xl: " rounded-xl",
+        full: "rounded-full",
       },
     },
   },
@@ -58,9 +70,7 @@ type ButtonOptionProps = {
   loading?: boolean;
 };
 
-type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
-  VariantProps<typeof buttonVariants> &
-  ButtonOptionProps;
+type Props<C extends ElementType> = BoxProps<C> & VariantProps<typeof buttonVariants> & ButtonOptionProps;
 
 export const Button = forwardRef(function Button<C extends ElementType = "button">(
   props: Props<C>,
@@ -77,11 +87,12 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
     endIcon,
     type,
     startIcon,
+    rounded,
     asChild = false,
     w,
     ...rest
   } = props;
-  const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
+  const typedRest = rest as PolymorphicComponentPropsWithRef<C, BoxProps<C>>;
   const slotClass = !!startIcon || !!endIcon ? "flex items-center justify-center gap-x-4" : "";
   const ComponentAs = as || "button";
   const ariaLabel = props["aria-label"] ?? loading ? "loading progress" : "button";
@@ -92,15 +103,16 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
       type={type}
       asChild={asChild}
       ref={ref}
-      className={cn(slotClass, buttonVariants({ variant, size }), formatClass(w, "w"), className)}
+      className={cn(slotClass, buttonVariants({ variant, size, rounded }), className)}
       disabled={disabled || loading}
       aria-label={ariaLabel}
+      w={w}
       {...typedRest}
     >
       <>
         {loading ? (
           <Box as="span" className=" absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
-            <Spinner />
+            <Spinner color={"primary"} />
           </Box>
         ) : null}
         {startIcon && !loading ? (
@@ -120,4 +132,4 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
 }) as <C extends "button" | "a" | ElementType = "button">(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
   ref?: PolymorphicRef<C>,
-) => ReactNode;
+) => JSX.Element;

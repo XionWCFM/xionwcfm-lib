@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/jotai",
-  "version": "0.0.11",
+  "version": "0.1.5",
   "license": "MIT",
   "scripts": {
     "build": "tsup",
@@ -27,21 +27,22 @@
   },
   "files": ["dist"],
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^16.0.0",
-    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
     "@types/node": "^20.14.9",
-    "@types/react": "^18",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@types/react": "catalog:react18",
+
     "@xionwcfm/typescript-config": "workspace:*",
     "happy-dom": "^14.12.0",
     "jotai": "^2.9.3",
-    "tsup": "^8.1.0",
-    "typescript": "latest",
-    "vite": "^5.3.4",
-    "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "^1.6.0",
-    "vitest-fetch-mock": "^0.2.2"
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:",
+    "vitest-fetch-mock": "catalog:"
   },
   "peerDependencies": {
     "react": ">=18",

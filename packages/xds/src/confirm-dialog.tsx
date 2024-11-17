@@ -10,7 +10,7 @@ type ConfirmDialogProps = {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
-  description?: string;
+  description?: ReactNode;
   primaryButton?: ReactNode;
   secondaryButton?: ReactNode;
 };
@@ -41,7 +41,7 @@ export const ConfirmDialog = (props: ConfirmDialogProps) => {
             </Paragraph>
           </DialogPrimitives.Description>
 
-          <Box className=" flex  justify-center items-center gap-x-8 xs:gap-x-16">
+          <Box className=" flex  w-full justify-center items-center gap-x-8 xs:gap-x-16">
             {primaryButton}
             {secondaryButton}
           </Box>

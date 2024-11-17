@@ -11,7 +11,7 @@ const spinnerVariants = cva(" text-gray-200 dark:text-gray-600 animate-spin", {
       "24": "w-24 h-24",
     },
     color: {
-      primary: "fill-primary-600",
+      primary: " fill-primary-alpha-600",
       secondary: "fill-secondary-600",
       neutral: "fill-neutral-600",
       success: "fill-success-600",

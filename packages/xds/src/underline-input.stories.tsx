@@ -81,5 +81,11 @@ export const Disabled: StoryObj = {
     placeholder: "Can't type here...",
     disabled: true,
   },
-  render: (args) => <UnderlineInput {...args} />,
+  render: (args) => (
+    <div className=" flex flex-col gap-16">
+      <UnderlineInput {...args} />
+      <UnderlineInput {...args} left={<ClipboardIcon className="w-5 h-5 text-gray-500" />} />
+      <UnderlineInput {...args} right={<MagnifyingGlassIcon className="w-5 h-5 text-gray-500" />} />
+    </div>
+  ),
 };

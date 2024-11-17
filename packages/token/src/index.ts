@@ -1,11 +1,42 @@
-const colors = Object.freeze({
+export const colors = Object.freeze({
   inherit: "inherit",
   current: "currentColor",
   transparent: "tranparent",
 
-  white: { DEFAULT: "var(--white)" },
-  black: { DEFAULT: "var(--black)" },
-
+  white: {
+    DEFAULT: "var(--white)",
+  },
+  "white-alpha": {
+    "50": "var(--white-alpha-50)",
+    "100": "var(--white-alpha-100)",
+    "150": "var(--white-alpha-150)",
+    "200": "var(--white-alpha-200)",
+    "300": "var(--white-alpha-300)",
+    "400": "var(--white-alpha-400)",
+    "500": "var(--white-alpha-500)",
+    "600": "var(--white-alpha-600)",
+    "700": "var(--white-alpha-700)",
+    "800": "var(--white-alpha-800)",
+    "900": "var(--white-alpha-900)",
+    "950": "var(--white-alpha-950)",
+  },
+  black: {
+    DEFAULT: "var(--black)",
+  },
+  "black-alpha": {
+    "50": "var(--black-alpha-50)",
+    "100": "var(--black-alpha-100)",
+    "150": "var(--black-alpha-150)",
+    "200": "var(--black-alpha-200)",
+    "300": "var(--black-alpha-300)",
+    "400": "var(--black-alpha-400)",
+    "500": "var(--black-alpha-500)",
+    "600": "var(--black-alpha-600)",
+    "700": "var(--black-alpha-700)",
+    "800": "var(--black-alpha-800)",
+    "900": "var(--black-alpha-900)",
+    "950": "var(--black-alpha-950)",
+  },
   neutral: {
     "50": "var(--neutral-50)",
     "100": "var(--neutral-100)",
@@ -89,9 +120,24 @@ const colors = Object.freeze({
     "900": "var(--primary-900)",
     "950": "var(--primary-950)",
   },
+
+  "primary-alpha": {
+    "50": "var(--primary-alpha-50)",
+    "100": "var(--primary-alpha-100)",
+    "150": "var(--primary-alpha-150)",
+    "200": "var(--primary-alpha-200)",
+    "300": "var(--primary-alpha-300)",
+    "400": "var(--primary-alpha-400)",
+    "500": "var(--primary-alpha-500)",
+    "600": "var(--primary-alpha-600)",
+    "700": "var(--primary-alpha-700)",
+    "800": "var(--primary-alpha-800)",
+    "900": "var(--primary-alpha-900)",
+    "950": "var(--primary-alpha-950)",
+  },
 });
 
-const borderRadius = Object.freeze({
+export const borderRadius = Object.freeze({
   xs: "var(--radius-xs)",
   sm: "var(--radius-sm)",
   md: "var(--radius-md)",
@@ -100,7 +146,7 @@ const borderRadius = Object.freeze({
   full: "var(--radius-full)",
 });
 
-const spacing = Object.freeze({
+export const spacing = Object.freeze({
   "0": "var(--spacing-0)",
   "2": "var(--spacing-2)",
   "4": "var(--spacing-4)",
@@ -127,12 +173,16 @@ const spacing = Object.freeze({
   "768": "var(--spacing-768)",
   "1024": "var(--spacing-1024)",
   "1440": "var(--spacing-1440)",
-  "1/3": "var(--spacing-1-3)",
+  "1/3": "33.3%",
+  "2/3": "66.6%",
+  "1/4": "25%",
+  "3/4": "75%",
+  "100%": "100%",
   half: "var(--spacing-half)",
   full: "var(--spacing-full)",
 });
 
-const fontSize = Object.freeze({
+export const fontSize = Object.freeze({
   "size-12": "calc(var(--font-size) * 3.75)",
   "size-11": "calc(var(--font-size) * 3)",
   "size-10": "calc(var(--font-size) * 2.25)",
@@ -147,7 +197,7 @@ const fontSize = Object.freeze({
   "size-1": "calc(var(--font-size) * 0.5)",
 });
 
-const fontWeight = Object.freeze({
+export const fontWeight = Object.freeze({
   bold: "var(--font-weight-bold)",
   "semi-bold": "var(--font-weight-semi-bold)",
   medium: "var(--font-weight-medium)",
@@ -156,7 +206,7 @@ const fontWeight = Object.freeze({
   thin: "var(--font-weight-thin)",
 });
 
-const lineHeight = Object.freeze({
+export const lineHeight = Object.freeze({
   denser: "var(--line-height-denser)",
   tight: "var(--line-height-tight)",
   normal: "var(--line-height-normal)",
@@ -164,14 +214,14 @@ const lineHeight = Object.freeze({
   looser: "var(--line-height-looser)",
 });
 
-const boxShadow = Object.freeze({
+export const boxShadow = Object.freeze({
   xs: "var(--box-shadow-xs)",
   sm: "var(--box-shadow-sm)",
   md: "var(--box-shadow-md)",
   lg: "var(--box-shadow-lg)",
 });
 
-const keyframes = Object.freeze({
+export const keyframes = Object.freeze({
   fadeIn: {
     "0%": { opacity: "0" },
     "100%": { opacity: "1" },
@@ -182,7 +232,7 @@ const keyframes = Object.freeze({
   },
 });
 
-const animation = Object.freeze({
+export const animation = Object.freeze({
   "fadIn-0.5s": "fadeIn 0.5s ease-in-out",
   "fadIn-1s": "fadeIn 1s ease-in-out",
   "fadIn-2s": "fadeIn 1s ease-in-out",
@@ -197,7 +247,7 @@ const animation = Object.freeze({
   "fadOut-5s": "fadeOut 5s ease-in-out",
 });
 
-const screens = Object.freeze({
+export const screens = Object.freeze({
   xs: "450px",
   sm: "640px",
   md: "768px",
@@ -205,11 +255,55 @@ const screens = Object.freeze({
   xl: "1280px",
 });
 
+export const opacity = Object.freeze({
+  "0": "var(--opacity-0)",
+  "5": "var(--opacity-5)",
+  "10": "var(--opacity-10)",
+  "15": "var(--opacity-15)",
+  "20": "var(--opacity-20)",
+  "25": "var(--opacity-25)",
+  "30": "var(--opacity-30)",
+  "35": "var(--opacity-35)",
+  "40": "var(--opacity-40)",
+  "45": "var(--opacity-45)",
+  "50": "var(--opacity-50)",
+  "55": "var(--opacity-55)",
+  "60": "var(--opacity-60)",
+  "65": "var(--opacity-65)",
+  "70": "var(--opacity-70)",
+  "75": "var(--opacity-75)",
+  "80": "var(--opacity-80)",
+  "85": "var(--opacity-85)",
+  "90": "var(--opacity-90)",
+  "95": "var(--opacity-95)",
+  "100": "var(--opacity-100)",
+});
+
+export const $semanticColors = Object.freeze({
+  "overlay-dim": "var(--overlay-dim)",
+  "overlay-low": "var(--overlay-low)",
+});
+
+export const $semanticOpacity = Object.freeze({});
+
+export const $semanticBorderRadius = Object.freeze({});
+
+export const $semanticPadding = Object.freeze({});
+
+export const $semanticMargin = Object.freeze({});
+
+export const $semanticFontSize = Object.freeze({});
+
+export const $semanticGap = Object.freeze({});
+
 export const XION_STYLE = Object.freeze({
-  colors,
-  borderRadius,
-  spacing,
-  fontSize,
+  colors: { ...colors, ...$semanticColors },
+  opacity: { ...opacity, ...$semanticOpacity },
+  borderRadius: { ...borderRadius, ...$semanticBorderRadius },
+  spacing: { ...spacing, ...$semanticPadding },
+  margin: { ...spacing, ...$semanticMargin },
+  fontSize: { ...fontSize, ...$semanticFontSize },
+  gap: { ...spacing, ...$semanticGap },
   fontWeight,
   lineHeight,
   boxShadow,

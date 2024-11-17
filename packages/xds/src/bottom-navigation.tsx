@@ -39,7 +39,11 @@ const Root = (props: ComponentPropsWithoutRef<"div"> & LayoutProps) => {
       <BottomNavigationProvider value={{ value, onValueChange }}>
         <Box
           as={"nav"}
-          className={cn(" flex justify-between bg-white h-[56px]", " duration-200 transition-all", className)}
+          className={cn(
+            "flex justify-between h-[56px] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]",
+            " duration-200 transition-all",
+            className,
+          )}
           style={{
             opacity,
             visibility,

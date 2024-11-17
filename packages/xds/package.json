@@ -1,12 +1,23 @@
 {
   "name": "@xionwcfm/xds",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "style": "./dist/style.css",
   "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
     "./style": {
       "default": "./dist/style.css"
     },
@@ -28,6 +39,26 @@
       "require": {
         "types": "./dist/accordion.d.ts",
         "default": "./dist/accordion.js"
+      }
+    },
+    "./justify-between": {
+      "import": {
+        "types": "./dist/justify-between.d.mts",
+        "default": "./dist/justify-between.mjs"
+      },
+      "require": {
+        "types": "./dist/justify-between.d.ts",
+        "default": "./dist/justify-between.js"
+      }
+    },
+    "./justify-end": {
+      "import": {
+        "types": "./dist/justify-end.d.mts",
+        "default": "./dist/justify-end.mjs"
+      },
+      "require": {
+        "types": "./dist/justify-end.d.ts",
+        "default": "./dist/justify-end.js"
       }
     },
     "./alert-dialog": {
@@ -468,19 +499,16 @@
     "@storybook/react-vite": "^8.3.6",
     "@storybook/test": "^8.3.6",
     "@turbo/gen": "^1.12.4",
-    "@types/eslint": "^8.56.5",
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react18",
+    "@types/react-dom": "catalog:react18",
     "@xionwcfm/icon": "workspace:*",
     "@xionwcfm/tailwindcss-config": "workspace:*",
-    "@xionwcfm/token": "^0.0.8",
+    "@xionwcfm/token": "workspace:*",
     "@xionwcfm/typescript-config": "workspace:*",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "catalog:",
     "cssnano": "^7.0.5",
-    "eslint": "^8.57.0",
-    "eslint-plugin-storybook": "^0.9.0",
-    "postcss": "^8",
+    "postcss": "catalog:",
     "postcss-colormin": "^7.0.2",
     "postcss-combine-media-query": "^1.0.1",
     "postcss-custom-properties": "^14.0.1",
@@ -490,11 +518,11 @@
     "postcss-minify-selectors": "^7.0.3",
     "postcss-reduce-initial": "^7.0.2",
     "postcss-variable-compress": "^3.0.0",
-    "react": "^18.2.0",
+    "react": "catalog:react18",
     "storybook": "^8.3.6",
-    "tailwindcss": "^3.4.1",
-    "tsup": "^8.1.0",
-    "typescript": "^5.3.3"
+    "tailwindcss": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
@@ -518,8 +546,8 @@
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@radix-ui/react-visually-hidden": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
     "sonner": "^1.5.0",
     "tailwind-merge": "1.14.0",
     "vaul": "^0.9.1"
@@ -527,8 +555,5 @@
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
-  },
-  "eslintConfig": {
-    "extends": ["plugin:storybook/recommended"]
   }
 }

@@ -13,8 +13,8 @@ const inputVariants = cva(
     "border-b border-gray-200",
     "text-size-5 placeholder:sr-only ",
     "focus:border-primary-400",
-    " text-gray-600 font-light",
-    " disabled:bg-gray-100 disabled:rounded-sm disabled:border-none disabled:text-gray-500 ",
+    " text-gray-600 font-light rounded-[0px]",
+    " disabled:bg-gray-100 disabled:rounded-sm disabled:border-none disabled:text-gray-500",
   ),
   {
     variants: {
@@ -30,19 +30,23 @@ const inputVariants = cva(
 
 const Wrapper = forwardRef<
   ElementRef<"label">,
-  ComponentPropsWithoutRef<"label"> & { children?: ReactNode; isFocused: boolean; hasValue: boolean }
+  ComponentPropsWithoutRef<"label"> & {
+    children?: ReactNode;
+    isFocused: boolean;
+    hasValue: boolean;
+    disabled?: boolean;
+  }
 >(function InputWrapper(props, ref) {
-  const { children, className, isFocused, hasValue, ...rest } = props;
+  const { children, className, isFocused, hasValue, disabled, ...rest } = props;
 
   return (
     <label
       ref={ref}
       className={cn(
-        "absolute left-0 top-0 translate-y-[6px] transition-all duration-100 cursor-text",
+        "absolute left-0 top-0 translate-y-[6px] transition-all duration-200 cursor-text",
         " font-light",
         isFocused || hasValue ? " text-size-3 -translate-y-16" : "text-base top-2",
         isFocused ? " text-primary-500" : " text-gray-300",
-
         className,
       )}
       {...rest}
@@ -87,7 +91,11 @@ export const UnderlineInput = forwardRef<
         isFocused={isFocused}
         hasValue={hasValue}
         htmlFor={id}
-        className={cn(left && !isFocused && isEmpty && " translate-x-36", disabled && !isEmpty && " invisible")}
+        className={cn(
+          disabled && " translate-x-16",
+          left && !isFocused && isEmpty && "translate-x-36",
+          disabled && !isEmpty && " invisible",
+        )}
         {...label}
       >
         {placeholder}

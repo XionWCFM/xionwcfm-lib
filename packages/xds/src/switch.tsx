@@ -13,6 +13,7 @@ export const Root = forwardRef<
         " w-[50px] h-[30px] rounded-full bg-gray-200 relative",
         " data-[state=checked]:bg-primary-500",
         "outline-none transition-colors duration-200",
+        " disabled:opacity-30",
       )}
       {...rest}
     />

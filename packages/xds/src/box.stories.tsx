@@ -1,129 +1,131 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Box } from "./box";
 
-const keys = Object.keys({
-  "0": "w-0",
-  "4": "w-4",
-  "8": "w-8",
-  "12": "w-12",
-  "16": "w-16",
-  "20": "w-20",
-  "24": "w-24",
-  "28": "w-28",
-  "32": "w-32",
-  "36": "w-36",
-  "40": "w-40",
-  "44": "w-44",
-  "48": "w-48",
-  "64": "w-64",
-  "76": "w-76",
-  "88": "w-88",
-  "100": "w-100",
-  "128": "w-128",
-  "256": "w-256",
-  "512": "w-512",
-  "768": "w-768",
-  "1024": "w-1024",
-  "1440": "w-1440",
-  "50%": "w-1/2",
-  "100%": "w-full",
-  screen: "w-screen",
-});
-
-const meta: Meta<typeof Box> = {
+const meta: Meta = {
   title: "Xds/Box",
   tags: ["autodocs"],
-  component: Box,
-  argTypes: {
-    asChild: {
-      control: "boolean",
-      description: "asChild",
-    },
-    h: {
-      control: "select",
-      description: "height",
-      options: keys,
-    },
-    w: {
-      control: "select",
-      description: "width",
-      options: keys,
-    },
-    m: {
-      control: "select",
-      description: "margin",
-      options: keys,
-    },
-    p: {
-      control: "select",
-      description: "padding",
-      options: keys,
-    },
-    children: {
-      control: "object",
-      description: "reactnode 타입을 받습니다.",
-    },
-    position: {
-      control: "select",
-      description: "position",
-      options: [
-        "relative",
-        "absolute",
-        "fixed",
-        "sticky",
-        "static",
-        "inherit",
-        "initial",
-        "revert",
-        "revert-layer",
-        "unset",
-      ],
-    },
-    className: {
-      control: "text",
-      description: "className",
-    },
-    as: {
-      control: "text",
-      description: "as",
-    },
-  },
   parameters: {
     docs: {
       description: {
-        component: "Box는 margin, padding에 대한 지원을 가지고 있습니다.",
+        component: "Box는 레이아웃을 구성하는 기본 컴포넌트입니다.",
       },
     },
   },
-} satisfies Meta<typeof Box>;
+  argTypes: {
+    as: {
+      description: "렌더링할 HTML 요소나 컴포넌트",
+      type: { name: "string" },
+    },
+    asChild: {
+      description: "자식 요소를 슬롯으로 사용할지 여부",
+      type: { name: "boolean" },
+    },
+    className: {
+      description: "추가 스타일링을 위한 클래스",
+      type: { name: "string" },
+    },
+  },
+} satisfies Meta;
 
 export default meta;
 
 type Story = StoryObj;
 
-export const Default: Story = {
-  args: {},
+export const BasicBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "기본적인 Box 컴포넌트입니다. 여백과 크기를 지정할 수 있습니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="bg-gray-100 p-16">
+      <Box className="bg-blue-100 p-16 mb-16">Box with margin bottom</Box>
+      <Box className="bg-green-100 p-16">Another box</Box>
+    </Box>
+  ),
 };
 
-export const Spacing: Story = {
-  render: () => {
-    return (
-      <Box
-        className=" bg-primary-100  "
-        maxW={{
-          initial: "32",
-          xl: "64",
-        }}
-        px={{
-          md: "12",
-        }}
-        py={{
-          md: "20",
-          xl: "40",
-        }}
-      >
-        hello
-      </Box>
-    );
+export const PolymorphicBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "다양한 HTML 요소로 렌더링할 수 있는 Box입니다. as prop을 사용하여 요소를 지정합니다.",
+      },
+    },
   },
+  render: () => (
+    <Box className="space-y-16">
+      <Box as="section" className="bg-blue-100 p-16">
+        This is a section
+      </Box>
+      <Box as="article" className="bg-green-100 p-16">
+        This is an article
+      </Box>
+      <Box as="button" className="bg-red-100 p-16">
+        This is a button
+      </Box>
+    </Box>
+  ),
+};
+
+export const SpacingBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "여백 시스템을 활용한 Box입니다. m, p 등의 spacing props를 사용할 수 있습니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="bg-gray-100">
+      <Box m="16" p="16" className="bg-blue-100">
+        Box with margin and padding
+      </Box>
+      <Box mt="32" px="24" className="bg-green-100">
+        Box with margin-top and horizontal padding
+      </Box>
+    </Box>
+  ),
+};
+
+export const DimensionsBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "크기를 지정할 수 있는 Box입니다. w, h, minW, maxW 등의 dimension props를 사용할 수 있습니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="space-y-16">
+      <Box h="32" className=" bg-primary-50">
+        Half width box
+      </Box>
+      <Box h={"screen"} maxH={"64"} className=" bg-gray-200">
+        Max width constrained box
+      </Box>
+      <Box minH={"128"} className=" bg-warning-200">
+        Min width box
+      </Box>
+    </Box>
+  ),
+};
+
+export const ResponsiveBox: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "반응형 레이아웃을 구현하는 Box입니다. 화면 크기에 따라 다른 스타일을 적용할 수 있습니다.",
+      },
+    },
+  },
+  render: () => (
+    <Box className="space-y-4">
+      <Box p={{ initial: "4", md: "8" }} className="bg-blue-100">
+        Responsive Padding
+      </Box>
+    </Box>
+  ),
 };

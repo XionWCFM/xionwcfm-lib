@@ -1,5 +1,5 @@
 import { type ElementType, type ReactNode, forwardRef } from "react";
-import { Box, type PolimophicWithSpacingSystemProps } from "./box";
+import { Box, type BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { formatClass } from "./internal-utils/format-class";
@@ -9,21 +9,15 @@ import { FlexDirectionTypeProps } from "./variants/flex-direction-variants";
 import { FlexJustifyTypeProps } from "./variants/flex-justify-variants";
 import { GapTypeProps } from "./variants/gap-variants";
 
-type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
+type Props<C extends ElementType> = BoxProps<C> &
   FlexDirectionTypeProps &
   GapTypeProps &
   FlexJustifyTypeProps &
   FlexItemsTypeProps;
 
-type FlexType = <C extends ElementType = SemanticHTMLContentSectionType>(
-  props: PolymorphicComponentPropsWithRef<C, Props<C>>,
-) => ReactNode | null;
-export const Flex: FlexType = forwardRef(function Flex<C extends ElementType = "div">(
-  props: Props<C>,
-  ref?: PolymorphicRef<C>,
-) {
+export const Flex = forwardRef(function Flex<C extends ElementType = "div">(props: Props<C>, ref?: PolymorphicRef<C>) {
   const { children, direction, gap, w, h, justify, items, className, as, ...rest } = props;
-  const typedRest = rest as PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>;
+  const typedRest = rest as PolymorphicComponentPropsWithRef<C, BoxProps<C>>;
   return (
     <Box
       as={as}
@@ -43,8 +37,4 @@ export const Flex: FlexType = forwardRef(function Flex<C extends ElementType = "
       {children}
     </Box>
   );
-});
-
-const Hi = () => {
-  return <Flex direction={"column"}></Flex>;
-};
+}) as <C extends ElementType = "div">(props: Props<C>, ref?: PolymorphicRef<C>) => JSX.Element;

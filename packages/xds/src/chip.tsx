@@ -1,9 +1,9 @@
 import { type ElementType, type ReactNode, forwardRef } from "react";
-import type { PolimophicWithSpacingSystemProps } from "./box";
+import type { BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 
-type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C>;
+type Props<C extends ElementType> = BoxProps<C>;
 type ChipType = <C extends ElementType = "div" | "button" | "a">(
   props: PolymorphicComponentPropsWithRef<C, Props<C>>,
 ) => ReactNode | null;

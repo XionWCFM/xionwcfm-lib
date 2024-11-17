@@ -23,22 +23,28 @@ export const Item = forwardRef<
 
 export const Trigger = forwardRef<
   React.ElementRef<typeof Accordion.AccordionTrigger>,
-  React.ComponentPropsWithoutRef<typeof Accordion.AccordionTrigger> & { right?: ReactNode }
->(({ children, className, right, ...props }, forwardedRef) => (
+  React.ComponentPropsWithoutRef<typeof Accordion.AccordionTrigger> & {
+    right?: ReactNode;
+    rotate?: boolean;
+  }
+>(({ children, className, right, rotate = true, ...props }, forwardedRef) => (
   <Accordion.Header className="flex">
     <Accordion.Trigger
       className={cn(
-        "group flex h-[45px] flex-1 cursor-default items-center justify-between bg-white px-[16px] text-size-5 leading-none text-neutral-600 outline-none ",
+        "group flex flex-1 cursor-default items-center justify-between leading-none outline-none ",
         className,
       )}
       {...props}
       ref={forwardedRef}
     >
       {children}
-      <ChevronDownIcon
-        className=" text-neutral-600 transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180"
-        aria-hidden
-      />
+      {rotate ? (
+        <div className=" transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180">
+          {right}
+        </div>
+      ) : (
+        right
+      )}
     </Accordion.Trigger>
   </Accordion.Header>
 ));
@@ -48,10 +54,7 @@ export const Content = forwardRef<
   React.ComponentPropsWithoutRef<typeof Accordion.AccordionContent>
 >(({ children, className, ...props }, forwardedRef) => (
   <Accordion.Content
-    className={cn(
-      "overflow-hidden bg-neutral-50 text-size-5 text-neutral-600 data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
-      className,
-    )}
+    className={cn("overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown", className)}
     {...props}
     ref={forwardedRef}
   >

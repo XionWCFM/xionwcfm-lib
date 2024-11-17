@@ -1,10 +1,11 @@
-export const ThreeDotLoadingSpinner = () => {
+export const ThreeDotLoadingSpinner = (props: { color?: string }) => {
+  const { color = "#dcdcdc" } = props;
   return (
     // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 20" preserveAspectRatio="xMidYMid" width="80" height="20">
       <g>
         <g transform="translate(10 10)">
-          <circle fill="#dcdcdc" r="6" cy="0" cx="0" transform="scale(0.017946720123291016)">
+          <circle fill={color} r="6" cy="0" cx="0" transform="scale(0.017946720123291016)">
             <animateTransform
               attributeName="transform"
               type="scale"
@@ -19,7 +20,7 @@ export const ThreeDotLoadingSpinner = () => {
           </circle>
         </g>
         <g transform="translate(40 10)">
-          <circle fill="#dcdcdc" r="6" cy="0" cx="0" transform="scale(0.3678668141365051)">
+          <circle fill={color} r="6" cy="0" cx="0" transform="scale(0.3678668141365051)">
             <animateTransform
               attributeName="transform"
               type="scale"
@@ -34,7 +35,7 @@ export const ThreeDotLoadingSpinner = () => {
           </circle>
         </g>
         <g transform="translate(70 10)">
-          <circle fill="#dcdcdc" r="6" cy="0" cx="0" transform="scale(0.8215078115463257)">
+          <circle fill={color} r="6" cy="0" cx="0" transform="scale(0.8215078115463257)">
             <animateTransform
               attributeName="transform"
               type="scale"

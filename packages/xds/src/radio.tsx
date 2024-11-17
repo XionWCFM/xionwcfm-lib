@@ -10,6 +10,7 @@ import {
   cloneElement,
   forwardRef,
   useId,
+  useState,
 } from "react";
 import { cn } from "./cn";
 import { createSafeContext } from "./hooks/xds-create-safe-context";
@@ -141,7 +142,7 @@ type TransitionBarProps = {
 };
 
 const transitionBarVariants = cva(
-  " absolute duration-500 transition-all top-[4px] left-[4px] bottom-[4px] z-0 rounded-sm ",
+  " absolute duration-500  transition-all top-[4px] left-[4px] bottom-[4px] z-0 rounded-sm ",
   {
     variants: {
       variant: {

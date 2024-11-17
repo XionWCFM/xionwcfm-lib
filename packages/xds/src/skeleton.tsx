@@ -1,6 +1,6 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
-import type { PolimophicWithSpacingSystemProps } from "./box";
+import type { BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import type { SemanticHTMLContentSectionType } from "./internal-utils/type";
@@ -20,7 +20,7 @@ const skeletonVariants = cva(" animate-pulse", {
   },
 });
 
-type Props<C extends ElementType> = PolimophicWithSpacingSystemProps<C> &
+type Props<C extends ElementType> = BoxProps<C> &
   VariantProps<typeof skeletonVariants> &
   Pick<VariantProps<typeof stackVariants>, "h" | "w">;
 

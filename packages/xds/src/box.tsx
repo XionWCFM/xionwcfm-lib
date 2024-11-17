@@ -16,7 +16,7 @@ import { MinWTypeProps } from "./variants/min-w-variants";
 import { PositionTypeProps } from "./variants/position-variants";
 import { WTypeProps } from "./variants/w-variants";
 
-export type PolimophicWithSpacingSystemProps<C extends ElementType> = PolymorphicComponentProps<
+export type BoxProps<C extends ElementType> = PolymorphicComponentProps<
   C,
   {
     className?: string;
@@ -32,7 +32,7 @@ export type PolimophicWithSpacingSystemProps<C extends ElementType> = Polymorphi
 >;
 
 export const Box = forwardRef(function Box<C extends ElementType = "div">(
-  { children, as, className, asChild = false, ...rest }: PolimophicWithSpacingSystemProps<C>,
+  { children, as, className, asChild = false, ...rest }: BoxProps<C>,
   ref?: PolymorphicRef<C>,
 ) {
   const AsComponent = (as || "div") as C;
@@ -82,6 +82,4 @@ export const Box = forwardRef(function Box<C extends ElementType = "div">(
       {children}
     </SlottableComponent>
   );
-}) as <C extends ElementType = ElementType>(
-  props: PolymorphicComponentPropsWithRef<C, PolimophicWithSpacingSystemProps<C>>,
-) => ReactNode;
+}) as <C extends ElementType = ElementType>(props: BoxProps<C>) => JSX.Element;

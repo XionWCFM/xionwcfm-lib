@@ -1,0 +1,49 @@
+name: Commit Message Labeler
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Fetch commit messages and apply labels
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+
+            const { data: commits } = await github.rest.pulls.listCommits({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+            });
+
+            const commitMessages = commits.map(commit => commit.commit.message);
+            console.log("Fetched commit messages:", commitMessages);
+
+            const labels = ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"];
+            const labelsToAdd = [];
+
+            labels.forEach(label => {
+              const regex = new RegExp(`^${label}:\\s`, "i");
+              if (commitMessages.some(message => regex.test(message))) {
+                labelsToAdd.push(label);
+              }
+            });
+
+            console.log("Labels to add:", labelsToAdd);
+
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                labels: labelsToAdd,
+              });
+            }

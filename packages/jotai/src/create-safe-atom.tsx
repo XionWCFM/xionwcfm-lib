@@ -1,5 +1,6 @@
-import { Atom, PrimitiveAtom, WritableAtom, useAtom, useAtomValue, useSetAtom } from "jotai";
-import { FunctionComponent, PropsWithChildren, createContext, useContext } from "react";
+import { Atom, PrimitiveAtom, WritableAtom, atom, useAtom, useAtomValue, useSetAtom } from "jotai";
+import { FunctionComponent, PropsWithChildren, createContext, useContext, useMemo } from "react";
+import { usePreservedCallback } from "./jotai-use-preserved-callback";
 
 type AtomOptionsType<AtomeValue extends ComprehensiveAtomType> = PropsWithChildren<{
   value?: AtomeValue;
@@ -15,6 +16,10 @@ type ReadonlyAtomResultType<TAtom extends ComprehensiveAtomType> = {
     options?: AtomOptionsType<TAtom>,
   ) => (props: Props) => JSX.Element;
   useAtomValue: () => TAtom extends Atom<infer AtomValue> ? Awaited<AtomValue> : never;
+  useAtomInstance: () => TAtom;
+  useDerivedAtom: <ReturnValue>(
+    callback: (value: TAtom extends Atom<infer AtomValue> ? Awaited<AtomValue> : never) => ReturnValue,
+  ) => Atom<ReturnValue>;
 };
 
 type WritableAtomResultType<TAtom extends DefaultWritableAtomType> = ReadonlyAtomResultType<TAtom> & {
@@ -106,6 +111,8 @@ const ERROR_MESSAGE_PROVIDER_NOT_PROVIDED =
 export function createSafeAtom<TAtom extends ComprehensiveAtomType>(
   initialValue: TAtom,
 ): CreateSafeAtomReturnType<TAtom> {
+  type AtomValue = TAtom extends Atom<infer AtomValue> ? Awaited<AtomValue> : never;
+
   const Context = createContext<TAtom | null>(null);
 
   const useSafeContext = (): TAtom => {
@@ -137,10 +144,20 @@ export function createSafeAtom<TAtom extends ComprehensiveAtomType>(
     return useAtomValue(useSafeContext());
   };
 
+  const useAtomInstance = useSafeContext;
+
+  const useDerivedAtom = <ReturnValue,>(callback: (value: Awaited<AtomValue>) => ReturnValue) => {
+    const atomInstance = useAtomInstance();
+    const preservedCallback = usePreservedCallback(callback);
+    return useMemo(() => atom((get) => preservedCallback(get(atomInstance))), [atomInstance, preservedCallback]);
+  };
+
   const result: ReadonlyAtomResultType<TAtom> = {
     Provider,
     with: ProviderWith,
     useAtomValue: useContextAtomValue,
+    useAtomInstance,
+    useDerivedAtom,
   };
 
   if ("write" in initialValue || "init" in initialValue) {
@@ -156,6 +173,8 @@ export function createSafeAtom<TAtom extends ComprehensiveAtomType>(
       ...result,
       useAtom: useContextAtom,
       useSetAtom: useSetContextAtom,
+      useAtomInstance,
+      useDerivedAtom,
     } as CreateSafeAtomReturnType<TAtom>;
   }
 

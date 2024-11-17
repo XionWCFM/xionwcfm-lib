@@ -1,0 +1,29 @@
+"@xionwcfm/jotai":
+  - changed-files:
+      - any-glob-to-any-file: "packages/jotai/**"
+
+"@xionwcfm/react-query":
+  - changed-files:
+      - any-glob-to-any-file: "packages/react-query/**"
+
+"@xionwcfm/react":
+  - changed-files:
+      - any-glob-to-any-file: "packages/react/**"
+
+"@xionwcfm/lotties":
+  - changed-files:
+      - any-glob-to-any-file: "packages/lotties/**"
+
+"@xionwcfm/xds":
+  - changed-files:
+      - any-glob-to-any-file: "packages/xds/**"
+
+"@xionwcfm/utils":
+  - changed-files:
+      - any-glob-to-any-file: "packages/utils/**"
+
+"@xionwcfm/token":
+  - changed-files:
+      - any-glob-to-any-file: "packages/token/**"
+
+
