@@ -1,0 +1,11 @@
+name: 'CodeQL config'
+
+paths:
+  - packages/**
+  - apps/**
+paths-ignore:
+  - '**/*.test.ts'
+  - '**/*.test.tsx'
+  - '**/*.stories.ts'
+  - '**/*.stories.tsx'
+  - '**/node_modules/**'
