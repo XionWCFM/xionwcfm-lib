@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/jotai",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "build": "tsup",
@@ -25,7 +25,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@testing-library/jest-dom": "catalog:",
     "@testing-library/react": "catalog:",
@@ -33,7 +35,6 @@
     "@vitejs/plugin-react": "catalog:",
     "@types/node": "^20.14.9",
     "@types/react": "catalog:react18",
-
     "@xionwcfm/typescript-config": "workspace:*",
     "happy-dom": "^14.12.0",
     "jotai": "^2.9.3",
