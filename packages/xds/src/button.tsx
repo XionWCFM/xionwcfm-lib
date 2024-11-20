@@ -1,11 +1,9 @@
-import { colors } from "@xionwcfm/token";
 import { type VariantProps, cva } from "class-variance-authority";
 import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type BoxProps } from "./box";
 import { cn } from "./cn";
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "./internal-type/polymorphic";
 import { Spinner } from "./spinner";
-import { ThreeDotLoadingSpinner } from "./three-dot-loading-spinner";
 
 export const buttonVariants = cva(
   `items-center justify-center whitespace-nowrap 
@@ -65,8 +63,8 @@ export const buttonVariants = cva(
 );
 
 type ButtonOptionProps = {
-  startIcon?: ReactNode;
-  endIcon?: ReactNode;
+  left?: ReactNode;
+  right?: ReactNode;
   loading?: boolean;
 };
 
@@ -84,16 +82,16 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
     size,
     loading,
     disabled,
-    endIcon,
+    right,
     type,
-    startIcon,
+    left,
     rounded,
     asChild = false,
     w,
     ...rest
   } = props;
   const typedRest = rest as PolymorphicComponentPropsWithRef<C, BoxProps<C>>;
-  const slotClass = !!startIcon || !!endIcon ? "flex items-center justify-center gap-x-4" : "";
+  const slotClass = !!left || !!right ? "flex items-center justify-center gap-x-4" : "";
   const ComponentAs = as || "button";
   const ariaLabel = props["aria-label"] ?? loading ? "loading progress" : "button";
 
@@ -115,15 +113,15 @@ export const Button = forwardRef(function Button<C extends ElementType = "button
             <Spinner color={"primary"} />
           </Box>
         ) : null}
-        {startIcon && !loading ? (
+        {left && !loading ? (
           <Box as="span" className=" mr-2">
-            {startIcon}
+            {left}
           </Box>
         ) : null}
         <div className={`${loading ? "invisible" : ""}`}>{children}</div>
-        {endIcon ? (
+        {right ? (
           <Box as="span" className="ml-2">
-            {endIcon}
+            {right}
           </Box>
         ) : null}
       </>

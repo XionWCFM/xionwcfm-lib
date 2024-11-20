@@ -46,7 +46,7 @@ export const BasicCollapsible: Story = {
         <Collapsible.Trigger asChild>
           <Button
             variant="outline"
-            endIcon={<ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />}
+            right={<ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />}
           >
             상세 정보 보기
           </Button>
@@ -77,7 +77,7 @@ export const ListCollapsible: Story = {
           <Button
             variant="ghost"
             className="w-full justify-between"
-            endIcon={<ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />}
+            right={<ChevronDownIcon className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />}
           >
             최근 주문 내역 (3)
           </Button>
@@ -116,7 +116,7 @@ export const NestedCollapsible: Story = {
         <Collapsible.Trigger asChild>
           <Button
             variant="outline"
-            endIcon={
+            right={
               <ChevronDownIcon className={`transition-transform duration-200 ${parentOpen ? "rotate-180" : ""}`} />
             }
           >
@@ -132,7 +132,7 @@ export const NestedCollapsible: Story = {
                 <Button
                   variant="ghost"
                   size="sm"
-                  endIcon={
+                  right={
                     <ChevronDownIcon className={`transition-transform duration-200 ${childOpen ? "rotate-180" : ""}`} />
                   }
                 >

@@ -133,9 +133,9 @@ export const IconButtons: Story = {
   },
   render: () => (
     <div className="space-x-4">
-      <Button startIcon={<ArrowRightIcon />}>Start Icon</Button>
-      <Button endIcon={<ArrowRightIcon />}>End Icon</Button>
-      <Button startIcon={<ReloadIcon />} endIcon={<ArrowRightIcon />}>
+      <Button left={<ArrowRightIcon />}>Start Icon</Button>
+      <Button right={<ArrowRightIcon />}>End Icon</Button>
+      <Button left={<ReloadIcon />} right={<ArrowRightIcon />}>
         Both Icons
       </Button>
     </div>

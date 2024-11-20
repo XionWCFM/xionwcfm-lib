@@ -267,6 +267,12 @@
   --danger-900: #ffdcdc;
 }
 
+@media (maxwidth: 767px) {
+  :root {
+    --font-size: 0.875rem;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --neutral-50: #1a1a1a;
