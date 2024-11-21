@@ -38,4 +38,4 @@ pre-push:
           fi
         done
     test:
-      run: pnpm run test:ci
+      run: pnpm run ci:test
