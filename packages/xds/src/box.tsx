@@ -31,6 +31,8 @@ export type BoxProps<C extends ElementType> = PolymorphicComponentProps<
     MaxHTypeProps
 >;
 
+export type BoxRef<C extends ElementType> = PolymorphicRef<C>;
+
 export const Box = forwardRef(function Box<C extends ElementType = "div">(
   { children, as, className, asChild = false, ...rest }: BoxProps<C>,
   ref?: PolymorphicRef<C>,

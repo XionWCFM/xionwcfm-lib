@@ -554,6 +554,7 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "react-hook-form": ">=3"
   }
 }

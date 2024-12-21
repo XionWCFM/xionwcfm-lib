@@ -4,6 +4,7 @@ import { createSafeContext } from "./create-safe-context";
 import { Debounce } from "./debounce";
 import { DebounceEvent } from "./debounce-event";
 import { Deferred } from "./deferred";
+import { InView } from "./in-view";
 import { Iterator } from "./iterator";
 import { Separated } from "./separated";
 import { SwitchCase } from "./switch-case";
@@ -52,6 +53,7 @@ import { useWindowScroll } from "./use-window-scroll";
 import { When } from "./when";
 
 export {
+  InView,
   Deferred,
   Iterator,
   When,
