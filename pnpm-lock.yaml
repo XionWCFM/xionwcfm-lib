@@ -90,7 +90,7 @@ importers:
         version: 19.5.0
       '@vitest/coverage-v8':
         specifier: ^2.1.5
-        version: 2.1.5(vitest@2.1.5(@types/node@22.9.0)(happy-dom@14.12.3))
+        version: 2.1.5(vitest@2.1.5(@types/node@22.9.0)(happy-dom@15.11.6))
       '@xionwcfm/typescript-config':
         specifier: workspace:*
         version: link:configs/typescript
@@ -111,7 +111,7 @@ importers:
         version: 5.6.3
       vitest:
         specifier: ^2.1.5
-        version: 2.1.5(@types/node@22.9.0)(happy-dom@14.12.3)
+        version: 2.1.5(@types/node@22.9.0)(happy-dom@15.11.6)
 
   apps/playground:
     dependencies:
@@ -209,7 +209,7 @@ importers:
     devDependencies:
       '@testing-library/jest-dom':
         specifier: 'catalog:'
-        version: 6.4.5(vitest@2.1.5(@types/node@20.16.3)(happy-dom@14.12.3))
+        version: 6.4.5(vitest@2.1.5(@types/node@20.16.3)(happy-dom@15.11.6))
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.0.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -229,8 +229,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typescript
       happy-dom:
-        specifier: ^14.12.0
-        version: 14.12.3
+        specifier: ^15.11.6
+        version: 15.11.6
       jotai:
         specifier: ^2.9.3
         version: 2.9.3(@types/react@18.3.12)(react@18.3.1)
@@ -248,10 +248,10 @@ importers:
         version: 4.3.2(typescript@5.6.3)(vite@5.3.4(@types/node@20.16.3))
       vitest:
         specifier: 'catalog:'
-        version: 2.1.5(@types/node@20.16.3)(happy-dom@14.12.3)
+        version: 2.1.5(@types/node@20.16.3)(happy-dom@15.11.6)
       vitest-fetch-mock:
         specifier: 'catalog:'
-        version: 0.2.2(vitest@2.1.5(@types/node@20.16.3)(happy-dom@14.12.3))
+        version: 0.2.2(vitest@2.1.5(@types/node@20.16.3)(happy-dom@15.11.6))
 
   packages/lotties: {}
 
@@ -3450,9 +3450,9 @@ packages:
     resolution: {integrity: sha512-dHcnlGFY2o2CdxfuYpqwSrBrpj/Kuzv4u4f3TU5yHW1GL24dKij4pv1BRjXnXc3uWo8qsCbToF9weaDsm/He8A==}
     engines: {node: '>=16.0.0'}
 
-  happy-dom@14.12.3:
-    resolution: {integrity: sha512-vsYlEs3E9gLwA1Hp+w3qzu+RUDFf4VTT8cyKqVICoZ2k7WM++Qyd2LwzyTi5bqMJFiIC/vNpTDYuxdreENRK/g==}
-    engines: {node: '>=16.0.0'}
+  happy-dom@15.11.6:
+    resolution: {integrity: sha512-elX7iUTu+5+3b2+NGQc0L3eWyq9jKhuJJ4GpOMxxT/c2pg9O3L5H3ty2VECX0XXZgRmmRqXyOK8brA2hDI6LsQ==}
+    engines: {node: '>=18.0.0'}
 
   har-schema@2.0.0:
     resolution: {integrity: sha512-Oqluz6zhGX8cyRaTQlFMPw80bSJVG2x/cFb8ZPhUILGgHka9SsokCCOQgpveePerqidZOrT14ipqfJb7ILcW5Q==}
@@ -7334,7 +7334,7 @@ snapshots:
     optionalDependencies:
       vitest: 2.1.5(@types/node@20.16.3)(happy-dom@14.12.0)
 
-  '@testing-library/jest-dom@6.4.5(vitest@2.1.5(@types/node@20.16.3)(happy-dom@14.12.3))':
+  '@testing-library/jest-dom@6.4.5(vitest@2.1.5(@types/node@20.16.3)(happy-dom@15.11.6))':
     dependencies:
       '@adobe/css-tools': 4.4.0
       '@babel/runtime': 7.25.6
@@ -7345,7 +7345,7 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
     optionalDependencies:
-      vitest: 2.1.5(@types/node@20.16.3)(happy-dom@14.12.3)
+      vitest: 2.1.5(@types/node@20.16.3)(happy-dom@15.11.6)
 
   '@testing-library/jest-dom@6.5.0':
     dependencies:
@@ -7563,7 +7563,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@2.1.5(vitest@2.1.5(@types/node@22.9.0)(happy-dom@14.12.3))':
+  '@vitest/coverage-v8@2.1.5(vitest@2.1.5(@types/node@22.9.0)(happy-dom@15.11.6))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -7577,7 +7577,7 @@ snapshots:
       std-env: 3.8.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.5(@types/node@22.9.0)(happy-dom@14.12.3)
+      vitest: 2.1.5(@types/node@22.9.0)(happy-dom@15.11.6)
     transitivePeerDependencies:
       - supports-color
 
@@ -8882,7 +8882,7 @@ snapshots:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
 
-  happy-dom@14.12.3:
+  happy-dom@15.11.6:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -11107,10 +11107,10 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  vitest-fetch-mock@0.2.2(vitest@2.1.5(@types/node@20.16.3)(happy-dom@14.12.3)):
+  vitest-fetch-mock@0.2.2(vitest@2.1.5(@types/node@20.16.3)(happy-dom@15.11.6)):
     dependencies:
       cross-fetch: 3.1.8
-      vitest: 2.1.5(@types/node@20.16.3)(happy-dom@14.12.3)
+      vitest: 2.1.5(@types/node@20.16.3)(happy-dom@15.11.6)
     transitivePeerDependencies:
       - encoding
 
@@ -11149,7 +11149,7 @@ snapshots:
       - supports-color
       - terser
 
-  vitest@2.1.5(@types/node@20.16.3)(happy-dom@14.12.3):
+  vitest@2.1.5(@types/node@20.16.3)(happy-dom@15.11.6):
     dependencies:
       '@vitest/expect': 2.1.5
       '@vitest/mocker': 2.1.5(vite@5.3.4(@types/node@20.16.3))
@@ -11173,7 +11173,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.16.3
-      happy-dom: 14.12.3
+      happy-dom: 15.11.6
     transitivePeerDependencies:
       - less
       - lightningcss
@@ -11184,7 +11184,7 @@ snapshots:
       - supports-color
       - terser
 
-  vitest@2.1.5(@types/node@22.9.0)(happy-dom@14.12.3):
+  vitest@2.1.5(@types/node@22.9.0)(happy-dom@15.11.6):
     dependencies:
       '@vitest/expect': 2.1.5
       '@vitest/mocker': 2.1.5(vite@5.3.4(@types/node@22.9.0))
@@ -11208,7 +11208,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.9.0
-      happy-dom: 14.12.3
+      happy-dom: 15.11.6
     transitivePeerDependencies:
       - less
       - lightningcss
