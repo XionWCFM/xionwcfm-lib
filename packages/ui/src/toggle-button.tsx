@@ -16,6 +16,7 @@ export const ToggleButton = forwardRef(function ToggleButton(props: ToggleButton
       data-state={selectedState}
       disabled={disabled}
       aria-disabled={disabled}
+      aria-selected={selected}
       role={role}
       tabIndex={disabled ? -1 : tabIndex}
       {...typesRest}
