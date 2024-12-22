@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --xui-skeleton-color: #f3f4f6;
+  --xui-skeleton-color-dark: #f3f4f6;
+}
+
+.xui-skeleton-color {
+  background-color: var(--xui-skeleton-color);
+}
+
+.dark .xui-skeleton-color {
+  background-color: var(--xui-skeleton-color-dark);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .xui-skeleton-color {
+    background-color: var(--xui-skeleton-color-dark);
+  }
+}

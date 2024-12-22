@@ -2,7 +2,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   format: ["cjs", "esm"],
-  entry: ["./src/*.(ts|tsx)", "!./src/**/*.stories.(ts|tsx)", "!./src/**/*.test.(ts|tsx)", "!./stories/*"],
+  entry: ["./src/*.(ts|tsx)", "!./src/**/*.test.(ts|tsx)", "!./src/**/*.stories.(ts|tsx)", "!./stories/*"],
   sourcemap: false,
   dts: true,
   clean: true,
