@@ -9,4 +9,5 @@ export default defineConfig({
   minify: true,
   treeshake: true,
   splitting: false,
+  external: ["react", "react-dom"],
 });
