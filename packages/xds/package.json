@@ -480,7 +480,8 @@
     "generate:component": "turbo gen react-component",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "serve-storybook": "npx serve storybook-static"
+    "serve-storybook": "npx serve storybook-static",
+    "test": "vitest"
   },
   "publishConfig": {
     "access": "public"
@@ -547,7 +548,7 @@
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "sonner": "^1.5.0",
-    "tailwind-merge": "1.14.0",
+    "tailwind-merge": "2.6.0",
     "vaul": "^0.9.1"
   },
   "peerDependencies": {
