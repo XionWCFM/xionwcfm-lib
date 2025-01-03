@@ -38,7 +38,7 @@
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
     "@vitejs/plugin-react": "^4.3.4",
-    "@xionwcfm/typescript-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "autoprefixer": "catalog:",
     "happy-dom": "^15.11.7",
     "postcss": "catalog:",

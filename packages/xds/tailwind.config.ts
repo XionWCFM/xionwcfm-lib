@@ -1,4 +1,4 @@
-import baseConfig from "@xionwcfm/tailwindcss-config/base";
+import baseConfig from "@repo/tailwindcss-config/base";
 import { vars } from "@xionwcfm/token";
 import type { Config } from "tailwindcss";
 const config: Config = {

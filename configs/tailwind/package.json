@@ -1,5 +1,5 @@
 {
-  "name": "@xionwcfm/tailwindcss-config",
+  "name": "@repo/tailwindcss-config",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -12,7 +12,7 @@
     }
   },
   "devDependencies": {
-    "@xionwcfm/typescript-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "latest",
