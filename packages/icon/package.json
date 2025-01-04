@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "@types/react": "catalog:react18",
-    "@xionwcfm/typescript-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@repo/tsup-config": "workspace:*",
     "tsup": "catalog:",
     "typescript": "catalog:"
   },

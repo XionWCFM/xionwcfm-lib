@@ -1,0 +1,7 @@
+{
+  "extends": "@repo/typescript-config/nextjs.json",
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}

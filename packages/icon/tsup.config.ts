@@ -1,9 +1,7 @@
+import config from "@repo/tsup-config";
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  format: ["cjs", "esm"],
-  entry: ["./src/*.(ts|tsx)"],
-  sourcemap: true,
-  dts: true,
+  ...config,
   clean: true,
 });

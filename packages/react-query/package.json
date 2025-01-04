@@ -23,9 +23,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "devDependencies": {
     "@tanstack/react-query": "catalog:react-query5",
     "@testing-library/jest-dom": "catalog:",
@@ -34,7 +32,7 @@
     "@types/node": "catalog:",
     "@types/react": "catalog:react18",
     "@vitejs/plugin-react": "catalog:",
-    "@xionwcfm/typescript-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "happy-dom": "catalog:",
     "tsup": "catalog:",
     "typescript": "catalog:",
