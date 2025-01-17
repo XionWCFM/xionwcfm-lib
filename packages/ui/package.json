@@ -17,6 +17,166 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
+    },
+    "./box": {
+      "import": {
+        "types": "./dist/box.d.mts",
+        "default": "./dist/box.mjs"
+      },
+      "require": {
+        "types": "./dist/box.d.ts",
+        "default": "./dist/box.js"
+      }
+    },
+    "./center-stack": {
+      "import": {
+        "types": "./dist/center-stack.d.mts",
+        "default": "./dist/center-stack.mjs"
+      },
+      "require": {
+        "types": "./dist/center-stack.d.ts",
+        "default": "./dist/center-stack.js"
+      }
+    },
+    "./center": {
+      "import": {
+        "types": "./dist/center.d.mts",
+        "default": "./dist/center.mjs"
+      },
+      "require": {
+        "types": "./dist/center.d.ts",
+        "default": "./dist/center.js"
+      }
+    },
+    "./flex": {
+      "import": {
+        "types": "./dist/flex.d.mts",
+        "default": "./dist/flex.mjs"
+      },
+      "require": {
+        "types": "./dist/flex.d.ts",
+        "default": "./dist/flex.js"
+      }
+    },
+    "./grid": {
+      "import": {
+        "types": "./dist/grid.d.mts",
+        "default": "./dist/grid.mjs"
+      },
+      "require": {
+        "types": "./dist/grid.d.ts",
+        "default": "./dist/grid.js"
+      }
+    },
+    "./image": {
+      "import": {
+        "types": "./dist/image.d.mts",
+        "default": "./dist/image.mjs"
+      },
+      "require": {
+        "types": "./dist/image.d.ts",
+        "default": "./dist/image.js"
+      }
+    },
+    "./justify-between": {
+      "import": {
+        "types": "./dist/justify-between.d.mts",
+        "default": "./dist/justify-between.mjs"
+      },
+      "require": {
+        "types": "./dist/justify-between.d.ts",
+        "default": "./dist/justify-between.js"
+      }
+    },
+    "./justify-end": {
+      "import": {
+        "types": "./dist/justify-end.d.mts",
+        "default": "./dist/justify-end.mjs"
+      },
+      "require": {
+        "types": "./dist/justify-end.d.ts",
+        "default": "./dist/justify-end.js"
+      }
+    },
+    "./list": {
+      "import": {
+        "types": "./dist/list.d.mts",
+        "default": "./dist/list.mjs"
+      },
+      "require": {
+        "types": "./dist/list.d.ts",
+        "default": "./dist/list.js"
+      }
+    },
+    "./row": {
+      "import": {
+        "types": "./dist/row.d.mts",
+        "default": "./dist/row.mjs"
+      },
+      "require": {
+        "types": "./dist/row.d.ts",
+        "default": "./dist/row.js"
+      }
+    },
+    "./skeleton": {
+      "import": {
+        "types": "./dist/skeleton.d.mts",
+        "default": "./dist/skeleton.mjs"
+      },
+      "require": {
+        "types": "./dist/skeleton.d.ts",
+        "default": "./dist/skeleton.js"
+      }
+    },
+    "./spacing": {
+      "import": {
+        "types": "./dist/spacing.d.mts",
+        "default": "./dist/spacing.mjs"
+      },
+      "require": {
+        "types": "./dist/spacing.d.ts",
+        "default": "./dist/spacing.js"
+      }
+    },
+    "./stack": {
+      "import": {
+        "types": "./dist/stack.d.mts",
+        "default": "./dist/stack.mjs"
+      },
+      "require": {
+        "types": "./dist/stack.d.ts",
+        "default": "./dist/stack.js"
+      }
+    },
+    "./toggle-button-group": {
+      "import": {
+        "types": "./dist/toggle-button-group.d.mts",
+        "default": "./dist/toggle-button-group.mjs"
+      },
+      "require": {
+        "types": "./dist/toggle-button-group.d.ts",
+        "default": "./dist/toggle-button-group.js"
+      }
+    },
+    "./toggle-button": {
+      "import": {
+        "types": "./dist/toggle-button.d.mts",
+        "default": "./dist/toggle-button.mjs"
+      },
+      "require": {
+        "types": "./dist/toggle-button.d.ts",
+        "default": "./dist/toggle-button.js"
+      }
+    },
+    "./toggle-button-multiple-group": {
+      "import": {
+        "types": "./dist/toggle-button-multiple-group.d.mts",
+        "default": "./dist/toggle-button-multiple-group.mjs"
+      },
+      "require": {
+        "types": "./dist/toggle-button-multiple-group.d.ts",
+        "default": "./dist/toggle-button-multiple-group.js"
+      }
     }
   },
   "files": ["dist"],
@@ -31,6 +191,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
@@ -38,8 +199,8 @@
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
     "@vitejs/plugin-react": "^4.3.4",
-    "@repo/typescript-config": "workspace:*",
     "autoprefixer": "catalog:",
+    "class-variance-authority": "^0.7.1",
     "happy-dom": "^15.11.7",
     "postcss": "catalog:",
     "react": "catalog:react18",
