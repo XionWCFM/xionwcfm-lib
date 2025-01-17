@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -8,6 +8,9 @@
   "style": "./dist/style.css",
   "exports": {
     "./package.json": "./package.json",
+    "./style": {
+      "default": "./style.css"
+    },
     ".": {
       "import": {
         "types": "./dist/index.d.mts",
@@ -179,7 +182,9 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss -i ./style.css -o dist/style.css --minify --postcss",
