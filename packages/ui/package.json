@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/ui",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -9,7 +9,7 @@
   "exports": {
     "./package.json": "./package.json",
     "./style": {
-      "default": "./style.css"
+      "default": "./dist/style.css"
     },
     ".": {
       "import": {
