@@ -10,7 +10,7 @@ describe("Skeleton", () => {
     render(<Skeleton>Content</Skeleton>);
     const element = screen.getByText("Content");
     expect(element.tagName).toBe("DIV");
-    expect(element).toHaveClass("xui-skeleton-color", "@xui-animate-pulse");
+    expect(element).toHaveClass("xui-skeleton-color", "xui-animate-pulse");
   });
 
   it("should render with custom width and height", () => {
@@ -32,7 +32,7 @@ describe("Skeleton", () => {
   it("should apply custom className while preserving default classes", () => {
     render(<Skeleton className="custom-class">Content</Skeleton>);
     const element = screen.getByText("Content");
-    expect(element).toHaveClass("custom-class", "xui-skeleton-color", "@xui-animate-pulse");
+    expect(element).toHaveClass("custom-class", "xui-skeleton-color", "xui-animate-pulse");
   });
 
   it("should forward ref correctly", () => {

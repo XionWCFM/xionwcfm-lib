@@ -15,7 +15,7 @@ export const Skeleton = forwardRef(function Skeleton<C extends ElementType = "di
 
   return (
     <Box
-      className={`xui-skeleton-color @xui-animate-pulse ${className}`}
+      className={`xui-skeleton-color xui-animate-pulse ${className}`}
       style={{ width: w, height: h, ...style }}
       ref={ref}
       as={as}

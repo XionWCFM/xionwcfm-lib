@@ -166,13 +166,13 @@ importers:
         version: link:../../packages/token
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2))
+        version: 3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3))
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2)))
+        version: 1.0.7(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3)))
       typescript:
         specifier: latest
-        version: 5.7.2
+        version: 5.7.3
 
   configs/tsup:
     devDependencies:
@@ -181,7 +181,7 @@ importers:
         version: link:../typescript
       tsup:
         specifier: ^8.3.5
-        version: 8.3.5(jiti@2.4.0)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.5.0)
+        version: 8.3.5(jiti@2.4.0)(postcss@8.4.49)(typescript@5.7.3)(yaml@2.5.0)
 
   configs/typescript: {}
 
@@ -414,21 +414,12 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.3.4(vite@6.0.5(@types/node@20.16.3)(jiti@2.4.0)(yaml@2.5.0))
-      autoprefixer:
-        specifier: 'catalog:'
-        version: 10.4.20(postcss@8.4.49)
       happy-dom:
         specifier: ^15.11.7
         version: 15.11.7
-      postcss:
-        specifier: 'catalog:'
-        version: 8.4.49
       react:
         specifier: catalog:react18
         version: 18.3.1
-      tailwindcss:
-        specifier: 'catalog:'
-        version: 3.4.15(ts-node@10.9.2(@types/node@20.16.3)(typescript@5.6.3))
       tsup:
         specifier: 'catalog:'
         version: 8.1.0(postcss@8.4.49)(ts-node@10.9.2(@types/node@20.16.3)(typescript@5.6.3))(typescript@5.6.3)
@@ -5531,8 +5522,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.7.2:
-    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -10163,13 +10154,13 @@ snapshots:
       postcss: 8.4.49
       ts-node: 10.9.2(@types/node@22.9.0)(typescript@5.6.3)
 
-  postcss-load-config@4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2)):
+  postcss-load-config@4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.0
     optionalDependencies:
       postcss: 8.4.49
-      ts-node: 10.9.2(@types/node@22.9.0)(typescript@5.7.2)
+      ts-node: 10.9.2(@types/node@22.9.0)(typescript@5.7.3)
 
   postcss-load-config@6.0.1(jiti@2.4.0)(postcss@8.4.49)(yaml@2.5.0):
     dependencies:
@@ -10797,11 +10788,11 @@ snapshots:
 
   tailwind-merge@2.6.0: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2))):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3))):
     dependencies:
-      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2))
+      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3))
 
-  tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2)):
+  tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -10820,7 +10811,7 @@ snapshots:
       postcss: 8.4.49
       postcss-import: 15.1.0(postcss@8.4.49)
       postcss-js: 4.0.1(postcss@8.4.49)
-      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2))
+      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3))
       postcss-nested: 6.2.0(postcss@8.4.49)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
@@ -10991,7 +10982,7 @@ snapshots:
       yn: 3.1.1
     optional: true
 
-  ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.2):
+  ts-node@10.9.2(@types/node@22.9.0)(typescript@5.7.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -11005,7 +10996,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.7.2
+      typescript: 5.7.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     optional: true
@@ -11070,7 +11061,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  tsup@8.3.5(jiti@2.4.0)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.5.0):
+  tsup@8.3.5(jiti@2.4.0)(postcss@8.4.49)(typescript@5.7.3)(yaml@2.5.0):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.24.0)
       cac: 6.7.14
@@ -11090,7 +11081,7 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.49
-      typescript: 5.7.2
+      typescript: 5.7.3
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -11145,7 +11136,7 @@ snapshots:
 
   typescript@5.6.3: {}
 
-  typescript@5.7.2: {}
+  typescript@5.7.3: {}
 
   uglify-js@3.19.3:
     optional: true

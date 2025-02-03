@@ -21,7 +21,7 @@ export const List = forwardRef(function List<C extends ElementType = "ul">(
   }
 
   return (
-    <Box className={` @xui-flex @xui-flex-col @xui-break-words ${className}`} ref={ref} as={as} {...typesRest}>
+    <Box className={` xui-flex xui-flex-col xui-break-words ${className}`} ref={ref} as={as} {...typesRest}>
       {rest.with ? <Separated with={rest.with}>{children}</Separated> : children}
     </Box>
   );

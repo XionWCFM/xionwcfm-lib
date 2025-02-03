@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --xui-skeleton-color: #f3f4f6;
   --xui-skeleton-color-dark: #f3f4f6;
@@ -13,6 +9,102 @@
 
 .dark .xui-skeleton-color {
   background-color: var(--xui-skeleton-color-dark);
+}
+
+.xui-flex {
+  display: flex;
+}
+
+.xui-flex-col {
+  flex-direction: column;
+}
+
+.xui-justify-center {
+  justify-content: center;
+}
+
+.xui-items-center {
+  align-items: center;
+}
+
+.xui-flex-grow {
+  flex-grow: 1;
+}
+
+.xui-w-full {
+  width: 100%;
+}
+
+.xui-text-left {
+  text-align: left;
+}
+
+.xui-justify-between {
+  justify-content: space-between;
+}
+
+.xui-break-words {
+  word-break: break-word;
+}
+
+.xui-object-cover {
+  object-fit: cover;
+}
+
+.xui-object-contain {
+  object-fit: contain;
+}
+
+.xui-object-fill {
+  object-fit: fill;
+}
+
+.xui-object-none {
+  object-fit: none;
+}
+
+.xui-object-scale-down {
+  object-fit: scale-down;
+}
+
+.xui-object-center {
+  object-position: center;
+}
+
+.xui-object-left {
+  object-position: left;
+}
+
+.xui-object-right {
+  object-position: right;
+}
+
+.xui-object-top {
+  object-position: top;
+}
+
+.xui-object-bottom {
+  object-position: bottom;
+}
+
+.xui-object-top-left {
+  object-position: top left;
+}
+
+.xui-object-top-right {
+  object-position: top right;
+}
+
+.xui-object-bottom-left {
+  object-position: bottom left;
+}
+
+.xui-object-bottom-right {
+  object-position: bottom right;
+}
+
+.xui-grid {
+  display: grid;
 }
 
 @media screen and (prefers-color-scheme: dark) {

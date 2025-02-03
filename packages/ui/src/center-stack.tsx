@@ -9,7 +9,7 @@ export const CenterStack = forwardRef(function CenterStack<C extends ElementType
   const typesRest = rest as BoxProps<C>;
   return (
     <Box
-      className={` @xui-flex @xui-flex-col @xui-justify-center @xui-items-center ${className}`}
+      className={` xui-flex xui-flex-col xui-justify-center xui-items-center ${className}`}
       ref={ref}
       as={as}
       {...typesRest}
