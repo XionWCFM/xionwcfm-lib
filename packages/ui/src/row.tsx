@@ -16,13 +16,13 @@ export const Row = forwardRef(function Row<C extends ElementType = "li">(
   const typesRest = rest as BoxProps<C>;
   return (
     <Box
-      className={` @xui-flex @xui-w-full @xui-justify-between @xui-items-center ${className}`}
+      className={`xui-flex xui-w-full xui-justify-between xui-items-center ${className}`}
       ref={ref}
       as={as}
       {...typesRest}
     >
       {isString(left) ? <div>{left}</div> : left}
-      {isString(children) ? <div className="@xui-w-full @xui-text-left @xui-flex-grow">{children}</div> : children}
+      {isString(children) ? <div className="xui-w-full xui-text-left xui-flex-grow">{children}</div> : children}
       {isString(right) ? <div>{right}</div> : right}
     </Box>
   );

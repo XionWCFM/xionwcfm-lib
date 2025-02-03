@@ -7,5 +7,5 @@ export const JustifyBetween = forwardRef(function JustifyBetween<C extends Eleme
   ref?: BoxRef<C>,
 ) {
   const typesRest = rest as BoxProps<C>;
-  return <Box className={` @xui-flex @xui-justify-between ${className}`} ref={ref} as={as} {...typesRest} />;
+  return <Box className={` xui-flex xui-justify-between ${className}`} ref={ref} as={as} {...typesRest} />;
 }) as <C extends ElementType = "div">(props: BoxProps<C> & { ref?: BoxRef<C> }) => JSX.Element;

@@ -10,20 +10,20 @@ describe("Stack", () => {
     render(<Stack>Content</Stack>);
     const element = screen.getByText("Content");
     expect(element.tagName).toBe("DIV");
-    expect(element).toHaveClass("@xui-flex", "@xui-flex-col");
+    expect(element).toHaveClass("xui-flex", "xui-flex-col");
   });
 
   it("should render as specified element", () => {
     render(<Stack as="section">Content</Stack>);
     const element = screen.getByText("Content");
     expect(element.tagName).toBe("SECTION");
-    expect(element).toHaveClass("@xui-flex", "@xui-flex-col");
+    expect(element).toHaveClass("xui-flex", "xui-flex-col");
   });
 
   it("should apply custom className while preserving default classes", () => {
     render(<Stack className="custom-class">Content</Stack>);
     const element = screen.getByText("Content");
-    expect(element).toHaveClass("custom-class", "@xui-flex", "@xui-flex-col");
+    expect(element).toHaveClass("custom-class", "xui-flex", "xui-flex-col");
   });
 
   it("should forward ref correctly", () => {

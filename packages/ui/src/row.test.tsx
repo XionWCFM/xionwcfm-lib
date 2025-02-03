@@ -60,9 +60,9 @@ describe("Row", () => {
     );
 
     const container = screen.getByText("Center").parentElement;
-    expect(container).toHaveClass("@xui-flex");
-    expect(container).toHaveClass("@xui-w-full");
-    expect(container).toHaveClass("@xui-justify-between");
-    expect(container).toHaveClass("@xui-items-center");
+    expect(container).toHaveClass("xui-flex");
+    expect(container).toHaveClass("xui-w-full");
+    expect(container).toHaveClass("xui-justify-between");
+    expect(container).toHaveClass("xui-items-center");
   });
 });

@@ -8,6 +8,6 @@ export const Center = forwardRef(function Center<C extends ElementType = "div">(
 ) {
   const typesRest = rest as BoxProps<C>;
   return (
-    <Box className={` @xui-flex @xui-justify-center @xui-items-center ${className}`} ref={ref} as={as} {...typesRest} />
+    <Box className={` xui-flex xui-justify-center xui-items-center ${className}`} ref={ref} as={as} {...typesRest} />
   );
 }) as <C extends ElementType = "div">(props: BoxProps<C> & { ref?: BoxRef<C> }) => JSX.Element;

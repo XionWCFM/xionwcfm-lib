@@ -1,26 +1,56 @@
-import { type VariantProps, cva } from "class-variance-authority";
 import { type ComponentPropsWithoutRef, type ReactNode, type Ref, forwardRef, useState } from "react";
 
-const imageVariants = cva("", {
-  variants: {
-    objectFit: {
-      cover: " @xui-object-cover",
-      contain: " @xui-object-contain",
-      fill: " @xui-object-fill",
-      none: " @xui-object-none",
-      "scale-down": " @xui-object-scale-down",
-      center: " @xui-object-center",
-      left: " @xui-object-left",
-      right: " @xui-object-right",
-      top: " @xui-object-top",
-      bottom: " @xui-object-bottom",
-      "top-left": " @xui-object-top-left",
-      "top-right": " @xui-object-top-right",
-      "bottom-left": " @xui-object-bottom-left",
-      "bottom-right": " @xui-object-bottom-right",
-    },
-  },
-});
+export type ObjectFit =
+  | "cover"
+  | "contain"
+  | "fill"
+  | "none"
+  | "scale-down"
+  | "center"
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+
+const matchObjectFit = (objectFit?: ObjectFit) => {
+  if (!objectFit) return "";
+  switch (objectFit) {
+    case "cover":
+      return "xui-object-cover";
+    case "contain":
+      return "xui-object-contain";
+    case "fill":
+      return "xui-object-fill";
+    case "none":
+      return "xui-object-none";
+    case "scale-down":
+      return "xui-object-scale-down";
+    case "center":
+      return "xui-object-center";
+    case "left":
+      return "xui-object-left";
+    case "right":
+      return "xui-object-right";
+    case "top":
+      return "xui-object-top";
+    case "bottom":
+      return "xui-object-bottom";
+    case "top-left":
+      return "xui-object-top-left";
+    case "top-right":
+      return "xui-object-top-right";
+    case "bottom-left":
+      return "xui-object-bottom-left";
+    case "bottom-right":
+      return "xui-object-bottom-right";
+    default:
+      return "";
+  }
+};
 
 export const Image = forwardRef(function Image(
   props: Omit<ComponentPropsWithoutRef<"img">, "alt"> & {
@@ -34,7 +64,7 @@ export const Image = forwardRef(function Image(
      * - "none": 대체 콘텐츠는 크기가 조정되지 않습니다.
      * - "scale-down": 콘텐츠는 none 또는 contain이 지정된 것처럼 크기가 조정됩니다 (더 작은 구체적인 객체 크기로 결과).
      */
-    objectfit?: VariantProps<typeof imageVariants>["objectFit"];
+    objectFit?: ObjectFit;
     fallback?: ReactNode;
     errorFallback?: ReactNode;
     isError?: boolean;
@@ -80,7 +110,7 @@ export const Image = forwardRef(function Image(
       alt={alt}
       aria-label={alt}
       ref={ref}
-      className={`${imageVariants({ objectFit: rest.objectfit })} ${className}`}
+      className={`${matchObjectFit(rest.objectFit)} ${className}`}
     />
   );
 
@@ -88,7 +118,7 @@ export const Image = forwardRef(function Image(
     return (
       <>
         {fallback}
-        <div className=" @xui-absolute @xui-invisible">{Component}</div>
+        <div className=" xui-absolute xui-invisible">{Component}</div>
       </>
     );
   }

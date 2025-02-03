@@ -7,5 +7,5 @@ export const JustifyEnd = forwardRef(function JustifyEnd<C extends ElementType =
   ref?: BoxRef<C>,
 ) {
   const typesRest = rest as BoxProps<C>;
-  return <Box className={` @xui-flex @xui-justify-end ${className}`} ref={ref} as={as} {...typesRest} />;
+  return <Box className={` xui-flex xui-justify-end ${className}`} ref={ref} as={as} {...typesRest} />;
 }) as <C extends ElementType = "div">(props: BoxProps<C> & { ref?: BoxRef<C> }) => JSX.Element;
