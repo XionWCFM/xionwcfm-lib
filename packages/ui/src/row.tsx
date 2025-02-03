@@ -22,7 +22,7 @@ export const Row = forwardRef(function Row<C extends ElementType = "li">(
       {...typesRest}
     >
       {isString(left) ? <div>{left}</div> : left}
-      <div className=" @xui-w-full @xui-text-left @xui-flex-grow">{children}</div>
+      {isString(children) ? <div className="@xui-w-full @xui-text-left @xui-flex-grow">{children}</div> : children}
       {isString(right) ? <div>{right}</div> : right}
     </Box>
   );
