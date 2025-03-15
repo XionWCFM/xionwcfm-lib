@@ -31,5 +31,5 @@
     "typescript": "catalog:",
     "vitest": "^2.1.5"
   },
-  "packageManager": "pnpm@9.13.2"
+  "packageManager": "pnpm@10.6.2"
 }

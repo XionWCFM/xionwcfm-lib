@@ -1,15 +1,21 @@
-import { DependencyList, useCallback, useRef } from "react";
+import { useCallback } from "react";
+import { usePreservedCallback } from "./use-preserved-callback";
 
-export function useCallbackOnce<F extends (...args: any[]) => void>(callback: F, deps: DependencyList) {
-  const hasFired = useRef(false);
-  const memoizedCallback = useCallback((...args: Parameters<F>) => {
-    if (hasFired.current) {
-      return;
+export const useCallbackOnce = <T extends (...args: any[]) => void>(callback: T, deps?: any[]) => {
+  const onceCallback = usePreservedCallback(callback);
+  return useCallback(once(onceCallback), deps ?? []);
+};
+
+function once<F extends (() => any) | ((...args: any[]) => void)>(func: F): F {
+  let called = false;
+  let cache: ReturnType<F>;
+
+  return ((...args: Parameters<F>): ReturnType<F> => {
+    if (!called) {
+      called = true;
+      cache = func(...args);
     }
 
-    callback(...args);
-    hasFired.current = true;
-  }, deps);
-
-  return memoizedCallback;
+    return cache;
+  }) as F;
 }
