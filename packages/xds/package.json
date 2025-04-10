@@ -481,7 +481,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "serve-storybook": "npx serve storybook-static",
-    "test": "vitest"
+    "test": "vitest",
+    "test:type": "tsc --noEmit"
   },
   "publishConfig": {
     "access": "public"
@@ -499,29 +500,29 @@
     "@storybook/react": "^8.3.6",
     "@storybook/react-vite": "^8.3.6",
     "@storybook/test": "^8.3.6",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
     "@turbo/gen": "^1.12.4",
     "@types/node": "catalog:",
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "catalog:",
     "@xionwcfm/icon": "workspace:*",
     "@repo/tailwindcss-config": "workspace:*",
     "@xionwcfm/token": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "autoprefixer": "catalog:",
-    "happy-dom": "^15.11.7",
+    "happy-dom": "catalog:",
     "postcss": "catalog:",
     "react": "catalog:react18",
     "storybook": "^8.3.6",
     "tailwindcss": "catalog:",
     "tsup": "catalog:",
     "typescript": "catalog:",
-    "vite": "^6.0.5",
-    "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^2.1.8"
+    "vite": "catalog:",
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

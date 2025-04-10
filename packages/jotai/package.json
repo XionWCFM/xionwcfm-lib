@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest",
-    "test:ci": "vitest run"
+    "test:ci": "vitest run",
+    "test:type": "tsc --noEmit"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -31,10 +32,10 @@
     "@testing-library/react": "catalog:",
     "@testing-library/user-event": "catalog:",
     "@vitejs/plugin-react": "catalog:",
-    "@types/node": "^20.14.9",
+    "@types/node": "catalog:",
     "@types/react": "catalog:react18",
     "@repo/typescript-config": "workspace:*",
-    "happy-dom": "^15.11.6",
+    "happy-dom": "catalog:",
     "jotai": "^2.9.3",
     "tsup": "catalog:",
     "typescript": "catalog:",

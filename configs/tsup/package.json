@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
-    "ci:type": "tsc --noEmit"
+    "ci:type": "tsc --noEmit",
+    "test:type": "tsc --noEmit"
   },
   "exports": {
     ".": {

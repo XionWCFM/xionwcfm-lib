@@ -9,27 +9,28 @@
     "lint": "turbo lint",
     "test": "turbo run test",
     "test:ci": "turbo run test:ci",
+    "test:type": "turbo run test:type",
     "lint:biome": "npx @biomejs/biome lint .",
     "check:biome": "npx @biomejs/biome check --write .",
     "format:biome": "npx @biomejs/biome format --write .",
     "clean:all": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules && pnpm store prune && pnpm install",
     "ci:lint": "npx @biomejs/biome lint .",
-    "ci:knip": "pnpm knip --no-exit-code",
+    "ci:knip": "npx knip --no-exit-code",
     "ci:build": "turbo build --filter './packages/*'",
     "ci:test": "turbo run test:ci"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@vitest/coverage-v8": "^2.1.5",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@repo/typescript-config": "workspace:*",
+    "@vitest/coverage-v8": "^3.1.1",
     "broken-link-checker": "^0.7.8",
-    "knip": "^5.37.1",
-    "lefthook": "^1.8.2",
-    "turbo": "^2.3.3",
-    "typescript": "catalog:",
-    "vitest": "^2.1.5"
+    "lefthook": "^1.11.8",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.6",
+    "vitest": "^3.1.1"
   },
   "packageManager": "pnpm@10.6.2"
 }
