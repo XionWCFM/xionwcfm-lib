@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup && pnpm run copy:css",
-    "copy:css": "cp ./src/index.css ./dist/index.css"
+    "copy:css": "cp ./src/index.css ./dist/index.css",
+    "test:type": "tsc --noEmit"
   },
   "main": "./dist/index.js",
   "exports": {

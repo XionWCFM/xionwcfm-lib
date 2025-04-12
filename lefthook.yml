@@ -39,3 +39,7 @@ pre-push:
         done
     test:
       run: pnpm run ci:test
+    typecheck:
+      run: pnpm run test:type
+    build:
+      run: pnpm run ci:build

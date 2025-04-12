@@ -21,5 +21,8 @@ jobs:
       - name: Test
         run: pnpm ci:test
 
+      - name: Typecheck
+        run: pnpm test:type
+
       - name: Build
         run: pnpm ci:build

@@ -6,5 +6,6 @@ export default defineConfig({
       reporter: ["text", "json-summary", "json", "lcov"],
       reportOnFailure: true,
     },
+    workspace: ["packages/*"],
   },
 });

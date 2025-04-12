@@ -17,6 +17,10 @@
       "cache": false,
       "persistent": true
     },
+    "test:type": {
+      "cache": false,
+      "persistent": true
+    },
     "test:ci": {
       "cache": true,
       "persistent": false,

@@ -3,7 +3,8 @@
   "version": "0.0.8",
   "license": "MIT",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "test:type": "tsc --noEmit"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
