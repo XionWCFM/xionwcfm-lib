@@ -15,13 +15,13 @@ jobs:
     - uses: ./.github/actions/pnpm-setup-node      
 
     - name: 'Install Deps'
-      run: pnpm install --frozen-lockfile
+      run: pnpm install
   
     - name: 'Build'
       run: pnpm run build:p
 
     - name: 'Test'
-      run: pnpm vitest --coverage.enabled true
+      run: pnpm vitest run --coverage.enabled true
 
     - name: 'Report Coverage'
       if: always() 
