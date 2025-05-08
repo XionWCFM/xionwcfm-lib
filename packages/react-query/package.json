@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/react-query",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -25,7 +25,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@tanstack/react-query": "catalog:react-query5",
     "@testing-library/jest-dom": "catalog:",
