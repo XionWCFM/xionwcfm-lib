@@ -11,8 +11,8 @@ jobs:
       pull-requests: write
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/pnpm-setup-node      
+    - uses: actions/checkout@v3
+    - uses: ./.github/actions/pnpm-setup-node
 
     - name: 'Install Deps'
       run: pnpm install --frozen-lockfile
