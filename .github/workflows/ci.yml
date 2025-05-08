@@ -14,13 +14,16 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        
+      - name: Build
+        run: pnpm run build:p
 
       - name: Lint
         run: pnpm ci:lint
 
       - name: Test
         run: pnpm ci:test
-
+      
       - name: Typecheck
         run: pnpm test:type
 
