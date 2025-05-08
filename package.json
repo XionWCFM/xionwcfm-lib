@@ -17,10 +17,12 @@
     "ci:lint": "npx @biomejs/biome lint .",
     "ci:knip": "npx knip --no-exit-code",
     "ci:build": "turbo build --filter './packages/*'",
-    "ci:test": "turbo run test:ci"
+    "ci:test": "turbo run test:ci",
+    "release": "pnpm run build:p && pnpm run test:ci && pnpm run test:type && pnpm run lint:biome && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@changesets/cli": "^2.29.3",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@repo/typescript-config": "workspace:*",

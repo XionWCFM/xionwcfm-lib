@@ -11,17 +11,17 @@ jobs:
       pull-requests: write
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/pnpm-setup-node      
+    - uses: actions/checkout@v3
+    - uses: ./.github/actions/pnpm-setup-node
 
     - name: 'Install Deps'
-      run: pnpm install
+      run: pnpm install --frozen-lockfile
   
     - name: 'Build'
       run: pnpm run build:p
 
     - name: 'Test'
-      run: pnpm vitest run --coverage.enabled true
+      run: pnpm vitest --coverage.enabled true
 
     - name: 'Report Coverage'
       if: always() 
