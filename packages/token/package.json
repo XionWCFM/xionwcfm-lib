@@ -2,6 +2,7 @@
   "name": "@xionwcfm/token",
   "version": "0.2.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "tsup && pnpm run copy:css",
     "copy:css": "cp ./src/index.css ./dist/index.css",

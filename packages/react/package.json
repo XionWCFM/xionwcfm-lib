@@ -2,6 +2,7 @@
   "name": "@xionwcfm/react",
   "version": "0.1.3",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "tsup",
     "test": "vitest",

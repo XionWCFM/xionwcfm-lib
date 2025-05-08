@@ -2,6 +2,7 @@
   "name": "@xionwcfm/react-query",
   "version": "0.0.8",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "tsup",
     "test:type": "tsc --noEmit"
