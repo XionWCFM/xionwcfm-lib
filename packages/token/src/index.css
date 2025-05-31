@@ -273,7 +273,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --neutral-50: #1a1a1a;
     --neutral-100: #2b2b2b;
@@ -353,4 +353,4 @@
     --danger-800: #ffb3b3;
     --danger-900: #ffdcdc;
   }
-}
+} */
