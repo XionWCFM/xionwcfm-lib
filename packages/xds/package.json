@@ -1,13 +1,15 @@
 {
   "name": "@xionwcfm/xds",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "style": "./dist/style.css",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -474,7 +476,9 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss -i ./style.css -o dist/style.css --minify --postcss",
