@@ -1,5 +1,11 @@
 # @xionwcfm/xds
 
+## 0.6.0
+
+### Minor Changes
+
+- [#55](https://github.com/XionWCFM/xionwcfm-lib/pull/55) [`1ce7157`](https://github.com/XionWCFM/xionwcfm-lib/commit/1ce71570c765ab82adcd363e35d4e5de8a34893d) Thanks [@XionWCFM](https://github.com/XionWCFM)! - package.josn 오류 수정
+
 ## 0.5.0
 
 ### Minor Changes
