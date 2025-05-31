@@ -1,6 +1,6 @@
 {
   "name": "@xionwcfm/token",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -26,7 +26,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist", "*.css"],
+  "files": [
+    "dist",
+    "*.css"
+  ],
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "tsup": "catalog:",
