@@ -26,10 +26,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "*.css"
-  ],
+  "files": ["dist", "*.css", "package.json"],
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "tsup": "catalog:",

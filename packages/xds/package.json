@@ -473,9 +473,7 @@
       }
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist", "package.json"],
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss -i ./style.css -o dist/style.css --minify --postcss",
