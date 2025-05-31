@@ -7,9 +7,6 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "style": "./dist/style.css",
-  "sideEffects": [
-    "*.css"
-  ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -476,9 +473,7 @@
       }
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss -i ./style.css -o dist/style.css --minify --postcss",
