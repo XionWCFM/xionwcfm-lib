@@ -1,5 +1,13 @@
 # @xionwcfm/xds
 
+## 0.5.0
+
+### Minor Changes
+
+- [#53](https://github.com/XionWCFM/xionwcfm-lib/pull/53) [`4aab3ca`](https://github.com/XionWCFM/xionwcfm-lib/commit/4aab3ca8b9728d322b8623cd14437e4516f137e5) Thanks [@XionWCFM](https://github.com/XionWCFM)! - package bump
+
+- [#53](https://github.com/XionWCFM/xionwcfm-lib/pull/53) [`4aab3ca`](https://github.com/XionWCFM/xionwcfm-lib/commit/4aab3ca8b9728d322b8623cd14437e4516f137e5) Thanks [@XionWCFM](https://github.com/XionWCFM)! - 빌드안하고 배포하던 문제 해결
+
 ## 0.4.0
 
 ### Minor Changes
