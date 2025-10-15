@@ -10,7 +10,7 @@ catalog:
   "vite": "6.2.6"
   "vitest": "3.1.1"
   "vite-tsconfig-paths": "5.1.4"
-  "happy-dom": "17.4.4"
+  "happy-dom": "20.0.2"
   "vitest-fetch-mock": "0.2.2"  
   "@testing-library/jest-dom": "6.6.3"
   "@testing-library/react": "16.3.0"
