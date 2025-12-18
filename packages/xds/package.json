@@ -520,7 +520,7 @@
     "happy-dom": "catalog:",
     "postcss": "catalog:",
     "react": "catalog:react18",
-    "storybook": "^8.3.6",
+    "storybook": "^8.6.15",
     "tailwindcss": "catalog:",
     "tsup": "catalog:",
     "typescript": "catalog:",
